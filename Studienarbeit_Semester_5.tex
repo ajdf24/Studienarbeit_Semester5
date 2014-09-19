@@ -1,0 +1,197 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{amsmath, amssymb, amstext, amsfonts, mathrsfs}
+
+
+% \sffamily %schrift ohne Serifen
+
+\usepackage[T1]{fontenc} 
+% schriftencodierung für umlaute, trennung
+% f\"ur Uni
+\usepackage[ansinew]{inputenc}
+\usepackage{selinput}
+% \usepackage[utf8]{inputenc} 
+\usepackage{bibgerm} 
+% german bibliography
+\usepackage[german]{babel}
+%wichtig für deutschen Content
+\usepackage{ucs}
+%erweiterte UTF-8 Unterstützung
+\usepackage{wrapfig} 
+% Paket zur Positionierung einbinden
+\usepackage{multirow}
+% zusammenfassen von Tabellenzellen
+% \usepackage{subscript}
+% zum tiefstellen
+\usepackage{lscape}
+\usepackage{pdflscape}
+% zum drehen der Seite
+% \usepackage[super]{natbib}
+\usepackage[square,sort,comma,numbers]{natbib}
+% Erstellung es Literaturverzeichnisses
+\usepackage{url}
+% Umbruch für URL
+\usepackage{pst-3dplot}
+% für tex Grafiken nötig
+\usepackage{pstricks}
+\usepackage{listings}
+% für das einfügen von Quelltext
+\definecolor{codegray}{rgb}{0.92,0.92,0.92}
+\lstset{basicstyle=\fontsize{9}{11}\selectfont\ttfamily, breaklines=true, backgroundcolor=\color{codegray}, numbers=left, numberstyle=\tiny, tabsize=4, language=java}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\lstset{
+commentstyle=\color{mygreen},
+keywordstyle=\color{mymauve},
+language=Java,
+stringstyle=\color{blue}
+}
+
+
+%Einstellungen für Quellcode
+\usepackage[a4paper, left=3cm, right=2cm, top=2cm]{geometry}
+% Formatierung Ränder
+\usepackage[section]{placeins}
+% für Floatbarriere
+\usepackage{color}
+%für die Verwendung von Farben
+
+\clubpenalty = 10000 
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+%Verhinderung von Hurenkindern und Schusterjungen
+%10000 bedeutet die sie sollen kommplett vermieden werden
+
+\title{Serialisierung von Datenobjekten in JSON zur \"Ubertragung von Objekten aus Energieanwendungen}
+
+\author{Sebastian Rieger}
+
+\pagenumbering{arabic}
+%Seitenzahlen(arabische Zahlen)
+
+\setlength{\parindent}{0.25cm} 
+%Absatzeinzug ändern in Zoll
+\setlength{\parskip}{0.25cm}
+%Absatzabstand
+\linespread {1.5}
+%Zeilenabstand
+
+% \usepackage{hyperref}
+%anklickbare Hyperlinks
+
+%funktioniert nicht bei Fußnoten
+\usepackage{graphicx}
+\usepackage{graphics}
+%für einbinden von Grafiken
+\usepackage{setspace}
+\usepackage{framed}
+%für Umrandung der Erklärung
+\usepackage{acronym}
+% für abkürzungen
+% \usepackage{PSTricks}
+\usepackage{epstopdf}
+% für eps bilder nutze pdflatex --shell-escape this.tex
+\usepackage{amssymb}
+% für mathematische Symbole
+
+\usepackage{hyperref}
+% klickbare links
+
+% \usepackage{pdfpages}
+\usepackage{rotating}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Angaben zur Arbeit
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Autor}{Sebastian Rieger}
+\newcommand{\MatrikelNummer}{7406886}
+\newcommand{\Kursbezeichnung}{TINF12B1}
+
+\newcommand{\FirmenName}{Karlsruher Institut für Technologie (KIT)}
+\newcommand{\FirmenStadt}{Karlsruhe}
+\newcommand{\FirmenLogoDeckblatt}{{\includegraphics[width=3cm]{Bilder/kitlogo}}}
+
+% Falls es kein Firmenlogo gibt:
+%  \newcommand{\FirmenLogoDeckblatt}{}
+
+% \newcommand{\BetreuerFirma}{Dr.-Ing. Karl-Uwe Stucky}
+\newcommand{\BetreuerDHBW}{Dipl. -Inform. Thorsten Schlachter}
+\newcommand{\Titel}{Entwicklung einer Android-Applikation für die Alarmierung der Einsatzkräfte der Freiwilligen Feuerwehren}
+\newcommand{\AbgabeDatum}{??????????}
+
+\newcommand{\Dauer}{??????????}
+
+% \newcommand{\Abschluss}{Bachelor of Engineering}
+\newcommand{\Abschluss}{Bachelor of Science}
+
+\newcommand{\Studiengang}{Angewandte Informatik}
+% \newcommand{\Studiengang}{Angewandte Informatik}
+\newcommand{\Was}{Studienarbeit}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%steuervariable
+\usepackage{ifthen} %Package für if/else
+\newboolean{bilder} %Deklaration
+\setboolean{bilder}{true} %Zuweisung
+% \setboolean{bilder}{false} %Zuweisung
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{center}
+\vspace*{-2cm}
+\FirmenLogoDeckblatt\hfill\includegraphics[width=4cm]{Bilder/dhbw-logo}\\[1cm]
+{\Huge \Titel}\\[2cm]
+{\Huge\scshape \Was}\\[2cm]
+{\large für die Prüfung zum}\\[0.5cm]
+{\Large \Abschluss}\\[0.5cm]
+{\large des Studienganges \Studiengang}\\[0.5cm]
+{\large an der}\\[0.5cm]
+{\large Dualen Hochschule Baden-Württemberg Karlsruhe}\\[0.5cm]
+{\large von}\\[0.5cm]
+{\large\bfseries \Autor}\\[1cm]
+{\large Abgabedatum \AbgabeDatum}
+\vfill
+\end{center}
+\begin{tabular}{l@{\hspace{1cm}}l}
+Bearbeitungszeitraum             & \Dauer                       \\
+Matrikelnummer                   & \MatrikelNummer              \\
+Kurs                             & \Kursbezeichnung             \\
+Ausbildungsfirma                 & \FirmenName                  \\
+                                 & \FirmenStadt                 \\
+% Betreuer der Ausbildungsfirma    & \BetreuerFirma               \\
+Gutachter der Studienakademie    & \BetreuerDHBW                \\
+\end{tabular}
+
+\newpage
+%Seitenumbruch
+\include{erklaerung}
+\newpage
+\begin{spacing}{0.9}
+
+%Einfügen Inhaltsverzeichnis
+\tableofcontents
+\newpage
+\include{Einleitung}
+\newpage
+\include{Aufgabenstellung}
+\newpage
+\include{Android}
+
+
+\end{spacing}
+
+
+
+
+\newpage
+\section{Abkürzungsverzeichnis}
+\input{Abkuerzungen}
+\newpage
+\listoffigures
+% Abkürzungsverzeichnis
+\newpage
+\bibliographystyle{alphadin}
+% verzeichnis im DIN format
+\bibliography{Quellen}
+\end{document}

@@ -1,0 +1,48 @@
+\section{Android - eine offene und mobile Plattform}
+Android ist ein Betriebssystem, welches erstmals im November 2007 von Google, im Zuge der Ver\"offentlichung, des Android \ac{SDK} vorgestellt wurde. Das Betriebssystem bassiert auf dem Linux-Kernel und wird von der \ac{OHA} entwickelt. Es ist auf Ger\"aten wie Netbooks, Smartphones, Mobiltelefonen und Digitalkameras zu finden und Heute weit Verbreitet. \cite{Kuehn12}
+
+\subsection{Android im Wandel der Zeiten}
+\begin{wrapfigure}{r}{4,95cm}
+\vspace{-13pt}
+\includegraphics[width=4.95cm]{Bilder/Android4.jpg}
+\caption{Android 4.4 Startbildschirm des Nexus 5 in Originalgr\"o\ss{}e}
+\label{Der MongoDB-Chooser-Dialog}
+\vspace{-20pt}
+\end{wrapfigure}
+Nach der Ver\"offentlichung des Android \ac{SDK} wurde 2008 mit dem "`G1"' das erste Smartphone mit dem neuen Betriebssystem Android vorgestellt. Ein direkten Vergleich zwischen Android und den von Apple stammenden iOS ging, zu dieser Zeit, klar zu Gunsten der Apple-Produkte aus.
+% 
+% Dem zu der Zeit noch Marktbeherschenden iOS und den iPhones, konnte 
+ 
+Durch eine schnelle und konsequente Entwicklung konnten, der Firma Apple mit ihrem iOS, immer mehr Marktanteile abgenommen werden. Zum heutgen Zeitpunkt ist die Android-Plattform mit fast 85 Prozent Marktanteil im Bereich der Smartphonebetriebssysteme f\"uhrend. \cite{GolemMobileBetriebssystem}
+
+Hardwarehersteller d\"urfen seit einiger Zeit nicht nur die Oberfl\"ache, sondern auch das Betriebssystem an sich auf ihre ganz speziellen Anforderungen anpassen, was zu einer gro\ss{}en Vielfalt der Plattform f\"uhrte. Ein pures unbearbeitetes Android ist zur Zeit nur auf Ger\"aten der "`Nexus-Reihe"' zu finden, welche zwar von verschiedenen Herstellern gebaut aber von Google vermarktet werden. Dies hat zur Folge das Systemupdates, auf Nexus-Ger\"aten, schneller und regelm\"a\ss{}iger zur Verf\"ugung stehen, da keine Anpassungen an den Updates, durch die Hardwarehersteller, vorgenommen werden m\"ussen.
+
+Android ist momentan in der Version 4.4.4 alias "`Kit Kat"' auf dem Markt. Die Versionsnamen von Android sind immer nach einer S\"u\ss{}speise benannt und kommen in alphabetischer Reihenfolge auf den Markt. So folgte auf "`Jelly Bean"' die aktuelle Version Kit Kat. Eine nun schon in der Entwicklervorschau erschienene Version wird also mit "`L"' beginnen, weshalb diese Version momentan auch "`Android L"' genannt wird. Gut zu sehen ist, dass auf den Buchstaben J ein K folgte, welcher wiederum vom L abgel\"ost wird. \cite{WikiAndroid} \cite{Jung13}
+
+Zus\"atzlich wurde dem Trend der "`Smartwatches"' folgend, im M\"arz 2014, ein speziell f\"ur Smartwatches angepasstes Android-System ver\"offentlicht, welches "`Android Wear"' hei\ss{}t. In dieser Arbeit wird jedoch nicht weiter auf Android Wear eingegangen, da dieses System nur im Zusammenspiel mit einem Smartphone in der Lage ist SMS zu empfangen. \cite{NextAndroidWear}
+
+\subsection{Die Entwicklungsumgenung f\"ur Android}
+Das schon angesprochene \ac{SDK} beinhaltet die folgenden Bestandteile:
+\begin{itemize}
+ \item Die eigentliche Entwicklungsumgenung mit Plugins
+ \item Biblioteken und APIs
+ \item Das Android Virtual Device
+ \item Den USB-Treiber 
+ \item Den SDK-Manager
+ 
+\end{itemize}
+
+Nach dem downloaden und installieren der Android \ac{SDK} sind die eben genannten Bestandteile auf dem Rechner vorhanden. Die meisten Entwickler verwenden die \ac{IDE} Eclipse, f\"ur die eigentliche Programmierarbeit. Die nun installierte Version von Eclipse enth\"alt das Plugin \ac{ADT} welches viele Tools f\"ur die Android-Entwicklung mitbringt und welche sp\"ater genauer erl\"autert werden.
+
+Eine andere Version des Android \ac{SDK} das sogenannte "`Android Studio"' bassiert auf der \ac{IDE} "`IntelliJ"'. Android Studio besitzt einige zus\"atzliche Features, wie die erweiterte "`Android Code-Completion"' oder die "`Multiple-APK generation"', welche es erlaubt eine Applikation gleichzeitig f\"ur Android und Android Wear zu erzeugen. Trotz der Vorteile, befindet sich das Android Studio noch in einer Beta-Phase und wird daher nicht verwendet. \cite{DevAndroidStudio}
+
+Au\ss{}er der \ac{IDE} beinhaltet das Android \ac{SDK} die aktuellen Bibliotheken und APIs, welche f\"ur die Erstellung einer Applikation ben\"otigt werden. Dies beinhaltet auch eine lauff\"ahige Version des Androidbetriebssystems, welches f\"ur das Virtual Device ben\"otigt wird.
+
+Das Virtual Device simuliert ein Smartphone am Rechner, auf dem die erstelle Applikation ausgef\"uhrt und getestet werden kann. Hierbei werden vom Virtual Device Debug-Information zur \ac{IDE} \"ubertragen, welche von dort aus angeschaut und ausgewertet werden k\"onnen.
+
+Um eine geschriebene Applikation letztendlich nicht nur auf Virtuellen Ger\"aten zu testen wird, unter Windows, ein USB-Treiber ben\"otigt. Dieser Treiber erm\"oglicht es, die Applikation auf ein reales Android-Ger\"at zu \"ubertragen und von dort aus zu Debuggen.
+Um dies mit realer Hardware zu Testen, muss im entsprechenden Smartphone die "`Entwickler-Option"' aktiviert werden. Wie  dies gemacht wird, wird im Kapitel ????? genauer beschrieben.
+
+Der SDK-Manager ist ein Tool, mit dem die einzelnen Android-Version, Bibliotheken, APIs und Eclipse-Plugin-Versionen verwaltet und aktualisiert werden k\"onnen. Dies ist zum Beispiel hilfreich, wenn man eine Applikation unter verschiedenen Android-Version testen oder lauff\"ahig halten will.
+
+\subsection{Runtime.......}
