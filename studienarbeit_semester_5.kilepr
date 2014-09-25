@@ -77,37 +77,37 @@ Mode=LaTeX
 
 [item:Abkuerzungen.tex]
 archive=true
-column=44
+column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=4
+line=5
 mode=LaTeX
 open=true
 order=5
 
 [item:Android.tex]
 archive=true
-column=362
+column=292
 encoding=ISO-8859-1
 highlight=LaTeX
-line=27
+line=45
 mode=LaTeX
 open=true
 order=3
 
 [item:Aufgabenstellung.tex]
 archive=true
-column=198
+column=159
 encoding=ISO-8859-1
 highlight=LaTeX
-line=20
+line=21
 mode=LaTeX
 open=true
 order=2
 
 [item:Einleitung.tex]
 archive=true
-column=28
+column=192
 encoding=ISO-8859-1
 highlight=LaTeX
 line=13
@@ -117,10 +117,10 @@ order=1
 
 [item:Quellen.bib]
 archive=true
-column=1
+column=22
 encoding=ISO-8859-1
 highlight=BibTeX
-line=34
+line=41
 mode=BibTeX
 open=true
 order=4
@@ -146,32 +146,32 @@ open=false
 order=-1
 
 [view-settings,view=0,item:Abkuerzungen.tex]
-CursorColumn=44
-CursorLine=4
+CursorColumn=0
+CursorLine=5
 JumpList=
 ViMarks=
 
 [view-settings,view=0,item:Android.tex]
-CursorColumn=362
-CursorLine=27
+CursorColumn=292
+CursorLine=45
 JumpList=
 ViMarks=
 
 [view-settings,view=0,item:Aufgabenstellung.tex]
-CursorColumn=198
-CursorLine=20
+CursorColumn=159
+CursorLine=21
 JumpList=
 ViMarks=
 
 [view-settings,view=0,item:Einleitung.tex]
-CursorColumn=28
+CursorColumn=192
 CursorLine=13
 JumpList=
 ViMarks=
 
 [view-settings,view=0,item:Quellen.bib]
-CursorColumn=1
-CursorLine=34
+CursorColumn=22
+CursorLine=41
 JumpList=
 ViMarks=
 

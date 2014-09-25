@@ -1,0 +1,111 @@
+\section{Lastenheft}
+Im Verlauf des Projektes soll eine mobile Android-App entwickelt werden, welche bei einer eingehenden Nachricht einen Alarm generiert und den Nutzer somit \"uber den Eingang informiert.
+
+\subsection{Zielsetzung}
+Ziel ist es eine Regelbassierte Android-App zu entwickeln, wobei die Regeln vom Nutzer nach CRUD erstellt, ausgelesen, ge\"andert und gel\"oscht werden k\"onnen. Hierbei sollen verschiedene Nutzer Regeln auch untereinander austauschen k\"onnen.
+
+\subsection{Produkteinsatz}
+Die zu entwickelnde Applikation soll vor allem die Einsatzkr\"afte der Freiwilligen Feuerwehren beim Erhalt einer AlarmSMS \"uber die erfolgte Alarmierung informieren. Diese AlarmSMS wird von Leitstellen oder Privatfirmen an die Mitglieder gesendet.
+
+Da heutige Smartphones nicht in der Lage sind bei bestimmten Absendernummern oder Absender-Strings den lautlosen Modus zu umgehen und bestimmte Alarmt\"one zu spielen soll eine Applikation entwickelt werden, welche diese Aufgabe \"ubernimmt.
+
+\subsubsection{Zusammenspiel mit anderen Systemen}
+Die Applikation soll unter Android laufen, wobei die App so weit wie m\"oglich Abw\"artskompatibel zu den Androidversionen gehalten werden soll. Au\ss{}erdem sollen andere auf dem Smartphone befindliche Applikation angesteuert werden k\"onnen, um zum einen Posts in Sozialen Netzwerken und zum anderen eine Navigation zum Feuerwehr-Ger\"atehaus oder zur Einsatzstelle zu erm\"oglichen.
+
+\subsection{Produktfunktionen}
+\begin{minipage}{3cm}
+/LF10/
+\end{minipage}
+\begin{minipage}{13cm}
+Die App soll den Nutzer beim eingehen von Nachrichten \"uber den Erhalt speziell informieren. Hierbei soll zum einen der Absender aber auch der Inhalt ausschlaggebend sein.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LF20/
+\end{minipage}
+\begin{minipage}{13cm}
+Der Nutzer soll die Alarmierung \"uber CRUD Regeln selber festlegen k\"onnen. Hierbei soll er nach folgendem Prinzip Regeln definieren k\"onnen.\\
+Absender-Nummer.equals("+4972160825769") AND SMS.getContent().con-tains(foo)
+==> Action.Klingelton(Mambo5).\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LF30/
+\end{minipage}
+\begin{minipage}{13cm}
+Die Regeln sollen so abstrakt wie m\"oglich gehalten werden, damit eine Erweiterung auf E-Mail und so weiter relativ einfach umzusetzen ist.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LF40/
+\end{minipage}
+\begin{minipage}{13cm}
+Es soll die M\"oglichkeit bestehen im Alarmfall automatisiert einen Post in Sozialen Netzwerken abzusetzen. Aber auch eine Information an den Einheitsf\"uhrer soll per SMS versendet werden k\"onnen.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LF50/
+\end{minipage}
+\begin{minipage}{13cm}
+Eine Navigation zum Einsatzort, beziehungsweise zum Ger\"atehaus soll mit Hilfe einer anderen App m\"oglich sein.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LF60/
+\end{minipage}
+\begin{minipage}{13cm}
+Die \"Ubertragung einer Regel an andere Nutzer der App muss ohne Umst\"ande m\"oglich sein.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LF70/
+\end{minipage}
+\begin{minipage}{13cm}
+Regeln sollen ohne ein l\"oschen deaktiviert und sp\"ater wieder reaktiviert werden k\"onnen.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LF80/
+\end{minipage}
+\begin{minipage}{13cm}
+Es sollen als Alarmt\"one nicht nur von der App mitgelieferte sondern auch andere T\"one oder Lieder gew\"ahlt werden k\"onnen.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LF90/
+\end{minipage}
+\begin{minipage}{13cm}
+In einer Einf\"uhrung soll der Nutzer mit der Regelerstellung vertraut gemacht werden. Die Einf\"uhrung soll Schritt f\"ur Schritt alle M\"oglichkeiten demonstrieren.\\
+\end{minipage}
+
+\subsection{Produktdaten}
+\begin{minipage}{3cm}
+/LD10/
+\end{minipage}
+\begin{minipage}{13cm}
+Erstellte Regeln m\"ussen gespeichert werden k\"onnen, so dass der Nutzer einmal erstellte Regeln wieder aktivieren kann.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LD20/
+\end{minipage}
+\begin{minipage}{13cm}
+Die App soll einige Alarmt\"one mitliefern, wobei keine Lizenzkosten anfallen d\"urfen.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LD30/
+\end{minipage}
+\begin{minipage}{13cm}
+Ein Regelaustausch mit anderen Nutzern soll grunds\"atzlich m\"oglich sein.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LD40/
+\end{minipage}
+\begin{minipage}{13cm}
+Es sollen keine nicht ben\"otigten Daten vom Telefon abgefragt, verarbeitet oder gesendet werden.\\
+\end{minipage}
+
+\subsection{Produktleistungen}
+\begin{minipage}{3cm}
+/LL10/
+\end{minipage}
+\begin{minipage}{13cm}
+Die Applikation soll beim Systemstart mit starten, und sofort einsatzbereit sein.\\
+\end{minipage}
+\begin{minipage}{3cm}
+/LL20/
+\end{minipage}
+\begin{minipage}{13cm}
+Regeln sollen \"uber Bluetooth ausgetauscht werden k\"onnen.\\
+\end{minipage}
