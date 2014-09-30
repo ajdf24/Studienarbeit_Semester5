@@ -8,8 +8,8 @@ kile_livePreviewEnabled=true
 kile_livePreviewStatusUserSpecified=false
 kile_livePreviewTool=LivePreview-PDFLaTeX
 kileprversion=2
-kileversion=2.9.60
-lastDocument=Android.tex
+kileversion=2.1.3
+lastDocument=Aufgabenstellung.tex
 masterDocument=
 name=Studienarbeit_Semester_5
 pkg_extIsRegExp=false
@@ -57,6 +57,13 @@ Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
 
+[document-settings,item:Lastenheft.tex]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+
 [document-settings,item:Quellen.bib]
 Bookmarks=
 Encoding=ISO-8859-1
@@ -83,37 +90,47 @@ highlight=LaTeX
 line=5
 mode=LaTeX
 open=true
-order=5
+order=6
 
 [item:Android.tex]
 archive=true
-column=292
+column=34
 encoding=ISO-8859-1
 highlight=LaTeX
-line=45
+line=8
 mode=LaTeX
 open=true
-order=3
+order=4
 
 [item:Aufgabenstellung.tex]
 archive=true
-column=159
+column=112
 encoding=ISO-8859-1
 highlight=LaTeX
-line=21
+line=19
 mode=LaTeX
 open=true
 order=2
 
 [item:Einleitung.tex]
 archive=true
-column=192
+column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=13
+line=9
 mode=LaTeX
 open=true
 order=1
+
+[item:Lastenheft.tex]
+archive=true
+column=6
+encoding=UTF-8
+highlight=LaTeX
+line=16
+mode=LaTeX
+open=true
+order=3
 
 [item:Quellen.bib]
 archive=true
@@ -123,14 +140,14 @@ highlight=BibTeX
 line=41
 mode=BibTeX
 open=true
-order=4
+order=5
 
 [item:Studienarbeit_Semester_5.tex]
 archive=true
-column=0
+column=24
 encoding=ISO-8859-1
 highlight=LaTeX
-line=197
+line=23
 mode=LaTeX
 open=true
 order=0
@@ -152,22 +169,28 @@ JumpList=
 ViMarks=
 
 [view-settings,view=0,item:Android.tex]
-CursorColumn=292
-CursorLine=45
+CursorColumn=34
+CursorLine=8
 JumpList=
-ViMarks=
+ViMarks=.,32,0,[,32,0,],32,0
 
 [view-settings,view=0,item:Aufgabenstellung.tex]
-CursorColumn=159
-CursorLine=21
+CursorColumn=112
+CursorLine=19
 JumpList=
 ViMarks=
 
 [view-settings,view=0,item:Einleitung.tex]
-CursorColumn=192
-CursorLine=13
+CursorColumn=0
+CursorLine=9
 JumpList=
 ViMarks=
+
+[view-settings,view=0,item:Lastenheft.tex]
+CursorColumn=6
+CursorLine=16
+JumpList=
+ViMarks=.,19,95,[,19,95,],19,95
 
 [view-settings,view=0,item:Quellen.bib]
 CursorColumn=22
@@ -176,7 +199,7 @@ JumpList=
 ViMarks=
 
 [view-settings,view=0,item:Studienarbeit_Semester_5.tex]
-CursorColumn=0
-CursorLine=197
+CursorColumn=24
+CursorLine=23
 JumpList=
-ViMarks=
+ViMarks=.,10,17,[,10,12,],10,17

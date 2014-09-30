@@ -8,9 +8,9 @@
 \usepackage[T1]{fontenc} 
 % schriftencodierung für umlaute, trennung
 % f\"ur Uni
-\usepackage[ansinew]{inputenc}
+\usepackage[latin1]{inputenc}
 \usepackage{selinput}
-% \usepackage[utf8]{inputenc} 
+% \usepackage[utf8x]{inputenc} 
 \usepackage{bibgerm} 
 % german bibliography
 \usepackage[german]{babel}
@@ -88,7 +88,7 @@ stringstyle=\color{blue}
 %für Umrandung der Erklärung
 \usepackage{acronym}
 % für abkürzungen
-\usepackage{PSTricks}
+% \usepackage{PSTricks}
 \usepackage{epstopdf}
 % für eps bilder nutze pdflatex --shell-escape this.tex
 \usepackage{amssymb}
@@ -193,7 +193,7 @@ Gutachter der Studienakademie    & \BetreuerDHBW                \\
 \listoffigures
 % Abkürzungsverzeichnis
 \newpage
-\bibliographystyle{alphadin}
+\bibliographystyle{alpha}
 % verzeichnis im DIN format
 \bibliography{Quellen}
 \end{document}
