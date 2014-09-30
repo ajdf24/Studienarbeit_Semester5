@@ -49,9 +49,9 @@ Der SDK-Manager ist ein Tool, mit dem die einzelnen Android-Version, Bibliotheke
 Mit dem Namen dx wird ein Compiler bezeichnet, welcher Javaklassen unter Android lauff\"ahig macht. Mehr hierzu ist im folgenden Abschitt zu finden
 
 \subsection{Dalvik anstelle der Java Virtual Machine}
-Da eine Applikation f\"ur Android in Java geschrieben wird, liegt es nahe das auch hier eine virtuelle Maschine genutzt wird, welche ein Programm aus f\"uhrt. Im Android-System ist dies die \ac{DVM}, welche die Applikationen ausf\"uhrt.\cite{Android44}
+Da eine Applikation f\"ur Android in Java geschrieben wird, liegt es nahe das auch hier eine virtuelle Maschine genutzt wird, welche ein Programm aus f\"uhrt. Im Android-System ist dies die \ac{DVM}, welche die Applikationen ausf\"uhrt. \cite{Android44}
 
-\"Ahnlich wie die \emph{Java Virtual Machine} arbeitet auch Dalvik. Jedoch mit dem gro\ss{}en Unterschied, das Dalvik vom Google-Entwickler Dan Bornstein erdacht wurde um speziell auf leistungsschwachen mobilen Endger\"aten zu funktionieren.
+\"Ahnlich wie die \emph{Java Virtual Machine} arbeitet auch Dalvik. Jedoch mit dem gro\ss{}en Unterschied, das Dalvik vom Google-Entwickler Dan Bornstein erdacht wurde um speziell auf leistungsschwachen mobilen Endger\"aten zu funktionieren. Der Java-Code wird auch unter Dalvik mittels \ac{JIT}-Compilierung ausgef\"uhrt, was bedeutet das der Quellcode erst wenn er ben\"otigt wird in Maschinencode \"ubersetzt wird.
 
 Dalvik ist speziell daf\"ur entwickelt auf Prozessoren mit ARM-Architektur zu arbeiten, wobei die virtuelle Dalvik Maschine hier, im Gegensatz zur Java VM, in der Lage ist Hardwareregister direkt anzusprechen und zu nutzen. Durch die direkte Kommunikation mit der Hardware ergibt sich eine schnellere Verarbeitung des Codes als unter der Java VM direkt.
 
@@ -77,3 +77,19 @@ Dieser Zusammenhang ist in der Abbildung \ref{JavaZuDex} \"uber der Linie noch e
 \label{JavaZuDex}
 \centering
 \end{figure}
+
+\subsection{Android Runtime}
+In Android 4.4 ist eine Laufzeitumgebung mit dem Namen \ac{ART}, welche zur Zeit noch experimentell ist, vorzufinden. \ac{ART} ist, genau wie Dalvik, eine Laufzeitumgebung welche speziell f\"ur mobile Ger\"ate geschaffen wurde. 
+
+Dalvik wurde von Google gew\"ahlt, um eine m\"oglichst hohe Flexibilit\"at bei der verwendeten Hardware zu erreichen. Da jedoch die \ac{JIT}-Compilierung oftmals als langsam und trage gilt wurde hier Abhilfe geschaffen.
+
+Im gegensatz zu Dalvik ist \ac{ART} kein \ac{JIT}-Compiler, sondern wandelt den Quellcode direkt in Maschinencode um. Dies ist Vorteilhaft, da der Prozessor nicht vor jeder Ausf\"uhrung den Code umwandeln muss. Dadurch spart das Ger\"at nicht nur wertvolle Akkuleistung, sondern verhindert auch die bei Android oft vorkommenden Mikroruckler. 
+Ein weiterer Vorteil von \ac{ART} ist ganz klar das sich Apps schneller starten lassen, da sie schon Compiliert vorliegen.
+
+Nachteilig an \ac{ART} ist jedoch, dass durch den vorliegenden Maschinencode mehr Speicherplatz ben\"otigt wird. Au\ss{}erdem dauert das installieren von Apps l\"anger, da diese erst Compiliert werden m\"ussen. \cite{NextART} \cite{AreamobileART}
+
+Nach ersten Berichten ist \ac{ART} wirklich der alten Laufzeitumgebung Dalvik \"uberlegen, warum unter der neuen Android L Version \ac{ART} zur standard Laufzeitumgebung wird. \cite{DevART} 
+
+Da der Quellcode auf dem jeweiligen Ger\"at Compiliert wird, ist die Hardwareunabh\"angikeit genau wie unter Dalvik gegeben. Denn der Code wird immer in, den f\"ur das Ger\"at ben\"otigte, Maschinencode \"ubersetzt. Mit der \ac{AOT} will Google die Performence von Apps und ihre Ausf\"uhrung wie eben schon beschrieben beschleunigen.
+
+Um die zu entwickelnde App also auch auch in Zukunft lauff\"ahig zu halten, soll diese so angepasst werden, dass sie unter Dalvik und \ac{ART} funktioniert.
