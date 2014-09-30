@@ -1,5 +1,5 @@
 \section{Lastenheft}
-Im Verlauf des Projektes soll eine mobile Android-App entwickelt werden, welche bei einer eingehenden Nachricht einen Alarm generiert und den Nutzer somit \"uber den Eingang informiert.
+Im Verlauf des Projektes soll eine mobile Android-App entwickelt werden, welche bei einer eingehenden Nachricht einen Alarm generiert und den Nutzer somit \"uber den Eingang, eines Alarms, informiert.
 
 \subsection{Zielsetzung}
 Ziel ist es eine Regelbassierte Android-App zu entwickeln, wobei die Regeln vom Nutzer nach CRUD erstellt, ausgelesen, ge\"andert und gel\"oscht werden k\"onnen. Hierbei sollen verschiedene Nutzer Regeln auch untereinander austauschen k\"onnen.
@@ -31,7 +31,7 @@ Absender-Nummer.equals("+4972160825769") AND SMS.getContent().con-tains(foo)
 /LF30/
 \end{minipage}
 \begin{minipage}{13cm}
-Die Regeln sollen so abstrakt wie m\"oglich gehalten werden, damit eine Erweiterung auf E-Mail und so weiter relativ einfach umzusetzen ist.\\
+Die Regeln sollen so abstrakt wie m\"oglich gehalten werden, damit eine Erweiterung auf E-Mails und andere Kommunikationsarten relativ einfach umzusetzen ist.\\
 \end{minipage}
 \begin{minipage}{3cm}
 /LF40/
@@ -43,7 +43,7 @@ Es soll die M\"oglichkeit bestehen im Alarmfall automatisiert einen Post in Sozi
 /LF50/
 \end{minipage}
 \begin{minipage}{13cm}
-Eine Navigation zum Einsatzort soll mit Hilfe einer anderen App m\"oglich sein und zwar genau dann wenn die ankommende SMS dessen Koordinaten beinhaltet.\\
+Eine Navigation zum Einsatzort soll mit Hilfe einer anderen App m\"oglich sein und zwar genau dann wenn die ankommende SMS die Koordinaten vom Einsatzort beinhaltet.\\
 \end{minipage}
 \begin{minipage}{3cm}
 /LF60/
@@ -69,31 +69,38 @@ Es sollen als Alarmt\"one nicht nur von der App mitgelieferte sondern auch ander
 \begin{minipage}{13cm}
 In einer Einf\"uhrung soll der Nutzer mit der Regelerstellung vertraut gemacht werden. Die Einf\"uhrung soll Schritt f\"ur Schritt alle M\"oglichkeiten demonstrieren.\\
 \end{minipage}
+\begin{minipage}{3cm}
+/LF100/
+\end{minipage}
+\begin{minipage}{13cm}
+Mit Hilfe einer Entfernungsregel soll das Smartphone, des Nutzers, automatisch eine SMS generieren k\"onnen wenn dieser sich, f\"ur einen Einsatz, zu weit vom Standort weg befindet.
+Der Nutzer soll wie bei allen anderen Regeln auch, relativ frei, einstellen k\"onnen wann eine solche SMS versand wird.
+\end{minipage}
 
 \subsection{Produktdaten}
 \begin{minipage}{3cm}
 /LD10/
 \end{minipage}
 \begin{minipage}{13cm}
-Erstellte Regeln m\"ussen gespeichert werden k\"onnen, so das der Nutzer einmal erstellte Regeln wieder aktivieren kann und diese beim schlie\ss{}en der Applikation nicht verloren gehen.\\
+Erstellte Regeln m\"ussen gespeichert werden k\"onnen, so das der Nutzer einmal erstellte Regeln aktivieren und deaktivieren kann. Au\ss{}erdem sollen die Regeln beim schlie\ss{}en der Applikation nicht verloren gehen.\\
 \end{minipage}
 \begin{minipage}{3cm}
 /LD20/
 \end{minipage}
 \begin{minipage}{13cm}
-Die App soll einige Alarmt\"one mitliefern, wobei keine Lizenzkosten anfallen d\"urfen. Hier k\"onnen zum Beispiel orginale Sirenen oder \ac{FME} T\"one vorliegen.\\
+Die App soll einige Alarmt\"one mitliefern, wobei keine Lizenzkosten anfallen d\"urfen. Hier k\"onnen zum Beispiel orginale Sirenen oder \ac{FME}-T\"one vorliegen.\\
 \end{minipage}
 \begin{minipage}{3cm}
 /LD30/
 \end{minipage}
 \begin{minipage}{13cm}
-Ein Regelaustausch mit anderen Nutzern soll grunds\"atzlich m\"oglich sein. Die Daten sollen in einem hief\"ur erstellten Format \"ubertragen werden.\\
+Ein Regelaustausch mit anderen Nutzern soll grunds\"atzlich m\"oglich sein. Die Daten sollen in einem hief\"ur geeigneten Format \"ubertragen werden.\\
 \end{minipage}
 \begin{minipage}{3cm}
 /LD40/
 \end{minipage}
 \begin{minipage}{13cm}
-Um den heute immer wichtiger werdenen Datenschutz gerecht zu werden, sollen keine nicht ben\"otigten Daten vom Telefon abgefragt, verarbeitet oder gesendet werden.\\
+Um den heute immer wichtiger werdenen Datenschutz gerecht zu werden, sollen keine nicht ben\"otigten Daten vom Telefon abgefragt, verarbeitet oder gesendet werden. Private Nutzerdaten sollen, wenn sie \"uberhaupt ben\"otigt werden, nur verschl\"usselt \"ubertragen werden.\\
 \end{minipage}
 
 \subsection{Produktleistungen}
