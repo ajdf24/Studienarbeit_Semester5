@@ -8,8 +8,8 @@ kile_livePreviewEnabled=true
 kile_livePreviewStatusUserSpecified=false
 kile_livePreviewTool=LivePreview-PDFLaTeX
 kileprversion=2
-kileversion=2.1.3
-lastDocument=ADT_Einrichten.tex
+kileversion=2.9.60
+lastDocument=Aufgabenstellung.tex
 masterDocument=
 name=Studienarbeit_Semester_5
 pkg_extIsRegExp=false
@@ -22,14 +22,16 @@ MakeIndex=
 QuickBuild=
 
 [document-settings,item:ADT_Einrichten.tex]
-Bookmarks=
+Bookmarks=1
 Encoding=ISO-8859-1
+FoldedColumns=
+FoldedLines=
 Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
 
 [document-settings,item:Abkuerzungen.tex]
-Bookmarks=
+Bookmarks=9
 Encoding=ISO-8859-1
 FoldedColumns=
 FoldedLines=
@@ -38,7 +40,7 @@ Indentation Mode=normal
 Mode=LaTeX
 
 [document-settings,item:Android.tex]
-Bookmarks=
+Bookmarks=12
 Encoding=ISO-8859-1
 FoldedColumns=
 FoldedLines=
@@ -47,7 +49,7 @@ Indentation Mode=normal
 Mode=LaTeX
 
 [document-settings,item:Aufgabenstellung.tex]
-Bookmarks=
+Bookmarks=21
 Encoding=ISO-8859-1
 FoldedColumns=
 FoldedLines=
@@ -65,14 +67,16 @@ Indentation Mode=normal
 Mode=LaTeX
 
 [document-settings,item:Lastenheft.tex]
-Bookmarks=
+Bookmarks=110
 Encoding=UTF-8
+FoldedColumns=
+FoldedLines=
 Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
 
 [document-settings,item:Quellen.bib]
-Bookmarks=
+Bookmarks=62
 Encoding=ISO-8859-1
 FoldedColumns=
 FoldedLines=
@@ -81,7 +85,7 @@ Indentation Mode=normal
 Mode=BibTeX
 
 [document-settings,item:Studienarbeit_Semester_5.tex]
-Bookmarks=
+Bookmarks=95
 Encoding=ISO-8859-1
 FoldedColumns=
 FoldedLines=
@@ -91,10 +95,10 @@ Mode=LaTeX
 
 [item:ADT_Einrichten.tex]
 archive=true
-column=237
+column=67
 encoding=ISO-8859-1
 highlight=LaTeX
-line=1
+line=3
 mode=LaTeX
 open=true
 order=5
@@ -111,20 +115,20 @@ order=7
 
 [item:Android.tex]
 archive=true
-column=0
+column=188
 encoding=ISO-8859-1
 highlight=LaTeX
-line=12
+line=92
 mode=LaTeX
 open=true
 order=4
 
 [item:Aufgabenstellung.tex]
 archive=true
-column=208
+column=210
 encoding=ISO-8859-1
 highlight=LaTeX
-line=21
+line=16
 mode=LaTeX
 open=true
 order=2
@@ -141,10 +145,10 @@ order=1
 
 [item:Lastenheft.tex]
 archive=true
-column=14
+column=106
 encoding=UTF-8
 highlight=LaTeX
-line=111
+line=104
 mode=LaTeX
 open=true
 order=3
@@ -180,8 +184,8 @@ open=false
 order=-1
 
 [view-settings,view=0,item:ADT_Einrichten.tex]
-CursorColumn=237
-CursorLine=1
+CursorColumn=67
+CursorLine=3
 JumpList=
 ViMarks=.,1,236,[,1,221,],1,236
 
@@ -192,14 +196,14 @@ JumpList=
 ViMarks=.,9,19,[,9,19,],9,43
 
 [view-settings,view=0,item:Android.tex]
-CursorColumn=0
-CursorLine=12
+CursorColumn=188
+CursorLine=92
 JumpList=
 ViMarks=.,12,0,[,12,0,],12,0
 
 [view-settings,view=0,item:Aufgabenstellung.tex]
-CursorColumn=208
-CursorLine=21
+CursorColumn=210
+CursorLine=16
 JumpList=
 ViMarks=.,21,208,[,21,208,],21,208
 
@@ -210,10 +214,10 @@ JumpList=
 ViMarks=
 
 [view-settings,view=0,item:Lastenheft.tex]
-CursorColumn=14
-CursorLine=111
+CursorColumn=106
+CursorLine=104
 JumpList=
-ViMarks=.,102,230,[,102,230,],102,230
+ViMarks=.,110,230,[,110,230,],110,230
 
 [view-settings,view=0,item:Quellen.bib]
 CursorColumn=85
