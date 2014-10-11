@@ -172,20 +172,20 @@ order=3
 
 [item:Quellen.bib]
 archive=true
-column=22
+column=1
 encoding=ISO-8859-1
 highlight=BibTeX
-line=84
+line=64
 mode=BibTeX
 open=true
 order=7
 
 [item:Studienarbeit_Semester_5.tex]
 archive=true
-column=21
+column=20
 encoding=ISO-8859-1
 highlight=LaTeX
-line=56
+line=176
 mode=LaTeX
 open=true
 order=0
@@ -243,13 +243,13 @@ JumpList=
 ViMarks=.,29,39,[,29,32,],29,39
 
 [view-settings,view=0,item:Quellen.bib]
-CursorColumn=22
-CursorLine=84
+CursorColumn=1
+CursorLine=64
 JumpList=
-ViMarks=.,88,25,[,88,25,],88,25
+ViMarks=.,0,81,[,0,70,],0,81
 
 [view-settings,view=0,item:Studienarbeit_Semester_5.tex]
-CursorColumn=21
-CursorLine=56
+CursorColumn=20
+CursorLine=176
 JumpList=
-ViMarks=.,56,0,[,56,0,],56,20
+ViMarks=.,82,0,[,82,0,],82,0
