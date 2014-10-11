@@ -102,10 +102,10 @@ Mode=LaTeX
 
 [item:ADT_Einrichten.tex]
 archive=true
-column=67
+column=16
 encoding=ISO-8859-1
 highlight=LaTeX
-line=66
+line=22
 mode=LaTeX
 open=true
 order=5
@@ -122,20 +122,20 @@ order=8
 
 [item:Android.tex]
 archive=true
-column=12
+column=62
 encoding=ISO-8859-1
 highlight=LaTeX
-line=69
+line=71
 mode=LaTeX
 open=true
 order=4
 
 [item:Aufbau_einer_App.tex]
 archive=true
-column=10
+column=18
 encoding=ISO-8859-1
 highlight=LaTeX
-line=27
+line=112
 mode=LaTeX
 open=true
 order=6
@@ -201,8 +201,8 @@ open=false
 order=-1
 
 [view-settings,view=0,item:ADT_Einrichten.tex]
-CursorColumn=67
-CursorLine=66
+CursorColumn=16
+CursorLine=22
 JumpList=
 ViMarks=.,83,118,[,83,118,],83,125
 
@@ -213,16 +213,16 @@ JumpList=
 ViMarks=.,9,19,[,9,19,],9,43
 
 [view-settings,view=0,item:Android.tex]
-CursorColumn=12
-CursorLine=69
+CursorColumn=62
+CursorLine=71
 JumpList=
-ViMarks=.,8,7,[,8,7,],8,33
+ViMarks=.,71,55,[,71,55,],71,61
 
 [view-settings,view=0,item:Aufbau_einer_App.tex]
-CursorColumn=10
-CursorLine=27
+CursorColumn=18
+CursorLine=112
 JumpList=
-ViMarks=.,48,51,[,48,51,],48,59
+ViMarks=.,47,15,[,47,15,],47,29
 
 [view-settings,view=0,item:Aufgabenstellung.tex]
 CursorColumn=210
