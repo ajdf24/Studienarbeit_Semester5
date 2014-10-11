@@ -45,7 +45,11 @@ Services in Android sind gedacht f\"ur Programmbestandteile, welche keine Benutz
 
 Wie schon bei den Broadcast Receivern gibt es im Androidsystem zwei Arten von Services, zum einen den Loacl Service welcher an eine bestimmte Komponente gebunden ist und zum anderen Remote Services, welche in einem eigenen Prozess laufen auch nachem die App beendet wurde.
 
-\subsubsection{ContentProvider}
+\subsubsection{ContentProvider} \label{ContentProvider aus Nutzersicht}
+ContentProvider sind Schnittstellen f\"ur die \"Ubergabe von Daten oder Datenbankeintr\"agen an andere App.
+Greift eine App zum Beispiel auf das Telefonbuch des Smartphones zu, geschieht dies \"uber einen ContentProvider. Daten werden durch die ContentProvider anderen Apps zur verf\"ugung gestellt werden, wobei immer nur der Dateninhalt und nicht die Datei selbst \"ubergeben wird. \cite{Kuehn12}
+
+ContentProvider sind wie eben schon einmal erw\"ahnt gewisse Daten aus der applikationseigenen Datenbank durch eine Art Schaufenster darzustellen und sie bei bedarf zu \"ubergeben.
 
 \subsection{Componenten einer Applikation aus Sicht des Programmierers}
 Eine App besteht f\"ur den Programmierer nat\"urlich aus sehr viel mehr als nur die vier f\"ur den Nutzer sichtbaren Teile. Welche das sind und welche Aufgaben sie haben ist im folgenden genauer beschrieben.
@@ -61,6 +65,27 @@ Im Listing ist eine Manifest-Datei beispielhaft zu sehen.
 \lstinputlisting{Code/ManifestExample.xml}
 
 \subsubsection{Intents} \label{Intents}
+Wie im Verlauf dieses Kapitels schon gezeigt wurde sind App's unter Android komponentenorientiert aufgebaut, was bedeutet das die einzelnen Komponenten wie Activitys, Services, BroadcastReceiver und ContentProvider untereinander kommunizieren m\"ussen. Hier kommen die Intents ins Spiel, welche die Aufgabe haben Nachrichten und Daten unter den Komponenten einer App aber auch systemweit zu \"ubermitteln und im gleichen Zug eine andere Activity zu starten.
+
+Android unterscheidet zwei verschiedene Arten von Intents, zum einen den "`Expliziten Intent"' und zum anderen den "`Impliziten Intent"'. Explizite Intents sind f\"ur die Kommunikation innerhalb einer App relevant, da hier explitit eine andere Komponente aufgerufen wird. 
+
+Im Listig wird ein neuer Intent gebaut, welcher zum einen den Context, also die aufrufende Komponente und zum anderen eine zweite Activity (\texttt{SecondActivity}) aufruft. Mittels der Methode \texttt{startActivity} wird der Intentent, also die andere Activity gestartet.
+
+\lstinputlisting{Code/ExpliziterIntentExample.java}
+
+Implizite Intents sind f\"ur die App\"ubergreifende Kommunikation gedacht, wobei hier ein Intent erstellt wird in der Hoffnung, dass eine App diese Inhalte \"offnen kann.
+Im Listig wird beispielhaft ein Intent erstellt, welcher dem Nutzer Daten anzeigen soll. Dies geschieht mit \texttt{Intent.ACTION\_VIEW}, wobei als Uri ein String mit Koordinaten f\"ur eine Karte mit \"ubertragen wird.
+
+\lstinputlisting{Code/ImpliziterIntentExample.java}
+
+Das Betriebssystem schaut nun welche installierten App's diesen Kontent verarbeiten k\"onnen und gibt bei mehreren M\"oglichkeiten dem Nutzer eine Wahlm\"oglichkeit um selbst zu bestimmen mit welcher App der Kontent dargestellt werden soll.
+
+Damit das Betriebssystem jedoch weis, welche Impliziten Intents von einer App verarbeiten werden k\"onnen m\"ussen sogenannten "`Intent Filter"' im Manifest angegeben werden.
+Im Manifest m\"ussen alle Komponenten registriert werden, so auch die Activitys einer App. In der Angabe zur Activity kann zus\"atzlich ein Intent Filter hinzugef\"ugt werden, welcher angibt, das diese spezielle Activity in der Lage ist Intents zu verarbeiten.
+
+Im Listing wird nur der Manifest-Ausschnitt mit der betreffenden Activity gezeigt (1), wobei diese einen Intent Filter besitzt der einen View \"offnet (2). Zus\"atzlich zur Aktion wurde noch eine entsprechende Kategorie angef\"ugt, welcher den Intent weiter eingrenzt (3). \cite{VogellaIntent}
+
+\lstinputlisting{Code/ImpliziterIntentManifestExample.xml}
 
 \subsubsection{Die Activity} \label{Die Activity aus Programmierersicht}
 Activitys sind wie im Kapitel \ref{Die Activity aus Nutzersicht} schon dargestellt die Benutzeroberfl\"ache, welche der Nutzer sieht, und mit der er Interagieren kann.
@@ -141,3 +166,10 @@ Ein Remote Service wird an eine Activity gebunden und wird \"uber die Methode \t
 \FloatBarrier
 
 \subsubsection{ContentProvider}
+ContentProvider sind wie im Kapitel \ref{ContentProvider aus Nutzersicht} schon erw\"ahnt in der Lage, Dateiinhalte \"uber Applikationsgrenzen hinweg zu durchzureichen.
+
+Ein ContentProvider erbt von der abstrackte Klasse \texttt{ContentProvider} aus der Android-API und muss mindestens die vier Methoden \texttt{query}, \texttt{insert}, \texttt{update} und \texttt{delete}. \"Uber diese Methoden ist es m\"oglich Daten zu bekommen und gegebenen falls zu manipulieren. Nat\"urlich m\"ussen die Daten \"uberhaupt erst mal gefunden werden, bevor sie gelesen oder ge\"andert werden k\"onnen, dies geschieht \"uber die Methode \texttt{getContentResolver}. \cite{Kuehn12}
+
+Der Lebenszyklus eines ContentProvider ist \"ahnlich dem eines Broadcast Receivers, da er nur erstellt wenn er wirklich ben\"otigt wird. Sollte auf einen Provider zugegriffen werden, dessen App nicht l\"auft, wird dieser vor dem Aufruf vom Betriebssystem erstellt.
+
+Da das Thema der ContentProvider jedoch sehr gr\"o\ss{} ist, kann es hier nicht in allen Einzelheiten erl\"autert werden. 

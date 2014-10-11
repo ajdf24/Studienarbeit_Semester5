@@ -9,7 +9,7 @@ kile_livePreviewStatusUserSpecified=false
 kile_livePreviewTool=LivePreview-PDFLaTeX
 kileprversion=2
 kileversion=2.1.3
-lastDocument=Aufbau_einer_App.tex
+lastDocument=Quellen.bib
 masterDocument=
 name=Studienarbeit_Semester_5
 pkg_extIsRegExp=false
@@ -132,10 +132,10 @@ order=4
 
 [item:Aufbau_einer_App.tex]
 archive=true
-column=18
+column=38
 encoding=ISO-8859-1
 highlight=LaTeX
-line=112
+line=80
 mode=LaTeX
 open=true
 order=6
@@ -172,10 +172,10 @@ order=3
 
 [item:Quellen.bib]
 archive=true
-column=102
+column=22
 encoding=ISO-8859-1
 highlight=BibTeX
-line=85
+line=84
 mode=BibTeX
 open=true
 order=7
@@ -219,10 +219,10 @@ JumpList=
 ViMarks=.,71,55,[,71,55,],71,61
 
 [view-settings,view=0,item:Aufbau_einer_App.tex]
-CursorColumn=18
-CursorLine=112
+CursorColumn=38
+CursorLine=80
 JumpList=
-ViMarks=.,47,15,[,47,15,],47,29
+ViMarks=.,85,279,[,85,279,],85,291
 
 [view-settings,view=0,item:Aufgabenstellung.tex]
 CursorColumn=210
@@ -243,10 +243,10 @@ JumpList=
 ViMarks=.,29,39,[,29,32,],29,39
 
 [view-settings,view=0,item:Quellen.bib]
-CursorColumn=102
-CursorLine=85
+CursorColumn=22
+CursorLine=84
 JumpList=
-ViMarks=.,85,29,[,85,29,],85,101
+ViMarks=.,88,25,[,88,25,],88,25
 
 [view-settings,view=0,item:Studienarbeit_Semester_5.tex]
 CursorColumn=21
