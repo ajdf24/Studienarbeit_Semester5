@@ -52,7 +52,10 @@ Greift eine App zum Beispiel auf das Telefonbuch des Smartphones zu, geschieht d
 ContentProvider sind wie eben schon einmal erw\"ahnt gewisse Daten aus der applikationseigenen Datenbank durch eine Art Schaufenster darzustellen und sie bei bedarf zu \"ubergeben.
 
 \subsection{Componenten einer Applikation aus Sicht des Programmierers}
-Eine App besteht f\"ur den Programmierer nat\"urlich aus sehr viel mehr als nur die vier f\"ur den Nutzer sichtbaren Teile. Welche das sind und welche Aufgaben sie haben ist im folgenden genauer beschrieben.
+Eine App besteht f\"ur den Programmierer nat\"urlich aus sehr viel mehr als nur die vier f\"ur den Nutzer sichtbaren Teile. Welche das sind und welche Aufgaben sie haben ist im folgenden genauer beschrieben. \cite{GolemHBAppAusEntwicklerSicht}
+
+\subsubsection{Der Projektbaum}
+\cite{GolemHBRessourcen}
 
 \subsubsection{Die Manifest-Datei} \label{Die Manifest-Datei}
 Das Android Manifest ist die Schaltzentrale einer App, in der alle Bestandteile einer Applikation aufgef\"uhrt sind. Das Manifestunter Android ist also XML-Datei im Wurzelverzeichnis abgelegt. 
@@ -63,6 +66,8 @@ Im Manifest sind als erstes Informationen zum Package-Name zu sehen (1) welche d
 Im Listing ist eine Manifest-Datei beispielhaft zu sehen.
 
 \lstinputlisting{Code/ManifestExample.xml}
+
+\subsubsection{Das Rechtekonzept in Android}
 
 \subsubsection{Intents} \label{Intents}
 Wie im Verlauf dieses Kapitels schon gezeigt wurde sind App's unter Android komponentenorientiert aufgebaut, was bedeutet das die einzelnen Komponenten wie Activitys, Services, BroadcastReceiver und ContentProvider untereinander kommunizieren m\"ussen. Hier kommen die Intents ins Spiel, welche die Aufgabe haben Nachrichten und Daten unter den Komponenten einer App aber auch systemweit zu \"ubermitteln und im gleichen Zug eine andere Activity zu starten.
@@ -173,3 +178,6 @@ Ein ContentProvider erbt von der abstrackte Klasse \texttt{ContentProvider} aus 
 Der Lebenszyklus eines ContentProvider ist \"ahnlich dem eines Broadcast Receivers, da er nur erstellt wenn er wirklich ben\"otigt wird. Sollte auf einen Provider zugegriffen werden, dessen App nicht l\"auft, wird dieser vor dem Aufruf vom Betriebssystem erstellt.
 
 Da das Thema der ContentProvider jedoch sehr gr\"o\ss{} ist, kann es hier nicht in allen Einzelheiten erl\"autert werden. 
+
+\subsection{Google-APIs} \label{Google-APIs}
+\cite{GolemHBGoogleServices}
