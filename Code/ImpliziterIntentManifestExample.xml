@@ -1,8 +1,8 @@
-<activity
+<activity <!-- (1)  -->
 	android:name=".SecondActivity"
 	android:label="@string/app_name" >
 	<intent-filter>
-		<action android:name="android.intent.action.VIEW"/>
-		<category android:name="android.intent.category.APP_MAPS"/>
+		<action android:name="android.intent.action.VIEW"/> <!-- (2) -->
+		<category android:name="android.intent.category.APP_MAPS"/> <!-- (3) -->
 	</intent-filter>
 </activity>
