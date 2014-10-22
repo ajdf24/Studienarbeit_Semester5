@@ -125,7 +125,7 @@ highlight=LaTeX
 line=10
 mode=LaTeX
 open=true
-order=7
+order=8
 
 [item:Android.tex]
 archive=true
@@ -139,10 +139,10 @@ order=4
 
 [item:Aufbau_einer_App.tex]
 archive=true
-column=239
+column=52
 encoding=ISO-8859-1
 highlight=LaTeX
-line=239
+line=232
 mode=LaTeX
 open=true
 order=6
@@ -179,13 +179,13 @@ order=3
 
 [item:Quellen.bib]
 archive=true
-column=14
+column=15
 encoding=ISO-8859-1
 highlight=BibTeX
-line=26
+line=192
 mode=BibTeX
-open=false
-order=7
+open=true
+order=9
 
 [item:Studienarbeit_Semester_5.tex]
 archive=true
@@ -205,7 +205,7 @@ highlight=LaTeX
 line=9
 mode=LaTeX
 open=true
-order=8
+order=7
 
 [item:studienarbeit_semester_5.kilepr]
 archive=true
@@ -236,10 +236,10 @@ JumpList=
 ViMarks=.,78,71,[,78,71,],78,128
 
 [view-settings,view=0,item:Aufbau_einer_App.tex]
-CursorColumn=239
-CursorLine=239
+CursorColumn=52
+CursorLine=232
 JumpList=
-ViMarks=.,239,218,[,239,218,],239,238
+ViMarks=.,239,201,[,239,201,],239,209
 
 [view-settings,view=0,item:Aufgabenstellung.tex]
 CursorColumn=210
@@ -260,8 +260,8 @@ JumpList=
 ViMarks=.,29,39,[,29,32,],29,39
 
 [view-settings,view=0,item:Quellen.bib]
-CursorColumn=14
-CursorLine=26
+CursorColumn=15
+CursorLine=192
 JumpList=
 ViMarks=.,0,0,[,0,0,],-1,-1
 
