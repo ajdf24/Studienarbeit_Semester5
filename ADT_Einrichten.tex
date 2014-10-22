@@ -85,4 +85,9 @@ Ist das Ger\"at angeschlossen fordert es eine Best\"atigung um App's, von dieser
 
 Wird nun die Play-Schaltfl\"ache bet\"atigt, fragt die IDE, bei angeschlossenen Ger\"at, ob es die App auf der realen Hardware oder im Virtual Device starten soll.
 
+\subsection{Eine APK-Datei} \label{Eine APK-Datei}
+Wird ein Projekt Kompiliert, so wird vom \ac{SDK} eine .apk-Datei erstellt, welche die eigentliche App darstellt. Diese Datei ist im \texttt{bin}-Ordner des Projektverzeichnisses abgelegt und nicht f\"ur eine weitergabe vorgesehen. 
 
+Eine .apk-Datei ist eine art komprimierter Zip-Ordner, welcher das Android-Manifest, den kompilierten Quellcode, alle verwendeten Ressourcen und Bibliotheken enth\"alt.
+
+Damit eine App auf einem Androidger\"at installiert werden kann, muss sie mit einem digitalen Zertifikat versehen werden. F\"ur den Debug-Betrieb legt das \ac{SDK} standardm\"a\ss{}ig einen Debug-Key an, mit dem die App zertifiziert wird. Nur eine mit dem entsprechenden Debug-Zertifikat versehene App kann auf der f\"ur den Debug eingerichteten Hardware laufen.

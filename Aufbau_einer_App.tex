@@ -100,12 +100,12 @@ Wie im Verlauf dieses Kapitels schon gezeigt wurde sind App's unter Android komp
 
 Android unterscheidet zwei verschiedene Arten von Intents, zum einen den "`Expliziten Intent"' und zum anderen den "`Impliziten Intent"'. Explizite Intents sind f\"ur die Kommunikation innerhalb einer App relevant, da hier explitit eine andere Komponente aufgerufen wird. 
 
-Im Listig wird ein neuer Intent gebaut, welcher zum einen den Context, also die aufrufende Komponente und zum anderen eine zweite Activity (\texttt{SecondActivity}) aufruft. Mittels der Methode \texttt{startActivity} wird der Intent also, im Beispiel, die andere Activity gestartet.
+Im Listing wird ein neuer Intent gebaut, welcher zum einen den Context, also die aufrufende Komponente und zum anderen eine zweite Activity (\texttt{SecondActivity}) aufruft. Mittels der Methode \texttt{startActivity} wird der Intent also, im Beispiel, die andere Activity gestartet.
 
 \lstinputlisting{Code/ExpliziterIntentExample.java}
 
 Implizite Intents sind f\"ur die App\"ubergreifende Kommunikation gedacht, wobei hier ein Intent erstellt wird in der Hoffnung, dass eine App diese Inhalte \"offnen kann.
-Im Listig wird beispielhaft ein Intent erstellt, welcher dem Nutzer Daten anzeigen soll. Dies geschieht mit \texttt{Intent.ACTION\_VIEW}, wobei als Uri ein String mit Koordinaten f\"ur eine Karte mit \"ubertragen wird.
+Im Listing wird beispielhaft ein Intent erstellt, welcher dem Nutzer Daten anzeigen soll. Dies geschieht mit \texttt{Intent.ACTION\_VIEW}, wobei als Uri ein String mit Koordinaten f\"ur eine Karte mit \"ubertragen wird.
 
 \lstinputlisting{Code/ImpliziterIntentExample.java}
 
@@ -155,7 +155,7 @@ Wie schon im Kapitel \ref{Services aus Nutzersicht} vorgestellt, gibt es unter A
 
 \lstinputlisting{Code/LocalServiceManifest.xml}
 
-Ein Remote Service ben\"otigt zus\"atzlich zum Klassennamen noch einen Prozessnamen, da der Service ja in einem eigenen Prozess starten soll. Das Listig vom Local Service muss also im den Prozessnamen erweitert werden.
+Ein Remote Service ben\"otigt zus\"atzlich zum Klassennamen noch einen Prozessnamen, da der Service ja in einem eigenen Prozess starten soll. Das Listing vom Local Service muss also im den Prozessnamen erweitert werden.
 
 Der Doppelpunkt vor dem Namen (im Listing "`MyDatabaseService"') sagt aus, dass der Service in einem eigenen Prozess starten soll.
 
@@ -206,4 +206,35 @@ Der Lebenszyklus eines ContentProvider ist \"ahnlich dem eines Broadcast Receive
 Da das Thema der ContentProvider jedoch sehr weitl\"aufig ist, kann es and dieser Stelle nicht in allen Einzelheiten erl\"autert werden. 
 
 \subsection{Google-APIs} \label{Google-APIs}
-\cite{GolemHBGoogleServices}
+Als Google-APIs werden Schnittstellen zu verschiedenen Google-Diensten verstanden. Um Dienste von Google wie zum Beispiel Google Maps nutzen zu k\"onnen m\"ussen zum einen die APIs in das Projekt eingebunden werden und zum anderen muss die App bei Google registriert werden.
+
+
+\subsubsection{Google-APIs aktivieren}
+Um eine App bei Google zu registrieren muss die "`Google Developers Console"' aufgerufen werden, welche unter dem Link \texttt{\url{https://code.google.com/apis/console/\#}} zu finden ist. Hier f\"ur ist eine Anmeldung mit einem Google-Konto notwendig, auf welches die App registriert wird. Beim ersten betreten der Console muss ein neues Projekt angelegt werden, ist dies geschehen m\"ussen die APIs gew\"ahlt werden, welche Verwendung finden sollen.
+
+Hier f\"ur wird in der linken Leiste unter dem Projektnamen auf \texttt{Overview} geklickt werden. Nun m\"ussen unter \texttt{Enable an API} die APIs ausgew\"ahlt werden, welche in der entsprechenden App Verwendung finden sollen. Wurden alle ben\"otigten APIs aktiviert, muss nun der Zugang von der App aus geschaffen werden. 
+
+\subsubsection{Einen API-Key ersten}
+Damit die App eine Google-API nutzen kann, muss diese im Projket registriert werden. In der Developers Console unter dem Punkt \texttt{Credentials} muss nun ein "`Public API access"' erstellt werden. Hier f\"ur wird der Punkt \texttt{Android key} unter \texttt{Create new Key} aufgerufen. 
+
+Nun verlangt Google ein SHA1 Zertifikat, mit welchem die Apk-Datei erstellt wird. Mit Hilfe von diesem Zertifikat ist es Google m\"oglich einen API-Zugriff einer App zuzuordnen.
+
+Um den schon im Kapitel \ref{Eine APK-Datei} erw\"ahnten Debug-Key auszulesen muss im Eclipse unter \texttt{Window $\Rightarrow$ Preferences $\Rightarrow$ Android $\Rightarrow$ Build} das Build-Men\"u aufgerufen werden. Hier ist zum einen der Ablageort des Zertifikates zu finden und zum anderen das ben\"otigte SHA1 Zertifikat.
+
+Der dort abgelegte Key, muss nun din das Fenster der Developers Console kopiert werden. Zus\"atzlich muss er noch mit einem Semikolon und dem Packagenamen, wie im Android-Manifest angegeben, ergenzt werden. \\\texttt{45:B5:E4:6F:36:AD:0A:98:94:B4:02:66:2B:12:17:F2:56:26:A0:E0;com.example} w\"are hierf\"ur ein Beispiel. 
+\cite{GolemHBGoogleServices} \cite{Android44}
+
+Nach diesem Schritt wird ein API-Key generierte, welcher nun noch in das Manifest der entsprechenden App eingef\"ugt werden muss.
+Ein Beispiel f\"ur einen API-Key w\"are: \\\texttt{AIzaSyDnKUs4NIdYqQ2EfjW4RXDVBZm8mvx5Va8}
+
+Der generierte API-Key muss im Manifest unter \texttt{application} wie im Listing gezeigt unter Angabe der verwendeten API eingetragen werden. 
+\lstinputlisting{Code/API-KeyManifest.xml}
+
+\subsection{Google-APIs herunterladen und einbinden}
+Nachdem die App gegen\"uber Googel verifiziert ist, m\"ussen f\"ur das Arbeiten mit den Google-APIs diese nat\"urlich auch noch heruntergeladen und in das entsprechende Projekt eingebunden werden. Die APIs m\"ussen \"uber den \ac{SDK}-Manager heruntergeladen werden. Sie sind unter Extras \texttt{Google Play Services} zu finden.
+
+Nach der Installation \"uber den \ac{SDK}-Manager sind die APIs unter \texttt{<Android-SDK>/extras /google/google\_play\_services/libproject/google-play-services\_lib} aufgelistet. Hierbei handelt es sich um ein Library-Projekt, welches in die App eingebunden werden muss.
+
+Um die Google-APIs nun verwenden zu k\"onnen muss das Library-Projekt in den Workspace aufgenommen werden, was \"uber \texttt{File $\Rightarrow$ Import... $\Rightarrow$ Android - Existing Android Code into Workspace} geschiet. Ist das erledingt muss die Library nat\"urlich noch zum eigentlichen Projekt hinzugef\"ugt werden. Die geschiet mit einem Rechtsklick auf das entsprechende Projekt, unter \texttt{Properties $\Rightarrow$ Android $\Rightarrow$ Libaray $\Rightarrow$ Add...}. Hier muss der Library-Ordner google-play-services\_lib hinzugef\"ugt werden.
+
+Sind alle diese Schirtte erledingt, k\"onnen die Google-APIs nun verwendet werden. Wie APIs im speziellen implementiert werden m\"ussen, wird nur an den in der Arbeit verwendeten APIs erkl\"art. \cite{Android44} \cite{GolemHBGoogleServices}
