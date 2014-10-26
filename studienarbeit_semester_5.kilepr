@@ -109,10 +109,10 @@ Mode=LaTeX
 
 [item:ADT_Einrichten.tex]
 archive=true
-column=49
+column=115
 encoding=ISO-8859-1
 highlight=LaTeX
-line=87
+line=90
 mode=LaTeX
 open=true
 order=5
@@ -139,10 +139,10 @@ order=4
 
 [item:Aufbau_einer_App.tex]
 archive=true
-column=52
+column=232
 encoding=ISO-8859-1
 highlight=LaTeX
-line=232
+line=212
 mode=LaTeX
 open=true
 order=6
@@ -218,10 +218,10 @@ open=false
 order=-1
 
 [view-settings,view=0,item:ADT_Einrichten.tex]
-CursorColumn=49
-CursorLine=87
+CursorColumn=115
+CursorLine=90
 JumpList=
-ViMarks=.,87,48,[,87,35,],87,48
+ViMarks=.,90,114,[,90,111,],90,114
 
 [view-settings,view=0,item:Abkuerzungen.tex]
 CursorColumn=0
@@ -236,10 +236,10 @@ JumpList=
 ViMarks=.,78,71,[,78,71,],78,128
 
 [view-settings,view=0,item:Aufbau_einer_App.tex]
-CursorColumn=52
-CursorLine=232
+CursorColumn=232
+CursorLine=212
 JumpList=
-ViMarks=.,239,201,[,239,201,],239,209
+ViMarks=.,239,137,[,239,137,],239,137
 
 [view-settings,view=0,item:Aufgabenstellung.tex]
 CursorColumn=210

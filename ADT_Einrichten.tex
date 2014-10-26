@@ -75,19 +75,19 @@ Um das Betriebssystem des Virtual Device nicht immer fortw\"ahrend neu zu starte
 Sollen Services von Google wie zum Beispiel Google Maps in der App verwendet werden, muss ein Virtaul Device mit Google APIs erstellt werden, wie dies Funktioniert ist im Kapitel \ref{Google-APIs} genauer beschrieben. \cite{GolemHBGoogleServices}
 
 \subsubsection{Eine App auf realer Hardware Ausf\"uhren}
-Um eine App auf einem realen Androidger\"at ausf\"uhren zu k\"onnen, muss in diesem die Entwickleroption freigeschaltet werden. Dies geschieht ,unter dem Nexus 5 mit purem Android 4.4.4, im Hauptmen\"u unter Einstellungen. Im Men\"upunkt "`\"Uber das Telefon"' muss sieben mal auf die Build-Nummer getippt werden um die Entwickleroptionen freizuschalten. Dies ist notwendig da die Entwickleroption seit Android 4.2 standardm\"a\ss{}ig deaktiviert sind. Bei anderen herstellereigenen Version von Android kann dies jedoch auch deutlich abweichen.  \cite{EntwickleroptionenFreischaltenS4}
+Um eine App auf einem realen Androidger\"at ausf\"uhren zu k\"onnen, muss in diesem die Entwickleroption freigeschaltet werden. Dies geschieht ,unter dem Nexus 5 mit purem Android 4.4.4, im Hauptmen\"u unter Einstellungen. Im Men\"upunkt "`\"Uber das Telefon"' muss sieben mal auf die Build-Nummer getippt werden um die Entwickleroptionen freizuschalten. Dies ist notwendig da die Entwickleroptionen seit Android 4.2 standardm\"a\ss{}ig deaktiviert sind. Bei anderen herstellereigenen Version von Android kann dies jedoch auch deutlich abweichen.  \cite{EntwickleroptionenFreischaltenS4}
 
 Ist das geschehen, ist im Einstellungsmen\"u unter System der Eintrag "`Entwickleroptionen"' sichtbar. Hier k\"onnen nun viele f\"ur die Entwicklung wichtige Einstellungen vorgenommen werden. \cite{EntwickleroptionenFreischalten}
 
 Um eine App von der IDE aus auf ein Ger\"at zu \"ubertragen muss der Eintrag "`USB-Debugging"' unter Entwickleroptionen aktiviert werden. Ist dies geschehen, muss das Ger\"at per USB-Kabel an den Entwicklungsrechner mit der IDE angeschlossen werden um eine App darauf zu installieren und zu debuggen. \cite{GolemHBEntwickleroptionen}
 
-Ist das Ger\"at angeschlossen fordert es eine Best\"atigung um App's, von dieser Quelle, installieren zu k\"onnen. Diese Meldung muss best\"atigt werden, damit Eclipse die App auf das Ger\"at \"ubertragen, starten und debuggen kann.
+Wird das Ger\"at zum ersten mal angeschlossen fordert es eine Best\"atigung um App's, von dieser Quelle, installieren zu k\"onnen. Diese Meldung muss best\"atigt werden, damit Eclipse die App auf das Ger\"at \"ubertragen, starten und debuggen kann.
 
 Wird nun die Play-Schaltfl\"ache bet\"atigt, fragt die IDE, bei angeschlossenen Ger\"at, ob es die App auf der realen Hardware oder im Virtual Device starten soll.
 
 \subsection{Eine APK-Datei} \label{Eine APK-Datei}
 Wird ein Projekt Kompiliert, so wird vom \ac{SDK} eine .apk-Datei erstellt, welche die eigentliche App darstellt. Diese Datei ist im \texttt{bin}-Ordner des Projektverzeichnisses abgelegt und nicht f\"ur eine weitergabe vorgesehen. 
 
-Eine .apk-Datei ist eine art komprimierter Zip-Ordner, welcher das Android-Manifest, den kompilierten Quellcode, alle verwendeten Ressourcen und Bibliotheken enth\"alt.
+Eine .apk-Datei ist eine art komprimierter Zip-Ordner, welcher das Android-Manifest, den kompilierten Quellcode und alle verwendeten Ressourcen und Bibliotheken enth\"alt.
 
 Damit eine App auf einem Androidger\"at installiert werden kann, muss sie mit einem digitalen Zertifikat versehen werden. F\"ur den Debug-Betrieb legt das \ac{SDK} standardm\"a\ss{}ig einen Debug-Key an, mit dem die App zertifiziert wird. Nur eine mit dem entsprechenden Debug-Zertifikat versehene App kann auf der f\"ur den Debug eingerichteten Hardware laufen.
