@@ -9,7 +9,7 @@ kile_livePreviewStatusUserSpecified=false
 kile_livePreviewTool=LivePreview-PDFLaTeX
 kileprversion=2
 kileversion=2.1.3
-lastDocument=Aufbau_einer_App.tex
+lastDocument=ADT_Einrichten.tex
 masterDocument=
 name=Studienarbeit_Semester_5
 pkg_extIsRegExp=false
@@ -109,10 +109,10 @@ Mode=LaTeX
 
 [item:ADT_Einrichten.tex]
 archive=true
-column=115
+column=194
 encoding=ISO-8859-1
 highlight=LaTeX
-line=90
+line=112
 mode=LaTeX
 open=true
 order=5
@@ -139,10 +139,10 @@ order=4
 
 [item:Aufbau_einer_App.tex]
 archive=true
-column=232
+column=13
 encoding=ISO-8859-1
 highlight=LaTeX
-line=212
+line=196
 mode=LaTeX
 open=true
 order=6
@@ -179,20 +179,20 @@ order=3
 
 [item:Quellen.bib]
 archive=true
-column=15
+column=27
 encoding=ISO-8859-1
 highlight=BibTeX
-line=192
+line=209
 mode=BibTeX
 open=true
 order=9
 
 [item:Studienarbeit_Semester_5.tex]
 archive=true
-column=111
+column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=65
+line=144
 mode=LaTeX
 open=true
 order=0
@@ -218,10 +218,10 @@ open=false
 order=-1
 
 [view-settings,view=0,item:ADT_Einrichten.tex]
-CursorColumn=115
-CursorLine=90
+CursorColumn=194
+CursorLine=112
 JumpList=
-ViMarks=.,90,114,[,90,111,],90,114
+ViMarks=.,112,0,[,111,0,],112,193
 
 [view-settings,view=0,item:Abkuerzungen.tex]
 CursorColumn=0
@@ -236,8 +236,8 @@ JumpList=
 ViMarks=.,78,71,[,78,71,],78,128
 
 [view-settings,view=0,item:Aufbau_einer_App.tex]
-CursorColumn=232
-CursorLine=212
+CursorColumn=13
+CursorLine=196
 JumpList=
 ViMarks=.,239,137,[,239,137,],239,137
 
@@ -260,14 +260,14 @@ JumpList=
 ViMarks=.,29,39,[,29,32,],29,39
 
 [view-settings,view=0,item:Quellen.bib]
-CursorColumn=15
-CursorLine=192
+CursorColumn=27
+CursorLine=209
 JumpList=
 ViMarks=.,0,0,[,0,0,],-1,-1
 
 [view-settings,view=0,item:Studienarbeit_Semester_5.tex]
-CursorColumn=111
-CursorLine=65
+CursorColumn=0
+CursorLine=144
 JumpList=
 ViMarks=.,65,7,[,65,7,],65,110
 

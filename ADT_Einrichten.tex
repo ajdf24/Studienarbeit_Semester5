@@ -30,7 +30,7 @@ Im mittleren Teilfenster, der IDE, ist der eigentliche Editor f\"ur den Quellcod
 
 Der rechte Teil des Fensters stellt die im Editor angezeigte Klasse beziehungsweise Datei schematisch dar. Hier sind unter dem Klassennamen alle Methoden und klassenweite Instanzen zu sehen. \"Uber einen Klick auf ein Element springt der Editor zur gew\"ahlten Methode beziehungsweise Variable.
 
-Im unteren Bereich ist zum einen die Problem-Ansicht von Eclipse, die Console und die "`Logcat"' zu finden. Bei der Logcat handelt es sich um eine Debuganzeige, welche Warnungen, Fehler und Informationen im Android-Betriebssystem anzeigt. Wie die Logcat zu benutzen ist und wie eine Anzeige innerhalb einer App generiert wird, wird im Kapitel ????? genauer beschrieben.
+Im unteren Bereich ist zum einen die Problem-Ansicht von Eclipse, die Console und die "`LogCat"' zu finden. Bei der LogCat handelt es sich um eine Debuganzeige, welche Warnungen, Fehler und Informationen im Android-Betriebssystem anzeigt. Wie die LogCat zu benutzen ist und wie eine Anzeige innerhalb einer App generiert wird, wird im Kapitel \ref{Die LogCat} genauer beschrieben.
 
 \begin{figure}[!ht]
 \centering
@@ -91,3 +91,32 @@ Wird ein Projekt Kompiliert, so wird vom \ac{SDK} eine .apk-Datei erstellt, welc
 Eine .apk-Datei ist eine art komprimierter Zip-Ordner, welcher das Android-Manifest, den kompilierten Quellcode und alle verwendeten Ressourcen und Bibliotheken enth\"alt.
 
 Damit eine App auf einem Androidger\"at installiert werden kann, muss sie mit einem digitalen Zertifikat versehen werden. F\"ur den Debug-Betrieb legt das \ac{SDK} standardm\"a\ss{}ig einen Debug-Key an, mit dem die App zertifiziert wird. Nur eine mit dem entsprechenden Debug-Zertifikat versehene App kann auf der f\"ur den Debug eingerichteten Hardware laufen.
+
+\subsection{Die LogCat} \label{Die LogCat}
+Bei der LogCat handelt es sich um ein Logging-Tool welches jederzeit in Android aktiv ist und Log-Ausgaben von allen App's und dem Betriebssystem sammelt. Jede Applikation kann Informationen in das Log schreiben, wobei die Menge der Log-Zeilen vom Programmierer abh\"angig ist, da er selbst bestimmt, welche Informationen er in das Log schreibt.
+
+Die LogCat ist als Ringpufferspeicher realisiert und hat zum Beispiel beim Samsung Galaxy Note eine gr\"o\ss{}e von 800KB. Als standard f\"ur die Speichergr\"o\ss{}e gibt Google jedoch nur 64KB an. Hier l\"asst sich gut erkennen, das viele Einstellungen im Betriebssystem von den Hardwareherstellern festgelegt werden.
+
+Da es sich bei der LogCat um einen Ringpufferspeicher handelt, werden die \"alltesten Daten automatisch \"uberschrieben. Somit ist die Speicherdauer davon abh\"angig, wie viele Log-Eintr\"age in einer bestimmten Zeit gemacht werden. \cite{LogCat}
+
+Wird ein Ger\"at an den Entwicklungsrechner angeschlossen, so wird automatisch der gesammte Ringpufferspeicher der LogCat in die \ac{IDE} \"ubertragen und in der LogCat angezeigt.
+
+Die LogCat ist in der Lage die Ausgaben Verbose, Debug, Information, Warning und Error zu unterscheiden. Hierf\"ur stehen in der Android-API verschiedene Methoden zur Verf\"ugung.
+
+Um die LogCat Eintr\"age in der LogCat vorzunehmen, muss im Programmcode die Klasse \texttt{Log} verwendet werden. Diese hat die Methoden \texttt{v}, \texttt{d}, \texttt{i}, \texttt{w} und \texttt{e}, welche im Listing aufgef\"uhrt sind.
+
+\lstinputlisting{Code/LogCatMethoden.java}
+
+Der als "`TAG"' bezeichnete String-Parameter in den Methoden sollte den Klassennamen, in der die Log-Ausgabe gemacht wird, enthalten.
+Google schl\"agt hierf\"ur in der Klasse eine Konstante TAG vor, welche den Klassennamen enth\"alt. \cite{APILog}
+
+Die eben beschiebenen Mehoden sind alle \"uberladen und k\"onnen jeweils noch einen weiteren Parameter aufnehmen, dieser Parameter erlaubt es eine Java Exception direkt in der LogCat auszugeben.
+
+Google schl\"agt in seinen APIs die eben beschriebene Konstante wie folgt vor zu Implementieren.
+
+\lstinputlisting{Code/GoogleLogCatConstante.java}
+
+Um Schreibfehler zu vermeiden, bietet es sich jedoch an, eine andere Variante zu verwenden.
+
+\lstinputlisting{Code/KuehnLogCatConstante.java}
+
