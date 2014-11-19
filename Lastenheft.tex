@@ -1,31 +1,31 @@
 \section{Lastenheft}
-Im Verlauf des Projektes soll eine mobile Android-App entwickelt werden, welche bei einer eingehenden Nachricht einen Alarm generiert und den Nutzer somit \"uber den Eingang, eines Alarms, informiert.
+Im Verlauf des Projektes soll eine mobile Android-App entwickelt werden, welche bei einer eingehenden Nachricht einen Alarm generiert und den Nutzer somit \"uber den Eingang eines Alarms informiert.
 
 \subsection{Zielsetzung}
 Ziel ist es eine regelbassierte Android-App zu entwickeln, wobei die Regeln vom Nutzer nach CRUD erstellt, ausgelesen, ge\"andert und gel\"oscht werden k\"onnen. Hierbei sollen verschiedene Nutzer ihre Regeln auch untereinander austauschen k\"onnen.
 
 \subsection{Produkteinsatz}
-Die zu entwickelnde Applikation soll vor allem die Einsatzkr\"afte der Freiwilligen Feuerwehren beim Erhalt einer AlarmSMS \"uber die erfolgte Alarmierung informieren. Diese AlarmSMS wird von Leitstellen oder Privatfirmen an die, mit einer Telefonnummer registrierten, Mitglieder gesendet.
+Die zu entwickelnde Applikation soll vor allem die Einsatzkr\"afte der Freiwilligen Feuerwehren beim Erhalt einer Alarm-SMS \"uber die erfolgte Alarmierung informieren. Diese Alarm-SMS wird von Leitstellen oder Privatfirmen an die, mit einer Telefonnummer registrierten, Mitglieder gesendet.
 
-Da heutige Smartphones nicht in der Lage sind bei bestimmten Absendernummern oder Absender-Strings den lautlosen Modus zu umgehen und bestimmte Alarmt\"one zu spielen soll eine Applikation entwickelt werden, welche diese Aufgabe \"ubernimmt.
+Da heutige Smartphones nicht in der Lage sind, bei bestimmten Absendernummern oder Absender-Strings den lautlosen Modus zu umgehen und bestimmte Alarmt\"one zu spielen, soll eine Applikation entwickelt werden, welche diese Aufgabe \"ubernimmt.
 
 \subsubsection{Zusammenspiel mit anderen Systemen}
-Die Applikation soll unter Android laufen, wobei die App so weit wie m\"oglich Abw\"artskompatibel zu den Androidversionen gehalten werden soll. Aber auch zuk\"unftige Eintwicklungen in der Android-Plattform sollen, soweit wie m\"oglich, schon heute umgesetzt und unterst\"utzt werden.
+Die Applikation soll unter Android laufen, wobei die App so weit wie m\"oglich abw\"artskompatibel zu den Androidversionen gehalten werden soll. Aber auch zuk\"unftige Eintwicklungen in der Android-Plattform sollen, soweit wie m\"oglich, schon heute umgesetzt und unterst\"utzt werden.
 
-Au\ss{}erdem sollen andere auf dem Smartphone befindliche Applikation angesteuert werden k\"onnen, um zum einen Posts in Sozialen Netzwerken und zum anderen eine Navigation zum Feuerwehr-Ger\"atehaus oder zur Einsatzstelle zu erm\"oglichen.
+Au\ss{}erdem sollen andere auf dem Smartphone befindliche Applikationen angesteuert werden k\"onnen, um zum einen Posts in sozialen Netzwerken und zum anderen eine Navigation zum Feuerwehr-Ger\"atehaus oder zur Einsatzstelle zu erm\"oglichen.
 
 \subsection{Produktfunktionen}
 \begin{minipage}{3cm}
 /LF10/
 \end{minipage}
 \begin{minipage}{13cm}
-Die App soll dem Nutzer beim eingehen von Nachrichten \"uber den Erhalt speziell informieren. Hierbei soll zum einen der Absender aber auch der Inhalt ausschlaggebend sein k\"onnen.\\
+Die App soll dem Nutzer beim Eingehen von Nachrichten \"uber den Erhalt speziell informieren. Hierbei soll zum einen der Absender aber auch der Inhalt ausschlaggebend sein k\"onnen.\\
 \end{minipage}
 \begin{minipage}{3cm}
 /LF20/
 \end{minipage}
 \begin{minipage}{13cm}
-Der Nutzer soll die Alarmierung \"uber CRUD Regeln selber festlegen k\"onnen. Hierbei soll er nach folgendem Prinzip Regeln definieren k\"onnen.\\
+Der Nutzer soll die Alarmierung \"uber CRUD-Regeln selbst festlegen k\"onnen. Hierbei soll er nach folgendem Prinzip Regeln definieren k\"onnen.\\
 Absender-Nummer.equals("+4972160825769") $\wedge$ SMS.getContent().con-tains(foo)
 $\Rightarrow$ Action.Klingelton(Alarmton).\\
 \end{minipage}
@@ -39,25 +39,26 @@ Die Regeln sollen so abstrakt wie m\"oglich gehalten werden, damit eine Erweiter
 /LF40/
 \end{minipage}
 \begin{minipage}{13cm}
-Es soll die M\"oglichkeit bestehen im Alarmfall automatisiert einen Post in Social Networks abzusetzen. Aber auch eine Information an den Einheitsf\"uhrer soll per SMS versendet werden k\"onnen.\\
+Es soll die M\"oglichkeit bestehen, im Alarmfall automatisiert einen Post in Social Networks abzusetzen. Aber auch eine Information an den Einheitsf\"uhrer soll per SMS versendet werden k\"onnen.\\
 \end{minipage}
 \begin{minipage}{3cm}
 /LF50/
 \end{minipage}
 \begin{minipage}{13cm}
-Eine Navigation zum Einsatzort soll, mit Hilfe einer anderen App, m\"oglich sein und zwar genau dann wenn die ankommende SMS die Koordinaten vom Einsatzort beinhaltet.\\
+Eine Navigation zum Einsatzort soll, mit Hilfe einer anderen App, m\"oglich sein und zwar genau dann, wenn die ankommende SMS die Koordinaten vom Einsatzort beinhaltet.\\
 \end{minipage}
 \begin{minipage}{3cm}
 /LF60/
 \end{minipage}
 \begin{minipage}{13cm}
-Die \"Ubertragung einer Regel an andere Nutzer der App muss ohne Umst\"ande m\"oglich sein. Hier kann auf unterschiedliche Schnittstellen (Bluetooth, E-Mail usw.) gesetzt werden k\"onnen. \\
+Die \"Ubertragung einer Regel an andere Nutzer der App muss ohne Umst\"ande m\"oglich sein. Hier soll auf unterschiedliche Schnittstellen (Bluetooth, E-Mail usw.) gesetzt werden k\"onnen. \\
 \end{minipage}
 \begin{minipage}{3cm}
 /LF70/
 \end{minipage}
 \begin{minipage}{13cm}
-Regeln sollen ohne ein l\"oschen, von Daten, deaktiviert und sp\"ater wieder reaktiviert werden k\"onnen.\\
+Regeln sollen deaktiviert und wieder aktiviert werden k\"onnen, ohne dass hierbei der eigentliche Regelinhalt ver\"andert wird.
+% Regeln sollen ohne ein l\"oschen, von Daten, deaktiviert und sp\"ater wieder reaktiviert werden k\"onnen.\\
 \end{minipage}
 \begin{minipage}{3cm}
 /LF80/
@@ -90,13 +91,13 @@ Die App soll beim Erhalt einer Alarmierung nicht nur einen Ton spielen, sondern 
 /LD10/
 \end{minipage}
 \begin{minipage}{13cm}
-Erstellte Regeln m\"ussen gespeichert werden k\"onnen, so das der Nutzer einmal erstellte Regeln aktivieren und deaktivieren kann. Au\ss{}erdem sollen die Regeln beim schlie\ss{}en der Applikation nicht verloren gehen.\\
+Erstellte Regeln m\"ussen gespeichert werden k\"onnen, so das der Nutzer einmal erstellte Regeln aktivieren und deaktivieren kann. Au\ss{}erdem sollen die Regeln beim Schlie\ss{}en der Applikation nicht verloren gehen.\\
 \end{minipage}
 \begin{minipage}{3cm}
 /LD20/
 \end{minipage}
 \begin{minipage}{13cm}
-Die App soll einige Alarmt\"one mitliefern, wobei keine Lizenzkosten anfallen d\"urfen. Hier k\"onnen zum Beispiel orginale Sirenen oder \ac{FME}-T\"one vorliegen.\\
+Die App soll einige Alarmt\"one mitliefern, wobei keine Lizenzkosten anfallen d\"urfen. Hier k\"onnen zum Beispiel originale Sirenen oder \ac{FME}-T\"one vorliegen.\\
 \end{minipage}
 \begin{minipage}{3cm}
 /LD30/
@@ -116,7 +117,7 @@ Um den heute immer wichtiger werdenen Datenschutz gerecht zu werden, sollen kein
 /LL10/
 \end{minipage}
 \begin{minipage}{13cm}
-Die Applikation soll beim Systemstart mit starten und sofort einsatzbereit sein, ohne das der Nutzer zus\"atzlich aktiv werden muss.\\
+Die Applikation soll beim Systemstart mitstarten und sofort einsatzbereit sein, ohne dass der Nutzer zus\"atzlich aktiv werden muss.\\
 \end{minipage}
 \begin{minipage}{3cm}
 /LL20/

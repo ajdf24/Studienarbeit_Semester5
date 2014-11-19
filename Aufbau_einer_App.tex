@@ -2,7 +2,7 @@
 Im nun folgenden Kapitel wird der grundlegende Aufbau einer Android App genauer beschrieben, wobei auf wichtige Bestandteile im Projekt eingegangen wird.
 Zum einen soll hier der zugrundeliegende Dateiaufbau, aber auch die Bestandteile einer App und deren Funktion genauer erl\"autert dargestellt werden. \cite{Android44}
 
-\subsection{Componenten einer Applikation aus Sicht des Nutzers}
+\subsection{Komponenten einer Applikation aus Sicht des Nutzers}
 Eine App unter Android bestizt aus der Sicht des Nutzers die vier Hauptbestandteile:
 \begin{itemize}
  \item Activity
@@ -14,11 +14,11 @@ Eine App unter Android bestizt aus der Sicht des Nutzers die vier Hauptbestandte
 \subsubsection{Die Activity} \label{Die Activity aus Nutzersicht}
 Eine Activity, unter Android, ist eine Benutzeroberfl\"ache in der App, wobei ein Projekt beliebig viele Activitys haben kann. Somit sind Activitys im eigentlichen Sinn Fenster, die in der Regel den gesamten Bildschirm f\"ullen und eine gewisse Aufgabe erf\"ullen. \cite{Kuehn12}
 
-Der Aufruf verschiedener Activitys kann entweder vom Programmablauf vorgegeben sein oder durch Nutzeraktionen variieren. So kann zum Beispiel jenachdem welchen Button der Nutzer bet\"atigt eine andere Activity aufgerufen werden. Ein solcher Activity-Aufruf kann im Androidsystem nicht nur Appintern, sondern auch App\"ubergreifend geschehen. \cite{Android44}
+Der Aufruf verschiedener Activitys kann entweder vom Programmablauf vorgegeben sein oder durch Nutzeraktionen variieren. So kann zum Beispiel je nachdem welchen Button der Nutzer bet\"atigt eine andere Activity aufgerufen werden. Ein solcher Activity-Aufruf kann im Androidsystem nicht nur App-Intern, sondern auch App-\"Ubergreifend geschehen. \cite{Android44}
 
-Jede Activity hat einen bestimmten Lebenszyklus den sie im Verlauf der Anwendung durchl\"auft. Beim erstellen einer Activity wird als erstes die Methode \texttt{onCreate} aufgerufen. Jenachdem welche Folgeaktion der Nutzer als n\"achstes ausf\"uhrt wird eine der anderen Methoden, welche im Bild \ref{ActivityLebenszyklus} zu sehen sind, aufgerufen. Wird die Activity wieder beendet, so wird die Methode \texttt{onDestroy} aufgerufen. 
+Jede Activity hat einen bestimmten Lebenszyklus, den sie im Verlauf der Anwendung durchl\"auft. Beim Erstellen einer Activity wird als erstes die Methode \texttt{onCreate} aufgerufen. Je nachdem welche Folgeaktion der Nutzer als n\"achstes ausf\"uhrt, wird eine der anderen Methoden, welche im Bild \ref{ActivityLebenszyklus} zu sehen sind, aufgerufen. Wird die Activity wieder beendet, so wird die Methode \texttt{onDestroy} aufgerufen. 
 
-Inaktiv ist eine Activity zum Beispiel dann, wenn die von einer anderen komplett oder Teilweise \"uberdeckt wird. Sollte eine neue Activity \"uber der alten ge\"offnet werden, wird diese nicht sofort zerst\"ort, sondern auf einer art Stack gehalten von woaus sie wieder aufgerufen werden kann. Dies w\"are der Fall, wenn der Nutzer die Zur\"ucktaste bet\"atigt.
+Inaktiv ist eine Activity zum Beispiel dann, wenn sie von einer anderen Activity komplett oder teilweise \"uberdeckt wird. Sollte eine neue Activity \"uber der alten ge\"offnet werden, wird diese nicht sofort zerst\"ort, sondern auf einer Art Stack gehalten, von wo sie wieder aufgerufen werden kann. Dies w\"are der Fall, wenn der Nutzer die Zur\"ucktaste bet\"atigt.
 
 Activitys die sich im Stack befinden, werden erst gel\"oscht, wenn die zugeh\"orige App geschlossen oder Arbeitsspeicher, f\"ur andere Aktivit\"aten, freigegeben werden muss. 
 
@@ -36,50 +36,50 @@ Alle im Bild \ref{ActivityLebenszyklus} zu sehenden Methoden sind in der Tabelle
 % In der folgenden Tabelle sind alle m\"oglichen Methoden beschrieben, welche im Lebenszyklus einer Activity vom Betriebssystem aufgerufen werden k\"onnen.
 
 \subsubsection{Broadcast Receiver} \label{Broadcast Receiver aus Nutzersicht}
-Ein Broadcast Receiver unter Android ist ein Empf\"anger f\"ur verschiedene Benachrichtigungen die vom Betriebssystem abgesetzt werden. Benachrichtigungen unter Android sind vielf\"altig und k\"onnen zum Beispiel bei erhalt einer SMS oder E-Mail gesendet werden. Alle im System registrieten Receiver werden bei ihrem zugeh\"origen Event aktiv und bleiben dies auch nur f\"ur die Zeit, welche es ben\"otigt die Methode \texttt{onReceive} auszuf\"uhren.
+Ein Broadcast Receiver unter Android ist ein Empf\"anger f\"ur verschiedene Benachrichtigungen die vom Betriebssystem abgesetzt werden. Benachrichtigungen unter Android sind vielf\"altig und k\"onnen zum Beispiel bei Erhalt einer SMS oder E-Mail gesendet werden. Alle im System registrierten Receiver werden bei ihrem zugeh\"origen Event aktiv und bleiben dies auch nur f\"ur die Zeit, welche es ben\"otigt, die Methode \texttt{onReceive} auszuf\"uhren.
 
-Android unterscheidet grunds\"atzlich zwei verschiedene Arten von Broadcast Receivern und zwar Dynamische und Statische Broadcast Receiver. Dynamische Broadcast Receiver sind nicht im System registriert und k\"onnen nur zur Laufzeit der Komponente (Activity oder Service), welche den Receiver enth\"alt, auf Ereignisse reagieren. Statische Broadcast Receiver hingegen m\"ussen im Betriebssystem registriert werden. Hierf\"ur m\"ussen sie in der Manifest-Datei deklariert sein, wie eine Manifest-Datei aufgebaut ist, ist im Kapitel \ref{Die Manifest-Datei} genauer beschrieben. Durch die Regisitrierung im System muss die zugeh\"orige App nicht laufen um einen Broadcast zu empfangen und verarbeiten zu k\"onnen. Sollte die App beim Broadcast nicht laufen wird sie vom System gestartet.
+Android unterscheidet grunds\"atzlich zwei verschiedene Arten von Broadcast Receivern und zwar dynamische und statische Broadcast Receiver. Dynamische Broadcast Receiver sind nicht im System registriert und k\"onnen nur zur Laufzeit der Komponente (Activity oder Service), welche den Receiver enth\"alt, auf Ereignisse reagieren. Statische Broadcast Receiver hingegen m\"ussen im Betriebssystem registriert werden. Hierf\"ur m\"ussen sie in der Manifest-Datei deklariert sein. Wie eine Manifest-Datei aufgebaut ist, ist im Kapitel \ref{Die Manifest-Datei} genauer beschrieben. Durch die Registrierung im System muss die zugeh\"orige App nicht laufen, um einen Broadcast zu empfangen und verarbeiten zu k\"onnen. Sollte die App beim Broadcast nicht laufen, wird sie vom System gestartet.
 
 \subsubsection{Services} \label{Services aus Nutzersicht}
-Services in Android sind gedacht f\"ur Programmbestandteile, welche keine Benutzeroberfl\"ache ben\"otigen. Hintergrundprozesse, wie zum Beispiel das abspielen von Musik oder das herunterladen von Daten sind typische Anwendungsf\"alle f\"ur Services. 
+Services in Android sind gedacht f\"ur Programmbestandteile, welche keine Benutzeroberfl\"ache ben\"otigen. Hintergrundprozesse, wie zum Beispiel das Abspielen von Musik oder das Herunterladen von Daten sind typische Anwendungsf\"alle f\"ur Services. 
 
-Wie schon bei den Broadcast Receivern gibt es im Androidsystem zwei Arten von Services, zum einen den Local Service welcher an eine bestimmte Komponente gebunden ist und zum anderen  Remote Services, welche in einem eigenen Prozess laufen auch nachdem die App beendet wurde.
+Wie schon bei den Broadcast Receivern gibt es im Androidsystem zwei Arten von Services, zum einen den Local Service, welcher an eine bestimmte Komponente gebunden ist und zum anderen  Remote Services, welche in einem eigenen Prozess laufen auch nachdem die App beendet wurde.
 
 \subsubsection{ContentProvider} \label{ContentProvider aus Nutzersicht}
 ContentProvider sind Schnittstellen f\"ur die \"Ubergabe von Daten oder Datenbankeintr\"agen an andere Apps.
-Greift eine App zum Beispiel auf das Telefonbuch des Smartphones zu, geschieht dies \"uber einen ContentProvider. Daten werden durch die ContentProvider anderen Apps zur verf\"ugung gestellt werden, wobei immer nur der Dateninhalt und nicht die Datei selbst \"ubergeben wird. \cite{Kuehn12}
+Greift eine App zum Beispiel auf das Telefonbuch des Smartphones zu, geschieht dies \"uber einen ContentProvider. Daten werden durch die ContentProvider anderen Apps zur Verf\"ugung gestellt, wobei immer nur der Dateninhalt und nicht die Datei selbst \"ubergeben wird. \cite{Kuehn12}
 
-ContentProvider stellen wie eben schon einmal erw\"ahnt gewisse Daten aus der applikationseigenen Datenbank durch eine Art Schaufenster dar und \"ubergeben sie bei bedarf an die aufrufende App ohne Berechtigungs- oder Zugriffssperren zu umgehen. Jeder Programmierer ist somit selbst daf\"ur verantwortlich welche Daten er nach au\ss{}en hin offen legt.
+ContentProvider stellen, wie eben schon einmal erw\"ahnt, gewisse Daten aus der applikationseigenen Datenbank durch eine Art Schaufenster dar und \"ubergeben sie bei Bedarf an die aufrufende App, ohne Berechtigungs- oder Zugriffssperren zu umgehen. Jeder Programmierer ist somit selbst daf\"ur verantwortlich, welche Daten er nach au\ss{}en hin offen legt.
 
-\subsection{Componenten einer Applikation aus Sicht des Programmierers} \label{Componenten einer Applikation aus Sicht des Programmierers}
-Eine App besteht f\"ur den Programmierer nat\"urlich aus sehr viel mehr als nur die vier f\"ur den Nutzer sichtbaren Bestandteile. Welche das sind und welche Aufgaben sie haben ist im folgenden genauer beschrieben. \cite{GolemHBAppAusEntwicklerSicht}
+\subsection{Komponenten einer Applikation aus Sicht des Programmierers} \label{Componenten einer Applikation aus Sicht des Programmierers}
+Eine App besteht f\"ur den Programmierer nat\"urlich aus sehr viel mehr als nur die vier f\"ur den Nutzer sichtbaren Bestandteile. Welche das sind und welche Aufgaben sie haben, ist im folgenden genauer beschrieben. \cite{GolemHBAppAusEntwicklerSicht}
 
 \subsubsection{Der Projektbaum}
-Wurde ein neues Projekt angelegt, ist im Projektverzeichnis die Ordnerstrucktur zum Projekt zu finden. Im obersten Ordner \texttt{src} ist das Package-Verzeichnis zu finden, welches den Quellcode der App enth\"alt. Das erste Package muss im Wizard zur Projekterzeugung angegeben werden und beginnt der Androidkonvention folgend immer mit "`com."'. In dem Sourcecode-Verzeichnis k\"onnen Packages und Klassen nach eigenem belieben angelegt werden.
+Wurde ein neues Projekt angelegt, ist im Projektverzeichnis die Ordnerstruktur zum Projekt zu finden. Im obersten Ordner \texttt{src} ist das Package-Verzeichnis zu finden, welches den Quellcode der App enth\"alt. Das erste Package muss im Wizard zur Projekterzeugung angegeben werden und beginnt der Androidkonvention folgend immer mit "`com."'. In dem Sourcecode-Verzeichnis k\"onnen Packages und Klassen nach eigenem belieben angelegt werden.
 
-Der nachste Ordner hei\ss{}t \texttt{gen}. In ihm liegen automatisch generierte Klassen, welche Angaben dar\"uber machen wo im Projektverzeichnis sich eine bestimme Ressource befindet.
+Der nachste Ordner hei\ss{}t \texttt{gen}. In ihm liegen automatisch generierte Klassen, welche Angaben dar\"uber machen, wo im Projektverzeichnis sich eine bestimme Ressource befindet.
 Die generierten Klassen sollten nicht ge\"andert werden, da dies die \ac{IDE} f\"ur den Programmierer \"ubernimmt. Werden neue Ressourcen angelegt werden die generischen Klassen automatisch nach einem Speichervorgang ge\"andert und angepasst.
 
-Unter dem Ordner \texttt{bin} sind alle f\"ur die Ausf\"uhrung ben\"otigten Daten abgelegt, so zum Beispiel die "`APK"'-Datei, welche die eigentliche App enth\"alt. Aber auch Librarys f\"ur das Virtual Device sind hier zufinden. Was eine "`APK"'-Datei genau ist wird im Kapitel \ref{Eine APK-Datei} genauer erl\"autert.
+Unter dem Ordner \texttt{bin} sind alle f\"ur die Ausf\"uhrung ben\"otigten Daten abgelegt, so zum Beispiel die "`APK"'-Datei, welche die eigentliche App enth\"alt. Aber auch Librarys f\"ur das Virtual Device sind hier zufinden. Was eine "`APK"'-Datei genau ist, wird im Kapitel \ref{Eine APK-Datei} genauer erl\"autert.
 
-\texttt{lib} ist der Ordner, in dem sich Standardm\"a\ss{}ig alle, zum Betrieb der App, ben\"otigten Librarys befinden. Hier k\"onnen nat\"urlich auch eigene, f\"ur das Projekt ben\"otigte, Bibliotheken eingebracht werden.
+\texttt{lib} ist der Ordner, in dem sich standardm\"a\ss{}ig alle, zum Betrieb der App, ben\"otigten Librarys befinden. Hier k\"onnen nat\"urlich auch eigene, f\"ur das Projekt ben\"otigte, Bibliotheken eingebracht werden.
 
-Im Ordner \texttt{res} befinden sich weitere Unterordner, welche die zum Berieb, der APP, ben\"otigten Ressourcen gliedern tun. In den \texttt{drawable}-Ordnern sind alle ben\"otigten Grafiken abgelegt, welche in den verschiedenen Ordnern je nach Aufl\"o\ss{}ung sortiert sind. Der Unterordner \texttt{layout} enth\"alt XML-Dateien, welche das Aussehen aller Activitys beschreiben. Die \texttt{values}-Unterordner enthalten die f\"ur verschiedene Androidversionen unterschiedlichen Style-Schematas und nat\"urlich die in der App ben\"otigten Strings (siehe Kapitel \ref{Internationalisierung in Android}).
+Im Ordner \texttt{res} befinden sich weitere Unterordner, welche die zum Berieb der App ben\"otigten Ressourcen gliedern. In den \texttt{drawable}-Ordnern sind alle ben\"otigten Grafiken abgelegt, welche in den verschiedenen Ordnern je nach Aufl\"osung sortiert sind. Der Unterordner \texttt{layout} enth\"alt XML-Dateien, welche das Aussehen aller Activitys beschreiben. Die \texttt{values}-Unterordner enthalten die f\"ur verschiedene Androidversionen unterschiedlichen Style-Schemata und nat\"urlich die in der App ben\"otigten Strings (siehe Kapitel \ref{Internationalisierung in Android}).
 
-Im Projektverzeichnis direkt ist die "`Android Manifestdatei"' zu finden, welche eine Steuerdatei f\"ur die App darstellt und Informationen \"uber die App bereit stellt (siehe Kapitel \ref{Die Manifest-Datei}).
+Im Projektverzeichnis direkt ist die "`Android Manifestdatei"' zu finden, welche eine Steuerdatei f\"ur die App darstellt und Informationen \"uber die App bereitstellt (siehe Kapitel \ref{Die Manifest-Datei}).
 \cite{GolemHBRessourcen}
 
 \subsubsection{Internationalisierung in Android} \label{Internationalisierung in Android}
-Alle Strings, die im Projekt Verwendung finden, werden in einer Datei \texttt{string.xml} gesammelt, was eine Internationalisierung vereinfacht. Soll im Sourcecode dann ein String verwendet werden, so wird einfach sein Ressourcenname angegeben und nicht der String selbst. Um in Android diese Internationalisierung durchzuf\"uhren werden verschiedene \texttt{values}-Unterordner erstellt. F\"ur jede Sprache wird ein eigener Ordner mit einer f\"ur die Sprache spezifiche \texttt{string.xml}-Datei erstellt, welche alle in der App vorkommenden Strings in der entsprechenden \"Ubersetzung auff\"uhrt. 
+Alle Strings, die im Projekt Verwendung finden, werden in einer Datei \texttt{string.xml} gesammelt, was eine Internationalisierung vereinfacht. Soll im Sourcecode dann ein String verwendet werden, so wird einfach sein Ressourcenname angegeben und nicht der String selbst. Um in Android diese Internationalisierung durchzuf\"uhren, werden verschiedene \texttt{values}-Unterordner erstellt. F\"ur jede Sprache wird ein eigener Ordner mit einer f\"ur die Sprache spezifische \texttt{string.xml}-Datei erstellt, welche alle in der App vorkommenden Strings in der entsprechenden \"Ubersetzung auff\"uhrt. 
 
-Der Ordnername wird, f\"ur die jeweilige Sprache, um die Internationale Sprachabk\"urzung erg\"anzt. F\"ur eine deutsche \"Ubersetzung muss der Ordner \texttt{values-de} genannt werden. Ist das Betriebssystem auf die deutsche Sprache eingestellt, werden automatisch die Strings aus dem deutschen Ordner genommen. Ist f\"ur die eingestellte Systemsprache keine \"Ubersetzung vorhanden, so wird die \texttt{string.xml} aus dem Ordner \texttt{values} geladen. Die Datei im Default-Ordner \texttt{values} sollte nach M\"oglichkeit die \"Ubersetzung der App in Englisch beinhalten. \cite{VogelaI18N}
+Der Ordnername wird, f\"ur die jeweilige Sprache, um die internationale Sprachabk\"urzung erg\"anzt. F\"ur eine deutsche \"Ubersetzung muss der Ordner \texttt{values-de} genannt werden. Ist das Betriebssystem auf die deutsche Sprache eingestellt, werden automatisch die Strings aus dem deutschen Ordner genommen. Ist f\"ur die eingestellte Systemsprache keine \"Ubersetzung vorhanden, so wird die \texttt{string.xml} aus dem Ordner \texttt{values} geladen. Die Datei im Default-Ordner \texttt{values} sollte nach M\"oglichkeit die \"Ubersetzung der App in Englisch beinhalten. \cite{VogelaI18N}
 % 
 % F\"ur verschiedene Sprachen werden unterschiedliche "`string.xml"' Dateien ben\"otigt. Das Betriebssystem kann somit die Sprache einer App einfach an die Systemsprache anpassen. Gibt es f\"ur die Systemsprache keine String-Datei so wird die Standarddatei string.xml verwendet.
 
 \subsubsection{Die Manifest-Datei} \label{Die Manifest-Datei}
 Das Android Manifest ist die Schaltzentrale einer App, in der alle Bestandteile einer Applikation aufgef\"uhrt sind. Das Manifest unter Android ist also eine XML-Datei, welche im Wurzelverzeichnis abgelegt ist. 
 
-Im Manifest sind als erstes Informationen zum Package-Name zu sehen (1) welche direkt vor der Versionsnummer und dem Versionsnamen zufinden sind (2). Unter \texttt{uses-sdk} ist zum einen die Angabe zur minimalen, f\"ur den Betrieb ben\"otigten, Android-Version angegeben und zum anderen mit welcher Version Kompiliert wurde (3). \texttt{uses-permission} gibt an, welche Berechtigungen die App in anspruch nimmt, wobei alle Berechtigungen aufgef\"uhrt sein m\"ussen damit die App korrekt arbeitet (4). Zum Schluss m\"ussen nat\"urlich auch noch alle Activitys und Services angegeben werden, \"uber die die App verf\"ugt (5).
+Im Manifest sind als erstes Informationen zum Packagenamen zu sehen (1), welche direkt vor der Versionsnummer und dem Versionsnamen zufinden sind (2). Unter \texttt{uses-sdk} ist zum einen die Angabe zur minimalen, f\"ur den Betrieb ben\"otigten, Android-Version angegeben und zum anderen mit welcher Version kompiliert wurde (3). \texttt{uses-permission} gibt an, welche Berechtigungen die App in Anspruch nimmt, wobei alle Berechtigungen aufgef\"uhrt sein m\"ussen, damit die App korrekt arbeitet (4). Zum Schluss m\"ussen nat\"urlich auch noch alle Activitys und Services angegeben werden, \"uber die die App verf\"ugt (5).
 \cite{Android44}
 
 Im Listing ist eine Manifest-Datei beispielhaft zu sehen.
@@ -87,39 +87,39 @@ Im Listing ist eine Manifest-Datei beispielhaft zu sehen.
 \lstinputlisting{Code/ManifestExample.xml}
 
 \subsubsection{Das Rechtekonzept in Android}
-Das Rechtekonzept unter Android ist recht einfach zu verstehen, aber auch im gleichen Ma\ss{}e wirksam wie einfach. Im Kapitel \ref{Das Sandbox Prinzip} wurde schon erw\"ahnt, dass jede App unter einem eigenen Benutzer angelegt wird, was auf wirksame weise verhindert, das App's sich gegenseitig beeinflussen k\"onnen. Da Android Linuxbassiert ist, hat kein Nutzer Schreibrechte auf Dateien und Programme anderer Nutzer.
+Das Rechtekonzept unter Android ist recht einfach zu verstehen, aber auch im gleichen Ma\ss{}e wirksam wie einfach. Im Kapitel \ref{Das Sandbox Prinzip} wurde schon erw\"ahnt, dass jede App unter einem eigenen Benutzer angelegt wird, was auf wirksame Weise verhindert, das Apps sich gegenseitig beeinflussen k\"onnen. Da Android linuxbasiert ist, hat kein Nutzer Schreibrechte auf Dateien und Programme anderer Nutzer.
 
-Damit der Benutzer beim installieren einer App mitbekommt welche Dienste eine App in anspruch nimmt, wurde das Rechtekonzept in Android eingef\"uhrt. Hierbei muss jede App in ihrem Manifest angeben, welche Berechtigungen sie ben\"otigt und verwenden tut. Berechtigungen unter Android sind Vielseitig, wobei jedoch die bekanntesten die Standortbestimmung oder die Nutzung von mobilen Daten sind. \cite{BerechtigungenPIT}
+Damit der Benutzer beim Installieren einer App mitbekommt, welche Dienste eine App in Anspruch nimmt, wurde das Rechtekonzept in Android eingef\"uhrt. Hierbei muss jede App in ihrem Manifest angeben, welche Berechtigungen sie ben\"otigt und verwenden tut. Berechtigungen unter Android sind vielseitig, wobei jedoch die bekanntesten die Standortbestimmung oder die Nutzung von mobilen Daten sind. \cite{BerechtigungenPIT}
 
-Android pr\"uft die angeben Berechtigungen der App und gibt diese auch nur f\"ur eine App frei, wenn die jeweilige Berechtigung im Manifest angefordert wurde. Sollte beim erstellen der App eine Berechtigung vergessen werden, f\"uhrt das zwangsl\"aufig zu Fehlern, da die App geforderte Dienste nicht nutzen darf.
+Android pr\"uft die angeben Berechtigungen der App und gibt diese auch nur f\"ur eine App frei, wenn die jeweilige Berechtigung im Manifest angefordert wurde. Sollte beim Erstellen der App eine Berechtigung vergessen werden, f\"uhrt das zwangsl\"aufig zu Fehlern, da die App geforderte Dienste nicht nutzen darf.
 
 Wichtig ist nat\"urlich noch zu erw\"ahnen, dass eine App immer m\"oglichst wenige oder beziehungsweise nur notwendige Berechtigungen verwenden sollte. Dies ist wichtig, da viele Nutzer schnell ver\"argert sind, wenn die App, ihrer Meinung nach, zu viele Berechtigungen ben\"otigt. \cite{BerechtigungenPIT}
 
 \subsubsection{Intents} \label{Intents}
-Wie im Verlauf dieses Kapitels schon gezeigt wurde sind App's unter Android komponentenorientiert aufgebaut, was bedeutet das die einzelnen Komponenten wie Activitys, Services, BroadcastReceiver und ContentProvider untereinander kommunizieren m\"ussen. Hier kommen die Intents ins Spiel, welche die Aufgabe haben Nachrichten und Daten unter den Komponenten einer App aber auch systemweit zu \"ubermitteln und im gleichen Zug eine andere Activity zu starten.
+Wie im Verlauf dieses Kapitels schon gezeigt wurde, sind Apps unter Android komponentenorientiert aufgebaut, was bedeutet, dass die einzelnen Komponenten wie Activitys, Services, BroadcastReceiver und ContentProvider untereinander kommunizieren m\"ussen. Hier kommen die Intents ins Spiel, welche die Aufgabe haben, Nachrichten und Daten unter den Komponenten einer App aber auch systemweit zu \"ubermitteln und im gleichen Zug eine andere Activity zu starten.
 
-Android unterscheidet zwei verschiedene Arten von Intents, zum einen den "`Expliziten Intent"' und zum anderen den "`Impliziten Intent"'. Explizite Intents sind f\"ur die Kommunikation innerhalb einer App relevant, da hier explitit eine andere Komponente aufgerufen wird. 
+Android unterscheidet zwei verschiedene Arten von Intents, zum einen den "`expliziten Intent"' und zum anderen den "`impliziten Intent"'. Explizite Intents sind f\"ur die Kommunikation innerhalb einer App relevant, da hier explizit eine andere Komponente aufgerufen wird. 
 
-Im Listing wird ein neuer Intent gebaut, welcher zum einen den Context, also die aufrufende Komponente und zum anderen eine zweite Activity (\texttt{SecondActivity}), welche ge\"offnet werden soll, angibt. Mittels der Methode \texttt{startActivity} wird der Intent also, im Beispiel, die andere Activity gestartet.
+Im Listing wird ein neuer Intent gebaut, welcher zum einen den Context, also die aufrufende Komponente und zum anderen eine zweite Activity (\texttt{SecondActivity}), welche ge\"offnet werden soll, angibt. Mittels der Methode \texttt{startActivity} wird der im Intent aufgerufe Kontent gestartet. Im Beispiel ist das die andere Activity.
 
 \lstinputlisting{Code/ExpliziterIntentExample.java}
 
-Implizite Intents sind f\"ur die App\"ubergreifende Kommunikation gedacht, wobei hier ein Intent erstellt wird in der Hoffnung, dass eine App diese Inhalte \"offnen kann.
+Implizite Intents sind f\"ur die App-\"Ubergreifende Kommunikation gedacht, wobei hier ein Intent erstellt wird in der Hoffnung, dass eine App diese Inhalte \"offnen kann.
 Im Listing wird beispielhaft ein Intent erstellt, welcher dem Nutzer Daten anzeigen soll. Dies geschieht mit \texttt{Intent.ACTION\_VIEW}, wobei als Uri ein String mit Koordinaten f\"ur eine Karte mit \"ubertragen wird.
 
 \lstinputlisting{Code/ImpliziterIntentExample.java}
 
-Das Betriebssystem schaut nun welche installierten App's diesen Kontent verarbeiten k\"onnen und gibt bei mehreren M\"oglichkeiten dem Nutzer eine Wahlm\"oglichkeit um selbst zu bestimmen mit welcher App der Kontent dargestellt werden soll.
+Das Betriebssystem schaut nun welche installierten Apps diesen Kontent verarbeiten k\"onnen und gibt bei mehreren M\"oglichkeiten dem Nutzer eine Wahlm\"oglichkeit, damit der Nutzer selbst bestimmen kann mit welcher App der Kontent dargestellt werden soll.
 
-Damit das Betriebssystem jedoch weis, welche Impliziten Intents von einer App verarbeiten werden k\"onnen m\"ussen sogenannten "`Intent Filter"' im Manifest angegeben werden.
-Im Manifest m\"ussen alle Komponenten registriert werden, so auch die Activitys einer App. In der Angabe zur Activity kann zus\"atzlich ein Intent Filter hinzugef\"ugt werden, welcher angibt, dass diese spezielle Activity in der Lage ist bestimmte Intents zu verarbeiten.
+Damit das Betriebssystem jedoch wei\ss{}, welche impliziten Intents von einer App verarbeiten werden k\"onnen, m\"ussen sogenannten "`Intent Filter"' im Manifest angegeben werden.
+Im Manifest m\"ussen alle Komponenten registriert werden, so auch die Activitys einer App. In der Angabe zur Activity kann zus\"atzlich ein Intent Filter hinzugef\"ugt werden, welcher angibt, dass diese spezielle Activity in der Lage ist, bestimmte Intents zu verarbeiten.
 
-Im Listing wird nur der Manifest-Ausschnitt mit der betreffenden Activity gezeigt (1), wobei diese einen Intent Filter besitzt der einen View \"offnet (2). Zus\"atzlich zur Aktion wurde noch eine entsprechende Kategorie angef\"ugt, welcher den Intent weiter eingrenzt (3). \cite{VogellaIntent}
+Im Listing wird nur der Manifest-Ausschnitt mit der betreffenden Activity gezeigt (1), wobei diese einen Intent Filter besitzt, der einen View \"offnet (2). Zus\"atzlich zur Aktion wurde noch eine entsprechende Kategorie angef\"ugt, welcher den Intent weiter eingrenzt (3). \cite{VogellaIntent}
 
 \lstinputlisting{Code/ImpliziterIntentManifestExample.xml}
 
 \subsubsection{Die Activity} \label{Die Activity aus Programmierersicht}
-Activitys sind wie im Kapitel \ref{Die Activity aus Nutzersicht} schon dargestellt die Benutzeroberfl\"ache, welche der Nutzer sieht, und mit der er interagieren kann.
+Activitys sind, wie im Kapitel \ref{Die Activity aus Nutzersicht} schon dargestellt, die Benutzeroberfl\"ache, welche der Nutzer sieht und mit der er interagieren kann.
 
 Eine Activity-Klasse erbt von der Android-API-Klasse \texttt{ActionBarActivity} und hat die in der Tabelle \ref{Lebenszyklus-Methode einer Activity} aufgef\"uhrten wichtigen Methoden, welche sie von der Oberklasse erbt.
 
@@ -127,12 +127,12 @@ Eine Activity-Klasse erbt von der Android-API-Klasse \texttt{ActionBarActivity} 
 \begin{table}[!ht]
 \begin{tabular}{|p{3cm}|p{12cm}|}
  \hline Methode & Beschreibung \\
- \hline onCreate & Diese Methode wird beim erzeugen der Activity aufgerufen und kann wie ein Konstruktor verwendet werden. Es werden alle Felder, Formulare, Men\"us und Layouts hier initialisiert.\\&\\
- onStart & Wird ausgef\"uhrt, wenn die Activity neu erzeugt wird oder sie aus dem Hintergrund wieder hervortritt, wie es zum Beispiel beim dr\"ucken der Zur\"ucktaste der Fall ist.\\&\\
- onResume & Wenn eine teilweise verdeckte Activity wieder in den Focus r\"uckt wird diese Methode Aufgerufen.\\&\\
+ \hline onCreate & Diese Methode wird beim Erzeugen der Activity aufgerufen und kann wie ein Konstruktor verwendet werden. Es werden alle Felder, Formulare, Men\"us und Layouts hier initialisiert.\\&\\
+ onStart & Wird ausgef\"uhrt, wenn die Activity neu erzeugt wird oder sie aus dem Hintergrund wieder hervortritt, wie es zum Beispiel beim Dr\"ucken der Zur\"ucktaste der Fall ist.\\&\\
+ onResume & Wenn eine teilweise verdeckte Activity wieder in den Focus r\"uckt, wird diese Methode aufgerufen.\\&\\
  onPause & Diese Methode wird Ausgef\"uhrt, wenn die Activity teilweise verdeckt und somit inaktiv wird.\\&\\
  onStop & Wird ausgef\"uhrt, wenn die Activity in den Hintergrund tritt und auf den Stack abgelegt wird.\\&\\
- onRestart & Die Activity r\"uckt vom Stack wieder in den Vordergrund weil sie wieder ben\"otigt wird.\\&\\
+ onRestart & Die Activity r\"uckt vom Stack wieder in den Vordergrund, weil sie wieder ben\"otigt wird.\\&\\
  onDestroy & Diese Methode wird ausgef\"uhrt, wenn die Activity beendet wird. In ihr sollten alle belegten Ressourcen wieder freigegeben werden.\\
  \hline
 \end{tabular}
@@ -142,16 +142,16 @@ Eine Activity-Klasse erbt von der Android-API-Klasse \texttt{ActionBarActivity} 
 \FloatBarrier
 
 \subsubsection{Broadcast Receiver} \label{Broadcast Receiver aus Programmierersicht}
-Eine Broadcast-Receiver-Klasse erbt von der Android-API-Klasse \texttt{BroadcastReceiver}. Ein Broadcast Receiver erbt nur die Methode \texttt{onReceive} welche Ausgef\"uhrt wird, wenn ein Broadcast empfangen wird. Hieraus wird auch ersichtlich, das ein Broadcast Receiver nur zur Zeit der Ausf\"uhrung existiert.
+Eine BroadcastReceiver-Klasse erbt von der Android-API-Klasse \texttt{BroadcastReceiver}. Ein Broadcast Receiver erbt nur die Methode \texttt{onReceive}, welche ausgef\"uhrt wird, wenn ein Broadcast empfangen wird. Hieraus wird auch ersichtlich, das ein Broadcast Receiver nur zur Zeit der Ausf\"uhrung existiert.
 
-Um einen Statischen Receiver im Manifest einzutragen wird ein Eintrag in der Manifest-Datei ben\"otigt, wie im Listing unten beispielhaft f\"ur einen Receiver der auf das Event \texttt{BOOT\_COMPLETED} reagiert dargestellt ist. Dieser Receiver wird ausgef\"uhrt, wenn das System fertig gebootet hat. Zum einen wird der Name der Receiver-Klasse eingetragen (BootReceiver), zum anderen auf welchen Intent er reagieren soll (im Beispiel \texttt{BOOT\_COMPLETED}).
+Um einen statischen Receiver zu registrieren, wird ein Eintrag in der Manifest-Datei ben\"otigt, wie im Listing unten beispielhaft f\"ur einen Receiver, der auf das Event \texttt{BOOT\_COMPLETED} reagiert, dargestellt ist. Dieser Receiver wird ausgef\"uhrt, wenn das System fertig gebootet hat. Zum einen wird der Name der Receiver-Klasse eingetragen (BootReceiver), zum anderen auf welchen Intent er reagieren soll (im Beispiel \texttt{BOOT\_COMPLETED}).
 
 \lstinputlisting{Code/BroadcastReceiverManifest.xml}
 
-Ein Dynamischer Broadcast Receiver wird einfach innerhalb einer Javaklasse zum Beispiel einer Activity aufgerufen und ist dann f\"ur die Lebensdauer der Komponente aktiv. Wird die Komponente geschlossen kann der Receiver folglich nicht mehr reagieren.
+Ein dynamischer Broadcast Receiver wird einfach innerhalb einer Javaklasse zum Beispiel einer Activity aufgerufen und ist dann f\"ur die Lebensdauer der Komponente aktiv. Wird die Komponente geschlossen, kann der Receiver folglich nicht mehr reagieren.
 
 \subsubsection{Services} \label{Services}
-Wie schon im Kapitel \ref{Services aus Nutzersicht} vorgestellt, gibt es unter Android die Local Services und die Remote Services. Beide Arten m\"ussen in der Manifest-Datei aufgef\"uhrt werden, wobei ein Local Servie nur mit dem Klassenname angegeben werden muss, wie das Listing zeigt. Der Klassenname des Service ist im Beispiel "`DatabaseService"', der Punkt sagt aus, dass sich die Klasse im selben Verzeichnis wie das Manifest befindet.
+Wie schon im Kapitel \ref{Services aus Nutzersicht} vorgestellt, gibt es unter Android die Local Services und die Remote Services. Beide Arten m\"ussen in der Manifest-Datei aufgef\"uhrt werden, wobei ein Local Servie nur mit dem Klassennamen angegeben werden muss, wie das Listing zeigt. Der Klassenname des Service ist im Beispiel "`DatabaseService"', der Punkt sagt aus, dass sich die Klasse im selben Verzeichnis wie das Manifest befindet.
 
 \lstinputlisting{Code/LocalServiceManifest.xml}
 
@@ -169,7 +169,7 @@ Ein Local Service wird mit der Methode \texttt{startService} gestartet und besit
 \begin{table}[!ht]
 \begin{tabular}{|p{3cm}|p{12cm}|}
  \hline Methode & Beschreibung \\
- \hline onCreate & Diese Methode wird beim erzeugen des Service aufgerufen und kann wie ein Konstruktor verwendet werden. Sie sollte f\"ur Initialisierungen genutzt werden.\\&\\
+ \hline onCreate & Diese Methode wird beim Erzeugen des Service aufgerufen und kann wie ein Konstruktor verwendet werden. Sie sollte f\"ur Initialisierungen genutzt werden.\\&\\
  onStartCommand & Wird aufgerufen, wenn die Methode \"uber \texttt{"`Context"'.startService} gestartet wird und ist neu seit Android 2.0.\\&\\
  onDestroy & Diese Methode wird aufgerufen, wenn der Service beendet wird, wobei ein Service sich auch \"uber die Methode \texttt{stopSelf} selbstst\"andig beenden kann.\\
  \hline
@@ -186,7 +186,7 @@ Ein Remote Service wird an eine Activity gebunden und wird \"uber die Methode \t
 \begin{tabular}{|p{3cm}|p{12cm}|}
  \hline Methode & Beschreibung \\
  \hline onCreate & Wie in Tabelle \ref{Lebenszyklus-Methode eines Local Service}.\\&\\
- onBinde & Wird aufgerufen, sobald sich eine Komponente mit dem Service Verbindet und gibt eine Instanz vom Typ \texttt{IBinder} zur\"uck.\\&\\
+ onBinde & Wird aufgerufen, sobald sich eine Komponente mit dem Service verbindet und gibt eine Instanz vom Typ \texttt{IBinder} zur\"uck.\\&\\
  onUnbinde & Wird aufgerufen, wenn die Komponente die Verbindung zum Service beendet.\\&\\
  onDestroy & Wie in Tabelle \ref{Lebenszyklus-Methode eines Local Service}.\\
  \hline
@@ -197,44 +197,44 @@ Ein Remote Service wird an eine Activity gebunden und wird \"uber die Methode \t
 \FloatBarrier
 
 \subsubsection{ContentProvider}
-ContentProvider sind wie im Kapitel \ref{ContentProvider aus Nutzersicht} schon erw\"ahnt in der Lage, Dateiinhalte \"uber Applikationsgrenzen hinweg durchzureichen.
+ContentProvider sind wie im Kapitel \ref{ContentProvider aus Nutzersicht} schon erw\"ahnt, in der Lage, Dateiinhalte \"uber Applikationsgrenzen hinweg durchzureichen.
 
-Ein ContentProvider erbt von der abstrackte Klasse \texttt{ContentProvider} aus der Android-API und muss mindestens die vier Methoden \texttt{query}, \texttt{insert}, \texttt{update} und \texttt{delete} implementieren. \"Uber diese Methoden ist es m\"oglich Daten zu bekommen und gegebenen falls zu manipulieren. Nat\"urlich m\"ussen die Daten \"uberhaupt erst mal gefunden werden, bevor sie gelesen oder ge\"andert werden k\"onnen, dies geschieht \"uber die Methode \texttt{getContentResolver}. \cite{Kuehn12}
+Ein ContentProvider erbt von der abstrakten Klasse \texttt{ContentProvider} aus der Android-API und muss mindestens die vier Methoden \texttt{query}, \texttt{insert}, \texttt{update} und \texttt{delete} implementieren. \"Uber diese Methoden ist es m\"oglich, Daten zu bekommen und gegebenenfalls zu manipulieren. Nat\"urlich m\"ussen die Daten \"uberhaupt erst mal gefunden werden, bevor sie gelesen oder ge\"andert werden k\"onnen, dies geschieht \"uber die Methode \texttt{getContentResolver}. \cite{Kuehn12}
 
-Der Lebenszyklus eines ContentProvider ist \"ahnlich dem eines Broadcast Receivers, da er nur erstellt wenn er wirklich ben\"otigt wird. Sollte auf einen Provider zugegriffen werden, dessen App nicht l\"auft, wird dieser vor dem Aufruf vom Betriebssystem erstellt.
+Der Lebenszyklus eines ContentProvider ist \"ahnlich dem eines Broadcast Receivers, da er nur erstellt wird, wenn er wirklich ben\"otigt wird. Sollte auf einen Provider zugegriffen werden, dessen App nicht l\"auft, wird dieser vor dem Aufruf vom Betriebssystem erstellt.
 
-Da das Thema der ContentProvider jedoch sehr weitl\"aufig ist, kann es and dieser Stelle nicht in allen Einzelheiten erl\"autert werden. 
+Da das Thema der ContentProvider jedoch sehr weitl\"aufig ist, kann es an dieser Stelle nicht in allen Einzelheiten erl\"autert werden. \cite{DevContentProviders}
 
 \subsection{Google-APIs} \label{Google-APIs}
-Als Google-APIs werden Schnittstellen zu verschiedenen Google-Diensten verstanden. Um Dienste von Google wie zum Beispiel Google Maps nutzen zu k\"onnen, m\"ussen zum einen die APIs in das Projekt eingebunden und zum anderen muss die App bei Google registriert werden.
+Als Google-APIs werden Schnittstellen zu verschiedenen Google-Diensten verstanden. Um Dienste von Google wie zum Beispiel Google Maps nutzen zu k\"onnen, m\"ussen zum einen die APIs in das Projekt eingebunden und zum anderen die App bei Google registriert werden.
 
 
 \subsubsection{Google-APIs aktivieren}
-Um eine App bei Google zu registrieren muss die "`Google Developers Console"' aufgerufen werden, welche unter dem Link \texttt{\url{https://code.google.com/apis/console/\#}} zu finden ist. Hier f\"ur ist eine Anmeldung mit einem Google-Konto notwendig, auf welches die App registriert wird. Beim ersten betreten der Console muss ein neues Projekt angelegt werden und die entsprechenden APIs, welche Verwendung finden sollen, m\"ussen gew\"ahlt werden.
+Um eine App bei Google zu registrieren, muss die "`Google Developers Console"' aufgerufen werden, welche unter dem Link \texttt{\url{https://code.google.com/apis/console/\#}} zu finden ist. Hierf\"ur ist eine Anmeldung mit einem Google-Konto notwendig, auf welches die App registriert wird. Beim ersten Betreten der Console muss ein neues Projekt angelegt werden und die entsprechenden APIs, welche Verwendung finden sollen, m\"ussen gew\"ahlt werden.
 
-Hier f\"ur wird in der linken Leiste unter dem Projektnamen auf \texttt{Overview} geklickt. Nun m\"ussen unter \texttt{Enable an API} die APIs ausgew\"ahlt werden, welche in der entsprechenden App Verwendung finden sollen. Wurden alle ben\"otigten APIs aktiviert, muss nun der Zugang von der App aus geschaffen werden. \cite{GDevMaps}
+Hierf\"ur wird in der linken Leiste unter dem Projektnamen auf \texttt{Overview} geklickt. Nun m\"ussen unter \texttt{Enable an API} die APIs ausgew\"ahlt werden, welche in der entsprechenden App Verwendung finden sollen. Wurden alle ben\"otigten APIs aktiviert, muss nun der Zugang von der App aus geschaffen werden. \cite{GDevMaps}
 
-\subsubsection{Einen API-Key ersten}
-Damit die App eine Google-API nutzen kann, muss diese im Projket registriert werden. In der Developers Console unter dem Punkt \texttt{Credentials} muss nun ein "`Public API access"' erstellt werden. Hier f\"ur wird der Punkt \texttt{Android key} unter \texttt{Create new Key} aufgerufen. 
+\subsubsection{Einen API-Key erstellen}
+Damit die App eine Google-API nutzen kann, muss diese im Projekt registriert werden. In der Developers Console unter dem Punkt \texttt{Credentials} muss nun ein "`Public API access"' erstellt werden. Hierf\"ur wird der Punkt \texttt{Android key} unter \texttt{Create new Key} aufgerufen. 
 
-Nun verlangt Google ein SHA1 Zertifikat, mit welchem die Apk-Datei signiert wird. Mit Hilfe von diesem Zertifikat ist es Google m\"oglich einen API-Zugriff einer App zuzuordnen.
+Nun verlangt Google ein SHA1-Zertifikat, mit welchem die Apk-Datei signiert wird. Mit Hilfe von diesem Zertifikat ist es Google m\"oglich, einen API-Zugriff einer App zuzuordnen.
 
-Um den schon im Kapitel \ref{Eine APK-Datei} erw\"ahnten Debug-Key auszulesen muss im Eclipse unter \texttt{Window $\Rightarrow$ Preferences $\Rightarrow$ Android $\Rightarrow$ Build} das Build-Men\"u aufgerufen werden. Hier ist zum einen der Ablageort des Zertifikates und zum anderen das ben\"otigte SHA1 Zertifikat zu finden.
+Um den schon im Kapitel \ref{Eine APK-Datei} erw\"ahnten Debug-Key auszulesen, muss im Eclipse unter \texttt{Window $\Rightarrow$ Preferences $\Rightarrow$ Android $\Rightarrow$ Build} das Build-Men\"u aufgerufen werden. Hier ist zum einen der Ablageort des Zertifikates und zum anderen das ben\"otigte SHA1 Zertifikat zu finden.
 
-Der dort abgelegte Key, muss nun in das Fenster der Developers Console kopiert werden. Zus\"atzlich muss er noch mit einem Semikolon und dem Packagenamen, wie im Android-Manifest angegeben, ergenzt werden. \\\texttt{45:B5:E4:6F:36:AD:0A:98:94:B4:02:66:2B:12:17:F2:56:26:A0:E0;com.example} w\"are hierf\"ur ein Beispiel. 
+Der dort abgelegte Key, muss nun in das Fenster der Developers Console kopiert werden. Zus\"atzlich muss er noch mit einem Semikolon und dem Packagenamen, wie im Android-Manifest angegeben, erg\"anzt werden. \\\texttt{45:B5:E4:6F:36:AD:0A:98:94:B4:02:66:2B:12:17:F2:56:26:A0:E0;com.example} w\"are hierf\"ur ein Beispiel. 
 \cite{GolemHBGoogleServices} \cite{Android44}
 
-Nach diesem Schritt wird ein API-Key generierte, welcher nun noch in das Manifest der entsprechenden App eingef\"ugt werden muss.
+Nach diesem Schritt wird ein API-Key generiert, welcher nun noch in das Manifest der entsprechenden App eingef\"ugt werden muss.
 Ein Beispiel f\"ur einen API-Key w\"are: \\\texttt{AIzaSyDnKUs4NIdYqQ2EfjW4RXDVBZm8mvx5Va8}
 
-Der generierte API-Key muss im Manifest unter \texttt{application} wie im Listing gezeigt unter Angabe der verwendeten API eingetragen werden. 
+Der generierte API-Key muss im Manifest unter \texttt{application}, wie im Listing gezeigt, unter Angabe der verwendeten API eingetragen werden. 
 \lstinputlisting{Code/API-KeyManifest.xml}
 
 \subsection{Google-APIs herunterladen und einbinden}
-Nachdem die App gegen\"uber Googel verifiziert ist, m\"ussen f\"ur das Arbeiten mit den Google-APIs diese nat\"urlich auch noch heruntergeladen und in das entsprechende Projekt eingebunden werden. Die APIs m\"ussen \"uber den \ac{SDK}-Manager heruntergeladen werden. Sie sind unter Extras \texttt{Google Play Services} zu finden.
+Nachdem die App gegen\"uber Google verifiziert ist, m\"ussen f\"ur das Arbeiten mit den Google-APIs diese nat\"urlich auch noch heruntergeladen und in das entsprechende Projekt eingebunden werden. Die APIs m\"ussen \"uber den \ac{SDK}-Manager heruntergeladen werden. Sie sind unter Extras $\Rightarrow$ \texttt{Google Play Services} zu finden.
 
-Nach der Installation \"uber den \ac{SDK}-Manager sind die APIs unter \texttt{<Android-SDK>/extras /google/google\_play\_services/libproject/google-play-services\_lib} aufgelistet. Hierbei handelt es sich um ein Library-Projekt, welches in die App einbinden muss.
+Nach der Installation \"uber den \ac{SDK}-Manager sind die APIs unter \texttt{<Android-SDK>/extras /google/google\_play\_services/libproject/google-play-services\_lib} aufgelistet. Hierbei handelt es sich um ein Library-Projekt, welches in die App eingebunden werden muss.
 
-Um die Google-APIs nun verwenden zu k\"onnen, muss das Library-Projekt in den Workspace aufgenommen werden, was \"uber \texttt{File $\Rightarrow$ Import... $\Rightarrow$ Android - Existing Android Code into Workspace} geschiet. Ist das erledingt wird die Library nat\"urlich noch zum eigentlichen Projekt hinzugef\"ugt. Dies geschiet mit einem Rechtsklick auf das entsprechende Projekt, unter \texttt{Properties $\Rightarrow$ Android $\Rightarrow$ Libaray $\Rightarrow$ Add...}. Hier muss der Library-Ordner google-play-services\_lib hinzugef\"ugt eingetragen sein.
+Um die Google-APIs nun verwenden zu k\"onnen, muss das Library-Projekt in den Workspace aufgenommen werden, was \"uber \texttt{File $\Rightarrow$ Import... $\Rightarrow$ Android - Existing Android Code into Workspace} geschieht. Ist das erledigt wird die Library nat\"urlich noch zum eigentlichen Projekt hinzugef\"ugt. Dies geschieht mit einem Rechtsklick auf das entsprechende Projekt unter \texttt{Properties $\Rightarrow$ Android $\Rightarrow$ Libaray $\Rightarrow$ Add...}. Hier muss der Library-Ordner google-play-services\_lib hinzugef\"ugt eingetragen sein.
 
-Sind alle diese Schirtte erledingt, k\"onnen die Google-APIs nun Verwendung finden. Wie APIs im speziellen implementiert werden m\"ussen, nur an den in der Arbeit verwendeten APIs erkl\"art. \cite{ApiAccess} \cite{GolemHBGoogleServices}
+Sind alle diese Schritte erledingt, k\"onnen die Google-APIs nun Verwendung finden. Wie APIs im speziellen implementiert werden m\"ussen, ist nur an den in der Arbeit verwendeten APIs erkl\"art (siehe Kapitel ?????). \cite{ApiAccess} \cite{GolemHBGoogleServices}

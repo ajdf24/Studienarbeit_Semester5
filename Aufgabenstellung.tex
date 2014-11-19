@@ -1,5 +1,5 @@
 \section{Aufgabenstellung}
-Mit Hilfe einer mobilen Android-Applikation sollen Feuerwehreinsatzkräfte durch eine eingehende "`Alarm-SMS"' benachrichtigt werden, welche von Leitstellen selbst oder von Privatfirmen stammt, welche die Funkinformationen der Leitstellen auswerten. Die gesendeten SMS sind allerdings nicht als Alarmmeldung sofort identifizierbar, sondern kommen wie jede andere SMS beim Empfänger an.
+Mit Hilfe einer mobilen Android-Applikation sollen Feuerwehreinsatzkräfte durch eine eingehende Alarm-SMS benachrichtigt werden, welche von Leitstellen selbst oder von Privatfirmen stammt, welche die Funkinformationen der Leitstellen auswerten. Die gesendeten SMS sind allerdings nicht als Alarmmeldung sofort identifizierbar, sondern kommen wie jede andere SMS beim Empfänger an.
 Beim Erhalt einer solchen SMS soll der Nutzer des Telefons akustisch über einstellbare Klingeltöne sowie visuell über das in Android-Geräten übliche "`Notification-Light"' informiert werden.
 
 Eine Alarm-SMS besteht, wie jede andere SMS auch, zum einen aus dem Absendernamen, welcher eine Telefonnummer oder eine Zeichenkette sein kann. Zum anderen enthält die SMS einen Nachrichtentext, in welchem bestimmte Informationen, wie Name der Feuerwehr, Einsatzzeit und Einsatzstichwort stehen.
@@ -8,7 +8,7 @@ Um eine Unabhängigkeit vom Absendesystem zu erreichen, soll der Nutzer zuerst ei
 
 Sollte es sich um eine Alarm-SMS handeln, so soll der Nutzer umgehend darauf besonders hingewiesen werden. Hierfür soll überprüft werden, welche Möglichkeiten für eine besondere Alarmierung im Android-System bestehen.
 
-Der Nutzer soll über ein neutrales Regelbasiertes System neue Regeln definieren, diese bearbeiten und löschen können. 
+Der Nutzer soll über ein neutrales regelbasiertes System neue Regeln definieren, diese bearbeiten und löschen können. 
 Hierf\"ur muss ein System ausgearbeitet werden, welches funktional und nutzerfreundlich ist. Auch soll der Export beziehungsweise der Import von Regeln m\"oglich sein, um diese untereinander austauschen zu k\"onnen.
 
 % Bsp: Absender-Nummer.equals("+4972160825769") AND SMS.getContent().contains("foo")
@@ -19,5 +19,5 @@ Zusätzlich sollen verschiedene Alarmtöne zur Auswahl stehen, unter denen der Nut
 
 Zus\"atzlich zur eigentlichen Alarmierungsfunktion soll untersucht werden, wie sich eine Post-Funktion f\"ur "`Social Networks"' wie Twitter, Facebook oder Google+ umsetzen l\"asst. Sollte sich ein String mit dem Einsatzort in der SMS befinden, so soll die Applikation die M\"oglichkeit bieten eine Navigation zu starten.
 
-Zum Abschluss soll untersucht werden, wie es m\"oglich ist eine SMS oder beziehungsweise eine E-Mail zu senden, um den Einheitsf\"uhrer \"uber ein m\"ogliches kommen beziehungsweise ein Fernbleiben zu melden.
+Zum Abschluss soll untersucht werden, wie es m\"oglich ist, eine SMS oder beziehungsweise eine E-Mail zu senden, um den Einheitsf\"uhrer \"uber ein m\"ogliches Kommen beziehungsweise ein Fernbleiben zu melden.
 
