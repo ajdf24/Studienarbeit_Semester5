@@ -1,0 +1,36 @@
+\section{Analyse des Lastenhefts}
+Im Lastenhefts im Kapitel \ref{Lastenheft} wurde auf\"uhrlich beschrieben, wie die Applikation funktionieren soll. Au\ss{}erdem wurde darauf eingegangen, welche Funktionen und Leistungen umgesetzt werden sollen. 
+
+Nun, nachdem das Androidsystem ausf\"uhrlich analysiert wurde, wird das Lastenheft Punkt f\"ur Punkt ausgewertet um festzulegen welche Funktionen mit welchen Mitteln umgesetzt werden k\"onnen.
+
+\subsection{Analyse des zusammenspiel mit anderen Systemen}
+Da die Applikation m\"oglichst weit abw\"artskompatibel sein soll, wird im Projekt das minimale API-Level auf die Version 14 eingestellt. Mit der Version 14 werden alle Androidversionen ab 4.0 unterst\"utzt, was in etwa 90 Prozent aller Android-Ger\"ate sind. Das target API-Level wird auf die nun neue Version 21 eingestellt. \cite{AndroidVerteilung} 
+
+\subsection{Analyse der Produktfunktionen}
+Im folgenden werden alle Produktfunktionen die im Lastenheft aufgef\"uhrt sind einzeln ausgewertet und beschrieben mit welchen Android-Technologien sie sich umsetzten lassen.
+
+\subsubsection{LF10}
+Um eigehende Nachrichtigen in Android zu analysieren zu k\"onnen, muss ein Broadcast Receiver Verwendung finden. Da eine Alarmierung auch geschehen soll, wenn die App nicht aktiv ist, muss ein statischer Broadcast Receiver verwendet werden (siehe Kapitel \ref{Broadcast Receiver aus Nutzersicht}). Dieser Receiver soll eigehende Nachrichtigen auf das zutreffen von Regeln analysieren und gegebenenfalls eine Alarmierung durchf\"uhren. 
+
+\subsubsection{LF20}
+Der Nutzer soll Regeln angeben k\"onnen, nach welchen alarmiert werden soll. Hierf\"ur soll der Nutzer folgende Dinge angeben k\"onnen:
+\begin{itemize}
+ \item Art der Nachricht auf die geachtet werden soll. ( vorerst nur SMS und E-Mail )
+ \item Von welchem Absender die Nachricht kommen muss.
+ \item Welche Schlagw\"orter die Nachricht enthalten/nicht enthalten muss.
+ \item Welcher Alarmton gespielt werden soll.
+ \item Was in sozialen Netzwerken gepostet werden soll.
+ \item Wann eine Weiterleitung von Nachrichten geschehen soll. ( Entfernungsabh\"angige automatische Antwort )
+\end{itemize}
+
+Die Regeln m\"ussen erstellt, gelesen, geupdatet und gel\"oscht werden k\"onnen, was die Funktionsweise von CRUD abbildet.
+
+\subsubsection{LF30}
+Damit die App sp\"ater einfach erweitert werden kann, soll die Regelerstellung m\"oglichst abstrakt gehalten werden soll. Dies geht am besten unter der Verwendung eines Factory-Pattern, welches die Regeln abstrakt darstellt. F\"ur eine Erweiterung muss dann die neue Regelart lediglich die abstraktion der Regel implementieren. 
+
+\subsubsection{LF40}
+Um einen Post in sozialen Netzwerken abzusetzen, muss ein entsprechender Intent erstellt werden. Eine andere M\"oglichkeit w\"are direkt die APIs von verschiedenen sozialen Netzwerken zu implementieren. Welche der beiden M\"oglichkeiten besser ist, muss im verlauf der Arbeit noch untersucht werden.
+
+F\"ur das versenden einer SMS muss keine andere App verwendet werden, da dies direkt aus der App geschehen kann. F\"ur das senden einer SMS muss nat\"urlich die entsprechende Berechtigung im Manifest eingetragen werden.
+
+\subsubsection{LF50}
