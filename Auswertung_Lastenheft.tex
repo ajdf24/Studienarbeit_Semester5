@@ -34,3 +34,49 @@ Um einen Post in sozialen Netzwerken abzusetzen, muss ein entsprechender Intent 
 F\"ur das versenden einer SMS muss keine andere App verwendet werden, da dies direkt aus der App geschehen kann. F\"ur das senden einer SMS muss nat\"urlich die entsprechende Berechtigung im Manifest eingetragen werden.
 
 \subsubsection{LF50}
+Die Navigation kann nur durchgef\"uhrt werden, wenn die Nachricht Koordinaten oder eine Adresse enth\"alt. Hierf\"ur muss die Nachricht nach Nutzerangaben geparst werden. Ist ein Einsatzort angegeben, wird \"uber ein Intent die Navigation gestartet.
+
+\subsubsection{LF60}
+Um die Regel zu \"ubertragen muss ein Format gefunden werden, welches Android unterst\"utzt. Hierf\"ur bietet sich das f\"ur solche aufgaben entwickelte JSON-Format an. Die Informationen m\"ussen mit Hilfe von Intents gesendet und empfangen werden.
+
+\subsubsection{LF70}
+Die Deaktivierung kann mit Hilfe eines Flags umgesetzt werden, welches angibt ob eine Regel Aktiv ist oder nicht.
+
+\subsubsection{LF80}
+Um auf die Klingelt\"one zuzugreifen, muss ein Content Provider eigesetzt werden, welcher den Zugriff auf interne T\"one regelt. Die mit der App mit gelieferten T\"one m\"ussen im Projektordner untergebracht und mit in die .apk-Datei gepackt werden.
+
+\subsubsection{LF90}
+Eine Einf\"uhrung kann mit Hilfe von Bildern oder Pfeilen geschehen wie es Android selbst auch macht. Hierf\"ur muss der praktikabelste Weg gefunden werden.
+
+\subsubsection{LF100}
+F\"ur die Entfernungsmessung k\"onnen Googledienste verwendet werden, die Messung soll bei eingehen mit Hilfe von GPS-Koordinaten geschehen. Um eine SMS zu senden muss der Nutzer den Inhalt vorgegeben haben. Der Nutzer kann selbst w\"ahlen wann eine solche Antwort versand werden soll. Um den Akku des Ger\"ates nicht unn\"otig zu belasten, soll eine Standortermittlung nur erfolgen wenn eine Senderegel zutrifft.
+
+\subsubsection{LF110}
+Die Android-Klassenbibliothek enth\"alt schon Klassen, welche einen Text in Sprache umwandeln und diesen Vorlesen.
+
+\subsection{Analyse der Produktdaten}
+Im folgenden werden alle Produktdaten die im Lastenheft aufgef\"uhrt sind einzeln ausgewertet und beschrieben mit welchen Android-Technologien sie sich umsetzten lassen.
+
+\subsubsection{LD10}
+Um Regeln nicht nur fl\"uchtig im Arbeitsspeicher zu halten, m\"ussen sie abgespeichert werden. Hierf\"ur bietet sich eine Speicherung mit Hilfe des JSON-Formats an, da der Serialisierer ( Jackson ), welcher von Google stammt, auch unter Android lauff\"ahig ist. Hierf\"ur muss die Jackson-Libary in das Projekt eingebunden werden.
+Mit Jackson ist es m\"oglich Java-Klassen als JSON-Datei zu schreiben und zu lesen. Diese Dateien k\"onnen dann im Androiddateisystem abgelegt werden.
+
+\subsubsection{LD20}
+Je nachdem, welche T\"one lizenzfrei zu erhalten sind werden sie in die App eingebunden. Die Tondateien m\"ussen im Android-Projekt im Ordner "`res"' abgelegt werden, da dies der Ablageort f\"ur s\"amtliche Ressourcen ist.
+
+\subsubsection{LD30}
+Das die Regeln jeweils als Datei im JSON-Format abgespeichert sind, ist ein austausch ganz einfach m\"oglich, da nur die ben\"otigte Regeldatei \"ubertragen werden muss.
+
+\subsubsection{LD40}
+Da die App zum funktionieren gewissen Daten wie den Standort und die Kontakte ben\"otigt, m\"ussen diese Daten abgefragt und verarbeitet werden. Eine zus\"atzliche Verschl\"usselung ist somit nicht n\"otig. Der Standort wird jedoch zur Entfernungsmessung an Google gesendet, wobei der Nutzer hier zustimmen muss.
+
+
+\subsection{Analyse der Produktleistungen}
+Im folgenden werden alle Produktleistungen die im Lastenheft aufgef\"uhrt sind einzeln ausgewertet und beschrieben mit welchen Android-Technologien sie sich umsetzten lassen.
+
+\subsubsection{LL10}
+Wenn die App einmal gestartet wurde, so sind die statischen Broadcast Receiver sofort nach dem Systemstart wieder Online und aktiv ohne das etwas aus Programmierer oder Nutzersicht getan werden muss. Sollte der Nutzer die App komplett beenden, so muss er diese auch selbst wieder starten.
+Durch die aktiven Broadcast Receiver wird die App bei erhalt einer entsprechenden Nachricht automatisch gestartet.
+
+\subsubsection{LL20}
+{\color{red}Hier muss ich erst noch nachschauen wie das mit Bluetooth geht.}

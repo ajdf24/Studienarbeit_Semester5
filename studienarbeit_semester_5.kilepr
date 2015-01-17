@@ -166,10 +166,10 @@ order=2
 
 [item:Auswertung_Lastenheft.tex]
 archive=true
-column=20
+column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=35
+line=4
 mode=LaTeX
 open=true
 order=7
@@ -265,8 +265,8 @@ JumpList=
 ViMarks=.,21,160,[,21,160,],21,160
 
 [view-settings,view=0,item:Auswertung_Lastenheft.tex]
-CursorColumn=20
-CursorLine=35
+CursorColumn=0
+CursorLine=4
 JumpList=
 ViMarks=.,33,219,[,33,219,],33,219
 
