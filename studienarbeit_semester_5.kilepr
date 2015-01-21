@@ -9,7 +9,7 @@ kile_livePreviewStatusUserSpecified=false
 kile_livePreviewTool=LivePreview-PDFLaTeX
 kileprversion=2
 kileversion=2.1.3
-lastDocument=Wireframes.tex
+lastDocument=UseCases.tex
 masterDocument=
 name=Studienarbeit_Semester_5
 pkg_extIsRegExp=false
@@ -107,6 +107,13 @@ Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
 
+[document-settings,item:UseCases.tex]
+Bookmarks=
+Encoding=ISO-8859-1
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+
 [document-settings,item:Wireframes.tex]
 Bookmarks=
 Encoding=ISO-8859-1
@@ -116,10 +123,10 @@ Mode=LaTeX
 
 [item:ADT_Einrichten.tex]
 archive=true
-column=87
+column=12
 encoding=ISO-8859-1
 highlight=LaTeX
-line=115
+line=40
 mode=LaTeX
 open=true
 order=5
@@ -132,7 +139,7 @@ highlight=LaTeX
 line=7
 mode=LaTeX
 open=true
-order=9
+order=10
 
 [item:Android.tex]
 archive=true
@@ -146,10 +153,10 @@ order=4
 
 [item:Aufbau_einer_App.tex]
 archive=true
-column=452
+column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=237
+line=239
 mode=LaTeX
 open=true
 order=6
@@ -202,27 +209,37 @@ highlight=BibTeX
 line=227
 mode=BibTeX
 open=true
-order=10
+order=11
 
 [item:Studienarbeit_Semester_5.tex]
 archive=true
-column=21
+column=16
 encoding=ISO-8859-1
 highlight=LaTeX
-line=145
+line=103
 mode=LaTeX
 open=true
 order=0
 
-[item:Wireframes.tex]
+[item:UseCases.tex]
 archive=true
-column=60
+column=51
 encoding=ISO-8859-1
 highlight=LaTeX
-line=23
+line=53
 mode=LaTeX
 open=true
 order=8
+
+[item:Wireframes.tex]
+archive=true
+column=12
+encoding=ISO-8859-1
+highlight=LaTeX
+line=74
+mode=LaTeX
+open=true
+order=9
 
 [item:studienarbeit_semester_5.kilepr]
 archive=true
@@ -235,8 +252,8 @@ open=false
 order=-1
 
 [view-settings,view=0,item:ADT_Einrichten.tex]
-CursorColumn=87
-CursorLine=115
+CursorColumn=12
+CursorLine=40
 JumpList=
 ViMarks=.,115,87,[,115,87,],115,87
 
@@ -253,8 +270,8 @@ JumpList=
 ViMarks=.,92,320,[,92,320,],92,320
 
 [view-settings,view=0,item:Aufbau_einer_App.tex]
-CursorColumn=452
-CursorLine=237
+CursorColumn=0
+CursorLine=239
 JumpList=
 ViMarks=.,239,214,[,239,200,],239,214
 
@@ -289,13 +306,19 @@ JumpList=
 ViMarks=.,227,13,[,227,13,],227,13
 
 [view-settings,view=0,item:Studienarbeit_Semester_5.tex]
-CursorColumn=21
-CursorLine=145
+CursorColumn=16
+CursorLine=103
 JumpList=
-ViMarks=.,188,29,[,188,9,],188,29
+ViMarks=.,104,0,[,104,0,],104,0
+
+[view-settings,view=0,item:UseCases.tex]
+CursorColumn=51
+CursorLine=53
+JumpList=
+ViMarks=.,67,124,[,67,68,],67,124
 
 [view-settings,view=0,item:Wireframes.tex]
-CursorColumn=60
-CursorLine=23
+CursorColumn=12
+CursorLine=74
 JumpList=
-ViMarks=.,17,112,[,17,70,],17,112
+ViMarks=.,116,0,[,116,0,],116,0
