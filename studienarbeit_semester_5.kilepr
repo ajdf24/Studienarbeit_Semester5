@@ -9,7 +9,7 @@ kile_livePreviewStatusUserSpecified=false
 kile_livePreviewTool=LivePreview-PDFLaTeX
 kileprversion=2
 kileversion=2.1.3
-lastDocument=UseCases.tex
+lastDocument=Quellen.bib
 masterDocument=
 name=Studienarbeit_Semester_5
 pkg_extIsRegExp=false
@@ -303,7 +303,7 @@ ViMarks=.,0,37,[,0,28,],0,37
 CursorColumn=13
 CursorLine=227
 JumpList=
-ViMarks=.,227,13,[,227,13,],227,13
+ViMarks=.,0,0,[,0,0,],-1,-1
 
 [view-settings,view=0,item:Studienarbeit_Semester_5.tex]
 CursorColumn=16
