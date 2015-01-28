@@ -1,4 +1,5 @@
 \section{\"Ubertragung des Lastenhefts in Wireframes}
+\label{Wireframes}
 
 Bei der Bearbeitung des Projekts wurde entschieden, nach der Lastenheftanalyse, zuerst die gesamte GUI nach der Aufgabenstellung des Lastenhefts zu modelieden. Durch diese Vorgehensweise wird schneller ersichtlich welche Android-Komponenten genau ben\"otigt werden und wie sie zu implementieren sind.
 
@@ -114,9 +115,46 @@ Die letzte noch fehlende Activity ist im Wireframe im Bild \ref{Wireframe Geraet
 Mit diesem Standort errechnet die App sp\"ater die Entferung zum Ger\"atehaus.
 \newpage
 
-
 \subsection{Die Evaluierung}
+Die eben gezeigten und genauer beschriebenen Wireframes wurden zusammen mit einer kurzen Pr\"asentation des Projekts der Freiwilligen Feuerwehr Rastenberg vorgestellt.
+Hierbei wurde eine Evaluierung des Projekts vorgenommen. Zusammen mit den Kammeraden wurde der Einsatzbereich der App noch einmal genau analysiert. Hierbei lag der Schwerpunkt auf einer Einsatzalarmierung per SMS. 
+
+Nachdem die Kammeraden in die Grundfunktionen eingewiesen waren, fanden sie Konzept schl\"ussig und gut abgerundet. Sie hatten keinerlei \"Anderungsvorschl\"age bei bestehenden Funktionen. 
+
+Jedoch kam der Wunsch auf, die empfange SMS zus\"atzlich zur Alarmierung auch vorzulesen, da im Alarmfall keine Zeit besteht auf das Smartphone zu schauen. Gleicherma\ss{}en sollten weitere, also Benachrichtigungen die andere als automatiserte Antworten schicken ebenfalls vorgelesen werden.
+
+Hierbei wurde betont, das man mit den vorgelesenen Informationen, bereits auf dem Weg zum Ger\"atehaus, eine Planung und Einteilung der Einsatzkr\"afte vornehmen k\"onnte.
+
+Als Folge daraus wurden die bestehenden Wireframes zum Teil angepasst.
 
 \subsection{Die Wireframes nach der Evaluierung}
+Nach der Evaluation des Projekts wurden die Wireframes noch einmal \"uberarbeitet, um den neuen Anforderungen gerecht zu werden.
+
+Im Bild \ref{Wireframe Regeluebersicht nach Eval} ist wie im Bild \ref{Wireframe Regeluebersicht} die Liste mit allen Einstellungsm\"oglichkeiten einer Regel zu finden. Neu ist der letzte Punkt "`Automatisches Vorlesen"'. Tippt der Nutzer auf diese Einstellung gelangt er zu einer neuen Activity, welche im Bild \ref{Wireframe Vorlesen} genauer gezeigt ist.
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=5cm]{Bilder/WireFrame_RegelauswahlNachEvaluation.png}
+\caption{Wireframe der Regel\"ubersicht nach der Evaluation}
+\label{Wireframe Regeluebersicht nach Eval}
+\centering
+\end{figure}
+
+Im folgenden Bild \ref{Wireframe Vorlesen} ist wie eben schon erl\"autert, die Activity zur Einstellung er automatischen Vorlesung von Nachrichtigen zu segen.
+Der Nutzer hat die Wahl die eingehende Nachricht, welche die Regel matcht vorlesen zu lassen, und alle Nachfolgenden. Hierbei werden alle eingehenden Nachrichten Vorgelesen, welche innerhalb eines Zeitfensters von f\"unf Minuten eintreffen.
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=5cm]{Bilder/WireFrameVorlesen.png}
+\caption{Wireframe der Einstellung zum automatischen Vorlesen}
+\label{Wireframe Vorlesen}
+\centering
+\end{figure}
 
 \subsection{Auswirkungen der Evaluierung auf das Lastenheft}
+Nach der Evaluierung muss das Lastenheft somit um einen weiteren Punkt erweitert werden.
+
+\begin{minipage}{3cm}
+/LF110/
+\end{minipage}
+\begin{minipage}{12,2cm}
+Die App soll beim Erhalt einer Alarmierung nicht nur einen Ton spielen, sondern auch den Inhalt der AlarmSMS vorlesen k\"onnen. Zus\"atzlich sollen alle nachfolgenden Nachrichten innerhalb von f\"unf Minuten auch vorgelesen werden, um die Planung von Einsatzkr\"aften schon auf dem Weg zum Ger\"atehaus beginnen zu k\"onnen.\\
+\end{minipage}
