@@ -9,7 +9,7 @@ kile_livePreviewStatusUserSpecified=false
 kile_livePreviewTool=LivePreview-PDFLaTeX
 kileprversion=2
 kileversion=2.1.3
-lastDocument=AKD.tex
+lastDocument=UseCases.tex
 masterDocument=
 name=Studienarbeit_Semester_5
 pkg_extIsRegExp=false
@@ -140,12 +140,12 @@ order=5
 
 [item:AKD.tex]
 archive=true
-column=12
+column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=10
+line=0
 mode=LaTeX
-open=true
+open=false
 order=10
 
 [item:Abkuerzungen.tex]
@@ -156,7 +156,7 @@ highlight=LaTeX
 line=7
 mode=LaTeX
 open=true
-order=11
+order=9
 
 [item:Android.tex]
 archive=true
@@ -190,10 +190,10 @@ order=2
 
 [item:Auswertung_Lastenheft.tex]
 archive=true
-column=76
+column=70
 encoding=ISO-8859-1
 highlight=LaTeX
-line=81
+line=63
 mode=LaTeX
 open=true
 order=7
@@ -226,7 +226,7 @@ highlight=BibTeX
 line=227
 mode=BibTeX
 open=true
-order=12
+order=10
 
 [item:Studienarbeit_Semester_5.tex]
 archive=true
@@ -246,7 +246,7 @@ highlight=LaTeX
 line=1
 mode=LaTeX
 open=true
-order=8
+order=11
 
 [item:Wireframes.tex]
 archive=true
@@ -256,7 +256,7 @@ highlight=LaTeX
 line=149
 mode=LaTeX
 open=true
-order=9
+order=8
 
 [item:studienarbeit_semester_5.kilepr]
 archive=true
@@ -305,8 +305,8 @@ JumpList=
 ViMarks=.,21,160,[,21,160,],21,160
 
 [view-settings,view=0,item:Auswertung_Lastenheft.tex]
-CursorColumn=76
-CursorLine=81
+CursorColumn=70
+CursorLine=63
 JumpList=
 ViMarks=.,81,74,[,81,63,],81,74
 
