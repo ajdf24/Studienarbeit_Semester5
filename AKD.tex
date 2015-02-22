@@ -3,7 +3,7 @@ Aufgrund der Use-Case-Diagramme im Kapitel \ref{Use Case Diagramme} und der Wire
 
 Im Klassendiagramm im Bild \ref{AKD} sind alle Klassen dargestellt, welche für die grundlegende Funktion der App notwendig sind. Hierbei wurde absichtlich auf das Einfügen der Activity-Klassen verzichtet um die \"Ubersichtlichkeit zu gewährleisten.
 
-Im mittleren Bereich des Diagramms sind die abstrakten Klassen "`Rule"', "`RuleCreator"', "`RuleObserver"' und die Klassen "`SMSRule"' und "`EMailRule"' zu finden. Mit diesen Klassen werden zum einen Regeln als Instanzen abgebildet, aber auch erstellt. Hierf\"ur wurde das Factory-Pattern in abge\"anderter Form verwendet.
+Im mittleren Bereich des Diagramms sind die abstrakten Klassen "`Rule"', "`RuleCreator"', "`RuleObserver"' und die Klassen "`SMSRule"' und "`EMailRule"' zu finden. Mit diesen Klassen werden zum einen Regeln als Instanzen abgebildet, aber auch erstellt. Hierf\"ur wurde das Factory-Pattern in abge\"anderter Form verwendet. \cite{JavaPattern}
 
 Im rechten Teil des Diagramms ist die abstrakte Oberklasse des Android \ac{SDK} BroadcastReceiver zu finden. Diese wird von den Klassen SMSReceiver und EMailReceiver erweitert, um das eingehen einer SMS oderE-Mail abzufangen.
 \begin{figure}[!ht]
