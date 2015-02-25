@@ -10,8 +10,18 @@ Hierf\"ur wurde ein "`ArrayAdapter"' gew\"ahlt welcher beim eintragen in das Tex
 
 Die statische Methode autocomplete() der Klasse GooglePlacesAutocompleteAdapter enth\"alt die Logik, mit der die Places-\ac{API} angesprochen wird.
 
-Als erstes wird eine Ergebnisliste und eine HttpURLConnection deklariert, wobei durch einen StringBuilder eine URL gebaut wird, welche geladen wird.
+Als erstes wird eine Ergebnisliste und eine HttpURLConnection deklariert, wobei durch einen StringBuilder eine URL gebaut und geladen wird.
+
+Der StingBuilder baut einen Sting, wie er im Listing zu sehen ist.
+\lstinputlisting{Code/PlacesURL.txt}
+
+Das daraufhin zum Google Server gelieferte JSON-Dokument wird dem StringBuilder hinzugef\"ugt um es im n\"achsten Schritt weiter zu verarbeiten. Ein Beispiel f\"ur ein solches ist im Anhang \ref{Places_API-Response Anhang} zu finden.
+
+Aus diesem JSON-Dokument wird nun ein Array mit den einzelnen M\"oglichkeiten erstellt, wobei aus diesem Array wiederum die einzelnen Beschreibungen "description"` ausgelesen werdem. Diese Ergebnisse werden dann mit Hilfe der Ergebinsliste zur\"uckgegeben. Dieser Zusammenhang ist im Listing unten noch einmal als Quellcode dargestellt.
+\cite{PlacesAPIGoogle}
+
 \lstinputlisting{Code/Metode_autocomplete.java}
+\cite{PlacesExample}
 
 \subsection{ogg-Files und Android}
 \cite{oggBug} \cite{oogStackOver}

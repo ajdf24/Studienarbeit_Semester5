@@ -1,0 +1,1 @@
+https://maps.googleapis.com/maps/api/place/autocomplete/json?key={key}&components=country:de&input={input%20strings%20for%20autocomplete%20search}
