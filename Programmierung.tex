@@ -2,6 +2,16 @@
 Da aus Zeitgr\"unden nicht auf die gesamte Programmierung im einzelnen genau eingegangen werden kann, sind im Folgenden Schwerpunkte die sich bei der Programmierung ergaben genauer aufgef\"uhrt und werden anhand von Quellcode-Beispielen genauer beschrieben.
 
 \subsection{Die Google-Places-API}
+Die Google-Places-\ac{API} bietet eine Schnittstelle f\"ur die Anbindung an Google, mit welcher es m\"oglich ist verschiedene Orte zu suchen. Im Projekt wird die \ac{API} in der Activity Navigation verwendet, um einen Ort f\"ur die Navigation zu w\"ahlen (Bild \ref{Wireframe NaviAuswahl}).
+
+Im Projekt ist in der Activity Navigation ein Textfeld, in welches der Nutzer einen Ort eintragen kann. Beim eintragen, wird der Nutzer \"uber eine Trefferliste bei der Auswahl unterst\"utz, wobei diese Vervollst\"andigung mit Hilfe der Places-\ac{API} geschieht.
+
+Hierf\"ur wurde ein "`ArrayAdapter"' gew\"ahlt welcher beim eintragen in das Textfeld eine Liste mit Treffern unterhalb des Textfeldes darstellt.
+
+Die statische Methode autocomplete() der Klasse GooglePlacesAutocompleteAdapter enth\"alt die Logik, mit der die Places-\ac{API} angesprochen wird.
+
+Als erstes wird eine Ergebnisliste und eine HttpURLConnection deklariert, wobei durch einen StringBuilder eine URL gebaut wird, welche geladen wird.
+\lstinputlisting{Code/Metode_autocomplete.java}
 
 \subsection{ogg-Files und Android}
 \cite{oggBug} \cite{oogStackOver}
