@@ -24,6 +24,28 @@ Aus diesem JSON-Dokument wird nun ein Array mit den einzelnen M\"oglichkeiten er
 \cite{PlacesExample}
 
 \subsection{ogg-Files und Android}
-\cite{oggBug} \cite{oogStackOver}
+Im Lastenheft wurde festgelegt, das die App zum einen Alarmt\"one selbst mitbringen soll, aber auch die internen Klingelt\"one sollen verwendet werden k\"onnen.
+
+Hierf\"ur wurden verschiedene Alarmt\"one zum Projekt hinzugef\"ugt, welche somit auch zu Auswahl stehen.
+
+Bei dem einbinden von standard Klingelt\"onen ergab sich jedoch ein schwerwiedendes Problem, welches im Folgenden genauer beschrieben wird.
+
+Unter Android sind alle Klingelt\"one als sogenannte .ogg-Files abgelegt. Diese .ogg-Files k\"onnen ein Flag enthalten, welches Android anweist sich bis zum Abbruch der Wiedergabe sich ewig zu wiederholen. 
+\cite{oogStackOver} (Abgerufen am 14.02.2015)
+
+Hierbei wird auch der Aufruf der Mediaplayer-Methode setLooping(false) durch das ogg-Flag ignoriert. Hierbei handelt es sich um einen Dokumentierten Bug im Android-System.
+\cite{oggBug} (Abgerufen am 14.02.2015)
+
+Da der Alarmton beim anklicken durch den User demonstrativ abgespielt werden soll und dann automatisch enden soll, ergibt sich hierbei ein Problem, da sich Klingelt\"one unendlich wiederholen w\"urden.
+
+Um dieses Problem zu um gehen, wurde ein Workaround gemacht, welcher im Listing unten zu sehen ist.
+
+Wird ein Ton gespielt, welcher ein Klingelton ist wird ein neuer Thread gestartet. Dieser Thread \"ubernimmt die Aufgabe die Wiedergabe zu unterbrechen, nachdem sie einmal abgespielt wurden ist.
+
+Hierf\"ur wird eine While-Schleife gestartet, welche solange l\"auft wie der eigentliche Ton, welcher gerade abgespielt wird l\"auft. Ist diese Schleife beendet, wird die Wiedergabe unterbrochen und die Thread ordnungsgem\"a\ss{} beendet.
+
+Das Listing ist im Quellcode in der Klasse SoundSelection unter der Methode createListAdapter() zu finden.
+
+\lstinputlisting{Code/MediaplayerWorkaround.java}
 
 \subsection{Observer- und Factory-Pattern}

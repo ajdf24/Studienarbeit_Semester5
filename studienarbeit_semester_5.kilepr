@@ -147,12 +147,12 @@ order=5
 
 [item:AKD.tex]
 archive=true
-column=12
+column=0
 encoding=ISO-8859-1
 highlight=LaTeX
-line=14
+line=0
 mode=LaTeX
-open=true
+open=false
 order=10
 
 [item:Abkuerzungen.tex]
@@ -163,7 +163,7 @@ highlight=LaTeX
 line=12
 mode=LaTeX
 open=true
-order=12
+order=9
 
 [item:Android.tex]
 archive=true
@@ -227,13 +227,13 @@ order=3
 
 [item:Programmierung.tex]
 archive=true
-column=32
+column=65
 encoding=ISO-8859-1
 highlight=LaTeX
-line=6
+line=32
 mode=LaTeX
 open=true
-order=11
+order=12
 
 [item:Quellen.bib]
 archive=true
@@ -243,7 +243,7 @@ highlight=BibTeX
 line=227
 mode=BibTeX
 open=true
-order=13
+order=10
 
 [item:Studienarbeit_Semester_5.tex]
 archive=true
@@ -257,13 +257,13 @@ order=0
 
 [item:UseCases.tex]
 archive=true
-column=52
+column=22
 encoding=ISO-8859-1
 highlight=LaTeX
-line=70
+line=52
 mode=LaTeX
 open=true
-order=8
+order=11
 
 [item:Wireframes.tex]
 archive=true
@@ -273,7 +273,7 @@ highlight=LaTeX
 line=45
 mode=LaTeX
 open=true
-order=9
+order=8
 
 [item:studienarbeit_semester_5.kilepr]
 archive=true
@@ -340,10 +340,10 @@ JumpList=
 ViMarks=.,81,0,[,81,0,],81,0
 
 [view-settings,view=0,item:Programmierung.tex]
-CursorColumn=32
-CursorLine=6
+CursorColumn=65
+CursorLine=32
 JumpList=
-ViMarks=.,6,20,[,6,20,],6,31
+ViMarks=.,46,106,[,46,58,],-1,-1
 
 [view-settings,view=0,item:Quellen.bib]
 CursorColumn=13
@@ -358,8 +358,8 @@ JumpList=
 ViMarks=.,124,28,[,124,20,],124,28
 
 [view-settings,view=0,item:UseCases.tex]
-CursorColumn=52
-CursorLine=70
+CursorColumn=22
+CursorLine=52
 JumpList=
 ViMarks=.,70,51,[,70,51,],70,51
 
