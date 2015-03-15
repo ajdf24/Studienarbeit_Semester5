@@ -49,3 +49,32 @@ Das Listing ist im Quellcode in der Klasse SoundSelection unter der Methode crea
 \lstinputlisting{Code/MediaplayerWorkaround.java}
 
 \subsection{Observer- und Factory-Pattern}
+Wie schon in den Unterkapitel \ref{AKD Factory Pattern} und \ref{AKD Observer Pattern} erw\"ahnt, musste f\"ur die Arbeit unter Android das Factory und das Observer Pattern angepasst werden. Im folgenden wird nun genauer auf die Programmierung eingegangen, da unter Android wie schon beschrieben nicht vorhergesagt werden kann, wo der Einsprungspunkt f\"ur eine App ist.
+
+\subsubsection{Die Implementierung des Observer Pattern}
+Da nicht bei jeder Verwendung des Observers angefragt werden soll, ob dieser schon existiert und auch eine \"Ubergabe der Observerinstanz mittels eines Android-Bundle unpraktikabel ist wurde der Observer so entwurfen, das er nun statische Methoden enth\"alt, welche von jeder Stelle des Quellcodes aufgerufen werden k\"onnen.
+
+Zus\"atzlich h\"alt der Observer die beobachteten Instanzen nicht im Arbeitsspeicher, sondern legt diese mit Hilfe der Jackson-Library im Filesystem als JSON-Dokumente ab.
+Dieses Vorgehen ist notwendig, da nicht Vorhergesagt werden kann, wann eine App beendet und aus dem Arbeitsspeicher entfernt wird. Um den hieraus resultierenden Datenverlust zu verhindern, werden alle Instanzen im Filesystem abgelegt und k\"onnen \"uber den Observer von dort auch wieder gelesen werden.
+
+Der Observer Mappt bei speichern, die Instanz zu einem JSON-Objekt, welches als File im Filesystem unter Android abgelegt wird. Dieses Mapping wird mit Hilfe der Jackson-Library erledigt. Hierbei gibt es unterschiedliche Methoden f\"ur das Speichern von SMS- und E-Mailregeln.
+
+Das Lesen von Regeln geschieht in die umgekehrten Reihenfolge. Zuerst werden die Files, welche eine Regel beinhalten vom Filesystem gelesen. Anschliesend werden diese Files wieder zu Javainstanzen gemappt.
+
+Die genaue Implementierung des Klasse RuleObserver ist im Anhang im Kapitel \ref{Die Klasse RuleObserver} zu finden.
+
+Zus\"atzlich gibt es im Projekt auch noch die Klasse AlarmSettingsObserver, welche die Alarmeinstellungen beobachtet und die Klasse DepartmentObserver, welche die Ger\"atehauseinstellungen beobachtet. Beide Klassen sind \"ahnlich implentiert, wie die Klasse RuleObserver.
+
+\subsubsection{Die Implementierung des Factory Pattern}
+Aus den selben Gr\"unden wie beim Observer Pattern, musste auch das Factory Pattern unter Android angepasst werden.
+
+Die Klasse RuleCreator stellt das Factory Pattern dar und hat verschiedene statische Methoden, die es erlauben eine Regelinstanz zu erstellen, oder zu \"andern.
+
+\"Uber die Methode createRule() wird, unter der angabe des Regelnames und des Typs, eine neue Regel der entsprechenden Instanz erstellt, und zur\"uckgeliefert.
+
+Mit Hilfe der anderen Methoden kann eine Regel ge\"andert werden, so kann zum Beispiel der Absender oder der Alarmton ge\"andert werden. Hierbei folgen alle Methoden dem Schema wie es im Kapitel \ref{AKD Factory Pattern} schon einmal dargestellt wurde.
+\lstinputlisting{Code/FactorySchema.java} 
+
+Zus\"atzlich ruft jede Methode der Factory die Methode notifyObserver() der Klasse Rule auf, um den Observer \"uber eine Ver\"anderung zu informieren.
+
+Die genaue Implementierung der Klasse RuleCreator ist im Anhang im Kapitel \ref{Die Klasse RuleCreator} zu finden. 

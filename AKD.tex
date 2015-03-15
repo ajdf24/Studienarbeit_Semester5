@@ -14,7 +14,7 @@ Im rechten Teil des Diagramms ist die abstrakte Oberklasse des Android \ac{SDK} 
 \centering
 \end{figure}
 
-\subsection{Das Factory Pattern}
+\subsection{Das Factory Pattern} \label{AKD Factory Pattern}
 Wie eben schon einmal erw\"ahnt, wurde das  Factory Pattern zwar verwendet, jedoch in einer abge\"anderten Version.
 Dies war n\"otig, da eine Factory im Programm zu erst erstellt werden muss, bevor sie Verwendung finden kann. Da eine Android-App auf verschiedene Arten aufgerufen und gegebenenfalls andere Abl\"aufe stattfinden. So kann eine App zum Beispiel \"uber eine Activity gestartet werden oder \"uber einen BroadcastReceiver.
 
@@ -27,7 +27,7 @@ Dies hat den Vorteil, das ihre Methoden an jeder Programmposition aufgerufen wer
 Die Klasse RuleCreator kann alle Unterklassen der Klasse Rule erzeugen und ihre Werte ver\"andern. Dabei Folgen alle Methoden dem Schema:
 \lstinputlisting{Code/FactorySchema.java}
 
-\subsection{Das Observer Pattern}
+\subsection{Das Observer Pattern} \label{AKD Observer Pattern}
 \"Ahnlich wie beim Factory-Pattern ist auch die Problematik beim Observer-Pattern, hier kommt jedoch noch erschwerend hinzu, das der Nutzer und der Programmierer nur begrenzte Kontrolle dar\"uber haben wann eine App und ihre im Arbeitsspeicher befindlichen Daten geschlossen werden, dies \"ubernimmt Android automatisch.
 
 Immer wenn Speicher ben\"otig wird, schlie\ss{}t Android im Hintergrund automatisch Apps, welche l\"anger nicht verwendet wurden sind.
