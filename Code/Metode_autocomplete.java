@@ -1,4 +1,4 @@
-c synchronized static ArrayList<String> autocomplete(String input) {
+public synchronized static ArrayList<String> autocomplete(String input) {
 		ArrayList<String> resultList = null;
 		HttpURLConnection connection = null;
 		StringBuilder jsonResults = new StringBuilder();

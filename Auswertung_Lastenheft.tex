@@ -1,21 +1,21 @@
 \section{Analyse des Lastenhefts}
-Im Lastenhefts im Kapitel \ref{Lastenheft} wurde auf\"uhrlich beschrieben, wie die Applikation funktionieren soll. Au\ss{}erdem wurde darauf eingegangen, welche Funktionen und Leistungen umgesetzt werden sollen. 
+Im Lastenheft im Kapitel \ref{Lastenheft} wurde ausf\"uhrlich beschrieben, wie die Applikation funktionieren soll. Au\ss{}erdem wurde darauf eingegangen, welche Funktionen und Leistungen umgesetzt werden sollen. 
 
-Nun, nachdem das Androidsystem ausf\"uhrlich analysiert wurde, wird das Lastenheft Punkt f\"ur Punkt ausgewertet um festzulegen welche Funktionen mit welchen Mitteln umgesetzt werden k\"onnen.
+Nachdem das Androidsystem ausf\"uhrlich analysiert wurde, wird das Lastenheft Punkt f\"ur Punkt ausgewertet, um festzulegen, welche Funktionen mit welchen Mitteln umgesetzt werden k\"onnen.
 
-\subsection{Analyse des zusammenspiel mit anderen Systemen}
-Da die Applikation m\"oglichst weit abw\"artskompatibel sein soll, wird im Projekt das minimale API-Level auf die Version 14 eingestellt. Mit der Version 14 werden alle Androidversionen ab 4.0 unterst\"utzt, was in etwa 90 Prozent aller Android-Ger\"ate sind. Das target API-Level wird auf die nun neue Version 21 eingestellt, um auch die neuste Version 5.0 zu unterst\"utzen. \cite{AndroidVerteilung} 
+\subsection{Analyse des Zusammenspiels mit anderen Systemen}
+Da die Applikation m\"oglichst weit abw\"artskompatibel sein soll, wird im Projekt das minimale \ac{API}-Level auf die Version 14 eingestellt. Mit der Version 14 werden alle Androidversionen ab 4.0 unterst\"utzt, was in etwa 90 Prozent aller Android-Ger\"ate sind. Das Target-\ac{API}-Level wird auf die nun neue Version 21 eingestellt, um auch die neuste Version 5.0 zu unterst\"utzen. \cite{AndroidVerteilung} 
 
 \subsection{Analyse der Produktfunktionen}
-Im folgenden werden alle Produktfunktionen die im Lastenheft aufgef\"uhrt sind einzeln ausgewertet und beschrieben mit welchen Android-Technologien sie sich umsetzten lassen.
+Im folgenden werden alle Produktfunktionen, die im Lastenheft aufgef\"uhrt sind, einzeln ausgewertet und beschrieben, mit welchen Android-Technologien sie sich umsetzen lassen.
 
 \subsubsection{LF10}
-Um eigehende Nachrichtigen in Android zu analysieren zu k\"onnen, muss ein Broadcast Receiver Verwendung finden. Da eine Alarmierung auch geschehen soll, wenn die App nicht aktiv ist, muss ein statischer Broadcast Receiver verwendet werden (siehe Kapitel \ref{Broadcast Receiver aus Nutzersicht}). Dieser Receiver soll eigehende Nachrichtigen auf das zutreffen von Regeln analysieren und gegebenenfalls eine Alarmierung durchf\"uhren. 
+Um eingehende Nachrichtigen in Android analysieren zu k\"onnen, muss ein Broadcast Receiver Verwendung finden. Da eine Alarmierung auch geschehen soll, wenn die App nicht aktiv ist, muss ein statischer Broadcast Receiver verwendet werden (siehe Kapitel \ref{Broadcast Receiver aus Nutzersicht}). Dieser Receiver soll eingehende Nachrichtigen auf das Zutreffen von Regeln analysieren und gegebenenfalls eine Alarmierung durchf\"uhren. 
 
 \subsubsection{LF20}
 Der Nutzer soll Regeln angeben k\"onnen, nach welchen alarmiert werden soll. Hierf\"ur soll der Nutzer folgende Dinge angeben k\"onnen:
 \begin{itemize}
- \item Art der Nachricht auf die geachtet werden soll. ( vorerst nur SMS und E-Mail )
+ \item Art der Nachricht, auf die geachtet werden soll. ( vorerst nur SMS und E-Mail )
  \item Von welchem Absender die Nachricht kommen muss.
  \item Welche Schlagw\"orter die Nachricht enthalten/nicht enthalten muss.
  \item Welcher Alarmton gespielt werden soll.
@@ -24,15 +24,15 @@ Der Nutzer soll Regeln angeben k\"onnen, nach welchen alarmiert werden soll. Hie
 \end{itemize}
 
 Die Regeln m\"ussen erstellt, gelesen, geupdatet und gel\"oscht werden k\"onnen, was die Funktionsweise von CRUD abbildet.
-Um alle Funktionen in der App abbilden zu k\"onnen, m\"ussen zus\"atzliche Librarys in das Projekt eingebunden werden. Hierbei sollen Googles Play Services, der Jackson Serialisierer, die Facebook-\ac{API} und gegebenenfalls weitere eingebunden werden.
+Um alle Funktionen in der App abbilden zu k\"onnen, m\"ussen zus\"atzliche Librarys in das Projekt eingebunden werden. Hierbei sollen Googles Play Services, der Jackson-Serialisierer, die Facebook-\ac{API} und gegebenenfalls weitere eingebunden werden.
 
 \subsubsection{LF30}
-Damit die App sp\"ater einfach erweitert werden kann, soll die Regelerstellung m\"oglichst abstrakt gehalten werden soll. Dies geht am besten unter der Verwendung eines Factory-Pattern, welches die Regeln abstrakt darstellt. F\"ur eine Erweiterung muss dann die neue Regelart lediglich die abstraktion der Regel implementieren. Hierbei wird das Schema der Vererbund angewendet.
+Damit die App sp\"ater einfach erweitert werden kann, soll die Regelerstellung m\"oglichst abstrakt gehalten werden. Dies geht am besten unter der Verwendung eines Factory-Pattern, welches die Regeln abstrakt darstellt. F\"ur eine Erweiterung muss dann die neue Regelart lediglich die Abstraktion der Regel implementieren. Hierbei wird das Schema der Vererbung angewendet.
 
 \subsubsection{LF40}
-Um einen Post in sozialen Netzwerken abzusetzen, muss ein entsprechender Intent erstellt werden. Eine andere M\"oglichkeit w\"are direkt die APIs von verschiedenen sozialen Netzwerken zu implementieren. Welche der beiden M\"oglichkeiten besser ist, muss im verlauf der Arbeit noch untersucht werden.
+Um einen Post in sozialen Netzwerken abzusetzen, muss ein entsprechender Intent erstellt werden. Eine andere M\"oglichkeit w\"are, direkt die \ac{API}s von verschiedenen sozialen Netzwerken zu implementieren. Welche der beiden M\"oglichkeiten besser ist, muss im verlauf der Arbeit noch untersucht werden.
 
-F\"ur das versenden einer SMS muss keine andere App verwendet werden, da dies direkt aus der App geschehen kann. F\"ur das senden einer SMS muss nat\"urlich die entsprechende Berechtigung im Manifest eingetragen werden.
+F\"ur das versenden einer SMS muss keine andere App verwendet werden, da dies direkt aus der App geschehen kann. F\"ur das Senden einer SMS muss nat\"urlich die entsprechende Berechtigung im Manifest eingetragen werden.
 
 \subsubsection{LF50}
 Die Navigation kann nur durchgef\"uhrt werden, wenn die Nachricht Koordinaten oder eine Adresse enth\"alt. Hierf\"ur muss die Nachricht nach Nutzerangaben geparst werden. Ist ein Einsatzort angegeben, wird \"uber ein Intent die Navigation gestartet.
@@ -40,46 +40,46 @@ Die Navigation kann nur durchgef\"uhrt werden, wenn die Nachricht Koordinaten od
 Diese Funktion soll angedacht werden, jedoch ist eine praktische Umsetzung im Rahmen dieser Arbeit nicht m\"oglich, da es hier an Beispieldaten mangelt.
 
 \subsubsection{LF60}
-Um die Regel zu \"ubertragen muss ein Format gefunden werden, welches Android unterst\"utzt. Hierf\"ur bietet sich das f\"ur solche aufgaben entwickelte JSON-Format an. Die Informationen m\"ussen mit Hilfe von Intents gesendet und empfangen werden.
+Um die Regel zu \"ubertragen, muss ein Format gefunden werden, welches Android unterst\"utzt. Hierf\"ur bietet sich das f\"ur solche Aufgaben entwickelte JSON-Format an. Die Informationen m\"ussen mit Hilfe von Intents gesendet und empfangen werden.
 
 \subsubsection{LF70}
-Die Deaktivierung kann mit Hilfe eines Flags umgesetzt werden, welches angibt ob eine Regel Aktiv ist oder nicht. Dieses Flag, muss direkt in der Regel enthalten sein und soll nicht extra gespeichert werden.
+Die Deaktivierung kann mit Hilfe eines Flags umgesetzt werden, welches angibt, ob eine Regel aktiv ist oder nicht. Dieses Flag muss direkt in der Regel enthalten sein und soll nicht extra gespeichert werden.
 
 \subsubsection{LF80}
-Um auf die Klingelt\"one zuzugreifen, muss eine art Content Provider eigesetzt werden, welcher den Zugriff auf interne T\"one regelt. Die mit der App mit gelieferten T\"one m\"ussen im Projektordner untergebracht und mit in die .apk-Datei gepackt werden. Dies geschieht im Projektverzeichnis im Ordner "`res/raw"', welcher hierf\"ur zwar erstellt werden muss, aber der offizelle Ablageort f\"ur zus\"atzliche Bin\"ardateinen ist.
+Um auf die Klingelt\"one zuzugreifen, muss eine Art Content Provider eigesetzt werden, welcher den Zugriff auf interne T\"one regelt. Die mit der App mit gelieferten T\"one m\"ussen im Projektordner untergebracht und mit in die .apk-Datei gepackt werden. Dies geschieht im Projektverzeichnis im Ordner "`res/raw"', welcher hierf\"ur zwar erstellt werden muss, aber der offizelle Ablageort f\"ur zus\"atzliche Bin\"ardateien ist.
 
 \subsubsection{LF90}
-Eine Einf\"uhrung kann mit Hilfe von Bildern oder Pfeilen geschehen wie es Android selbst auch macht. Hierf\"ur muss der praktikabelste Weg gefunden werden. 
+Eine Einf\"uhrung kann mit Hilfe von Bildern oder Pfeilen geschehen, wie es Android selbst auch macht. Hierf\"ur muss der praktikabelste Weg gefunden werden. 
 
 \subsubsection{LF100}
-F\"ur die Entfernungsmessung k\"onnen Googledienste verwendet werden, die Messung soll bei eingehen mit Hilfe von GPS-Koordinaten geschehen. Um eine SMS zu senden, muss der Nutzer den Inhalt vorgegeben haben. Der Nutzer kann selbst w\"ahlen wann eine solche Antwort versand werden soll. Um den Akku des Ger\"ates nicht unn\"otig zu belasten, soll eine Standortermittlung nur erfolgen wenn eine Regel zutrifft.
+F\"ur die Entfernungsmessung k\"onnen Dienste von Google verwendet werden, die Messung soll beim Eingehen mit Hilfe von GPS-Koordinaten geschehen. Um eine SMS zu senden, muss der Nutzer den Inhalt vorgegeben haben. Der Nutzer kann selbst w\"ahlen, wann eine solche Antwort versendet werden soll. Um den Akku des Ger\"ates nicht unn\"otig zu belasten, soll eine Standortermittlung nur erfolgen, wenn eine Regel zutrifft.
 
 \subsubsection{LF110}
-Die Android-Klassenbibliothek enth\"alt schon Klassen, welche einen Text in Sprache umwandeln und diesen Vorlesen. Hierf\"ur muss keine zus\"atzliche Library eingebunden werden.
+Die Android-Klassenbibliothek enth\"alt schon Klassen, welche einen Text in Sprache umwandeln und diesen vorlesen kann. Hierf\"ur muss keine zus\"atzliche Library eingebunden werden.
 
 \subsection{Analyse der Produktdaten}
-Im folgenden werden alle Produktdaten die im Lastenheft aufgef\"uhrt sind einzeln ausgewertet und beschrieben mit welchen Android-Technologien sie sich umsetzten lassen.
+Im folgenden werden alle Produktdaten, die im Lastenheft aufgef\"uhrt sind, einzeln ausgewertet und beschrieben, mit welchen Android-Technologien sie sich umsetzen lassen.
 
 \subsubsection{LD10}
 Um Regeln nicht nur fl\"uchtig im Arbeitsspeicher zu halten, m\"ussen sie abgespeichert werden. Hierf\"ur bietet sich eine Speicherung mit Hilfe des JSON-Formats an, da der Serialisierer ( Jackson ), welcher von Google stammt, auch unter Android lauff\"ahig ist. Hierf\"ur muss die Jackson-Libary in das Projekt eingebunden werden.
-Mit Jackson ist es m\"oglich Java-Klassen als JSON-Datei zu schreiben und zu lesen. Diese Dateien k\"onnen dann im Androiddateisystem abgelegt werden.
+Mit Jackson ist es m\"oglich, Java-Klassen als JSON-Datei zu schreiben und zu lesen. Diese Dateien k\"onnen dann im Androiddateisystem abgelegt werden.
 
 \subsubsection{LD20}
-Je nachdem, welche T\"one lizenzfrei zu erhalten sind werden sie in die App eingebunden. Die Tondateien m\"ussen im Android-Projekt im Ordner "`res"' abgelegt werden, da dies der Ablageort f\"ur s\"amtliche Ressourcen ist.
+Je nachdem, welche T\"one lizenzfrei zu erhalten sind, werden sie in die App eingebunden. Die Tondateien m\"ussen im Android-Projekt im Ordner "`res"' abgelegt werden, da dies der Ablageort f\"ur s\"amtliche Ressourcen ist.
 
 \subsubsection{LD30}
-Das die Regeln jeweils als Datei im JSON-Format abgespeichert sind, ist ein austausch ganz einfach m\"oglich, da nur die ben\"otigte Regeldatei \"ubertragen werden muss.
+Da die Regeln jeweils als Datei im JSON-Format abgespeichert sind, ist ein Austausch ganz einfach m\"oglich, da nur die ben\"otigte Regeldatei \"ubertragen werden muss.
 
 \subsubsection{LD40}
-Da die App zum funktionieren gewissen Daten wie den Standort und die Kontakte ben\"otigt, m\"ussen diese Daten abgefragt und verarbeitet werden. Eine zus\"atzliche Verschl\"usselung ist somit nicht n\"otig. Der Standort wird jedoch zur Entfernungsmessung an Google gesendet, wobei der Nutzer hier zustimmen muss.
+Da die App zum Funktionieren gewisse Daten wie den Standort und die Kontakte ben\"otigt, m\"ussen diese Daten abgefragt und verarbeitet werden. Eine zus\"atzliche Verschl\"usselung ist somit nicht n\"otig. Der Standort wird jedoch zur Entfernungsmessung an Google gesendet, wobei der Nutzer hier zustimmen muss.
 
 
 \subsection{Analyse der Produktleistungen}
-Im folgenden werden alle Produktleistungen die im Lastenheft aufgef\"uhrt sind einzeln ausgewertet und beschrieben mit welchen Android-Technologien sie sich umsetzten lassen.
+Im folgenden werden alle Produktleistungen, die im Lastenheft aufgef\"uhrt sind, einzeln ausgewertet und beschrieben, mit welchen Android-Technologien sie sich umsetzen lassen.
 
 \subsubsection{LL10}
-Wenn die App einmal gestartet wurde, so sind die statischen Broadcast Receiver sofort nach dem Systemstart wieder Online und aktiv ohne das etwas aus Programmierer oder Nutzersicht getan werden muss. Sollte der Nutzer die App komplett beenden, so muss er diese auch selbst wieder starten.
-Durch die aktiven Broadcast Receiver wird die App bei erhalt einer entsprechenden Nachricht automatisch gestartet.
+Wenn die App einmal gestartet wurde, so sind die statischen Broadcast Receiver sofort nach dem Systemstart wieder online und aktiv, ohne das etwas aus Programmierer- oder Nutzersicht getan werden muss. Sollte der Nutzer die App komplett beenden, so muss er diese auch selbst wieder starten.
+Durch die aktiven Broadcast Receiver wird die App bei Erhalt einer entsprechenden Nachricht automatisch gestartet.
 
 \subsubsection{LL20}
 {\color{red}Hier muss ich erst noch nachschauen wie das mit Bluetooth geht.}
