@@ -9,7 +9,7 @@ kile_livePreviewStatusUserSpecified=false
 kile_livePreviewTool=LivePreview-PDFLaTeX
 kileprversion=2
 kileversion=2.1.3
-lastDocument=Wireframes.tex
+lastDocument=Programmierung.tex
 masterDocument=
 name=Studienarbeit_Semester_5
 pkg_extIsRegExp=false
@@ -224,7 +224,7 @@ order=1
 
 [item:FacebookSDK.tex]
 archive=true
-column=115
+column=71
 encoding=ISO-8859-1
 highlight=LaTeX
 line=16
@@ -244,20 +244,20 @@ order=3
 
 [item:Programmierung.tex]
 archive=true
-column=103
+column=229
 encoding=ISO-8859-1
 highlight=LaTeX
-line=17
+line=111
 mode=LaTeX
 open=true
 order=12
 
 [item:Quellen.bib]
 archive=true
-column=21
+column=121
 encoding=ISO-8859-1
 highlight=BibTeX
-line=217
+line=312
 mode=BibTeX
 open=true
 order=14
@@ -284,10 +284,10 @@ order=8
 
 [item:Wireframes.tex]
 archive=true
-column=165
+column=28
 encoding=ISO-8859-1
 highlight=LaTeX
-line=142
+line=145
 mode=LaTeX
 open=true
 order=9
@@ -351,10 +351,10 @@ JumpList=
 ViMarks=.,7,207,[,7,207,],7,207
 
 [view-settings,view=0,item:FacebookSDK.tex]
-CursorColumn=115
+CursorColumn=71
 CursorLine=16
 JumpList=
-ViMarks=.,17,100,[,17,100,],17,100
+ViMarks=.,19,249,[,19,214,],19,249
 
 [view-settings,view=0,item:Lastenheft.tex]
 CursorColumn=0
@@ -363,14 +363,14 @@ JumpList=
 ViMarks=.,81,0,[,81,0,],81,0
 
 [view-settings,view=0,item:Programmierung.tex]
-CursorColumn=103
-CursorLine=17
+CursorColumn=229
+CursorLine=111
 JumpList=
-ViMarks=.,46,106,[,46,58,],-1,-1
+ViMarks=.,111,228,[,111,206,],111,228
 
 [view-settings,view=0,item:Quellen.bib]
-CursorColumn=21
-CursorLine=217
+CursorColumn=121
+CursorLine=312
 JumpList=
 ViMarks=.,0,0,[,0,0,],-1,-1
 
@@ -387,7 +387,7 @@ JumpList=
 ViMarks=.,70,50,[,70,50,],70,50
 
 [view-settings,view=0,item:Wireframes.tex]
-CursorColumn=165
-CursorLine=142
+CursorColumn=28
+CursorLine=145
 JumpList=
 ViMarks=.,142,164,[,142,164,],142,164

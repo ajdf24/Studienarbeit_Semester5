@@ -78,3 +78,35 @@ Mit Hilfe der anderen Methoden kann eine Regel ge\"andert werden, so kann zum Be
 Zus\"atzlich ruft jede Methode der Factory die Methode notifyObserver() der Klasse Rule auf, um den Observer \"uber eine Ver\"anderung zu informieren.
 
 Die genaue Implementierung der Klasse RuleCreator ist im Anhang im Kapitel \ref{Die Klasse RuleCreator} zu finden. 
+
+\subsection{Die Implementierung des E-Mail Receivers}
+Da Android nicht wie vermutet einen eigenen Receiver f\"ur E-Mails bereitstellt, wie es bei den SMS der Fall ist, muss hierf\"ur eine eigene Implementierung erstellt werden.
+
+Da diese Implementierung f\"ur alle Protokolle wie zum Beispiel IMAP oder SecureIMAP gemacht werden muss, wurde in der Arbeit aus Zeitgr\"unden nur die Implementierung des IMAP-Protokolls umgesetzt. Hierf\"ur wurde eine Bibliothek ben\"otigt, welche schon in der Lage ist Mails von einem Server zu lesen. Au\ss{}erdem musste darauf geachtet werden, dass diese auch mit Android kompatibel ist. Im Projekt wurde hierf\"ur die JavaMail-API f\"ur Android verwendet, welche Google bereitstellt. \cite{MailAPI}
+
+F\"ur die Implementierung, wurde ein TimerTask verwendet, welcher in regelm\"a\ss{}igen Abst\"anden die Mails vom Server abruft. Dieser TimerTask ist in einem AsyncTask gekapselt, da unter Android der Netzwerkzugriff nicht vom UI-Thread gestattet ist. 
+
+Der AsyncTask wiederum wird von einem Service gestartet, welcher mit der Option \\"'START\_STICKY"` versehen ist. Dies bedeutet, dass der Service vom System immer neu gestartet wird, sollte er beendet werden.
+
+Nach einigen Tests dieser Prototypischen Implementierung wurden verschiedene Fehlverhalten festgestellt wie zum Beispiel, dass der Service nach einer gewissen Zeit beendet wird.
+Einge genauere Untersuchung und Behebung der Fehler beim abrufen der Mails konnte aus zeitlichen Gr\"unden nicht fertig gestellt werden.
+
+Da der Mail Receiver nicht stabil lauff\"ahig ist, wurde er nicht im Projekt selbst implentiert.
+
+\subsection{Versenden einer Regel}
+LF60 des Lastenhefts verlangt, das Regeln \"ubertragen werden k\"onnen sollen. Dies bedeutet, dass es einem Nutzer m\"oglich sein muss eine seiner Regeln auch an andere Nutzer der App versenden zu k\"onnen. Hierbei gibt das Lastenheft keine konkreten Vorgaben, sondern nur einige Vorschl\"age wie eine Regel \"ubertragen werden kann.
+
+Der Nutzer hat in der Activity der Regel\"ubersicht die m\"oglichkeit eine Regel l\"anger zu ber\"uhren. \"Uber das daraufhin erscheinede Contextmen\"u ist es m\"oglich eine Regel zu \"ubertragen.
+
+Damit der Nutzer viele verschiedene M\"oglichkeiten hat eine Regel zu \"ubertragen, wurde ein Intent gew\"ahlt um den Nutzer eine Auswahl der Sendem\"oglichkeiten zur Verf\"ugung zu stellen.
+
+Es wird also ein impliziter Intent erzeugt, welcher es erlaubt dem Nutzer auszuw\"ahlen welchen Versandweg er nutzen m\"ochte. Dem Intent wird ein JSON-Dokument \"ubergeben, welches mit dem Mimetype "'text/plain"` versehen ist.
+
+Damit andere Activitys die Datei auch lesen k\"onnen, muss die Regel vor dem Start der vom Nutzer gew\"ahlten Activity zuerst an einen \"offentlichen Speicherplatz kopiert werden.
+Dies ist notwendig, da andere Apps nicht auf den internen Speicherbereich anderer Apps zugreifen k\"onnen.
+
+Der eben beschriebene Zusammenhang ist im folgenden Quellcodeausschnitt noch einmal dargestellt. \cite{AttachFileToIntent}
+
+\lstinputlisting{Code/SendRuleIntent.java}
+
+Zus\"atzlich ergibt sich durch den gew\"ahlten Weg auch die M\"oglichkeit, dass der Nutzer seine Regeln zum Beispiel in Google Drive oder Dropbox speichern kann. Dies iust davon abh\"angig, welche Apps der Nutzer installiert hat.
