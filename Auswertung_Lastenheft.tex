@@ -82,4 +82,6 @@ Wenn die App einmal gestartet wurde, so sind die statischen Broadcast Receiver s
 Durch die aktiven Broadcast Receiver wird die App bei Erhalt einer entsprechenden Nachricht automatisch gestartet.
 
 \subsubsection{LL20}
-{\color{red}Hier muss ich erst noch nachschauen wie das mit Bluetooth geht.}
+Um eine Datei \"uber Bluetooth, E-Mail oder anderweitig zu versenden, wird ein impliziter Intent verwendet, welcher die zu sendende Datei enth\"alt. Hier \"offnet sich ein Auswahlfenster, in dem der Nutzer selbst entscheiden kann, welche App er zum versenden w\"ahlt. 
+
+Um eine Datei wiederum zu Empfangen, muss ein Intentfilter im Manifest deklariert sein. Bei erhalt eines Intents, wird dann vom System die entsprechende Klasse aufgerufen und die Datei \"ubergeben.

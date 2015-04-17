@@ -8,21 +8,30 @@ F\"ur die Modellierung der Wireframes wurde das Mockup-Tool WireframeSketcher ve
 Nach einer ersten Erstellung der Wireframes wird eine Evaluierung mit Hilfe der Kameraden der Freiwilligen Feuerwehr Rastenberg stattfinden, bei der eventuelle Schwachstellen oder Verbesserungen diskutiert werden sollen.
 
 \subsection{Die Wireframes}
-  
-\begin{wrapfigure}{l}{10cm}
-\vspace{-13pt}
-\includegraphics[width=10cm]{Bilder/StartBildschirm.png}
-\caption{Wireframe des StartBildschirms mit der Erstellung einer Regel}
-\label{Wireframe StartBildschirm}
-\vspace{-10pt}
-\end{wrapfigure}
+
 Im Bild \ref{Wireframe StartBildschirm} sind die ersten zwei Wireframes zu sehen. Im linken Frame ist der Start-Bildschirm der App abgebildet, welcher beim Starten der App angezeigt werden soll. Hier hat der Nutzer eine \"Ubersicht \"uber alle seine Regeln, welche mit Hilfe der Checkboxen rechts aktiviert oder deaktiviert werden k\"onnen, wie es das Lastenheft nach LF70 verlangt. In der oberen Men\"uleisten ist zum einen ein Plus-Symbol, sowie zum anderen das standardm\"a\ss{}ige Android-Symbol f\"ur das Activity abh\"angige Popupmen\"u zu sehen.
 
 Tippt der Nutzer nun auf das Plus-Symbol, gelangt er zu einer neuen Activity (im Bild \ref{Wireframe StartBildschirm} rechts), mit der er eine neue Regel erzeugen kann.
 Die neue Activity verlangt zum einen einen Namen f\"ur die Regel, zum anderen eine Angabe, ob es sich bei der Regel um eine SMS-Regel oder eine E-Mail-Regel handelt. Die Auswahl der Regelart, ist \"uber die Radiobuttons unter dem Textfeld m\"oglich.
 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{Bilder/StartBildschirm.png}
+\caption{Wireframe des StartBildschirms mit der Erstellung einer Regel}
+\label{Wireframe StartBildschirm}
+\centering
+\end{figure}
+
 Im unteren Teil der Activity hat der Nutzer zwei Buttons, zum einen, um die Aktion abzubrechen und zum anderen einen Button, um weitere Regeleinstellungen vorzunehmen.
 Beim Bet\"atigen des Weiter-Buttons gelangt der Nutzer auf eine weitere Activity, welche im Bild \ref{Wireframe Regeluebersicht} dargestellt ist.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=16cm]{Bilder/WireframeRegeluebersicht.png}
+\caption{Wireframe der Regel\"ubersicht und der Absenderauswahl}
+\label{Wireframe Regeluebersicht}
+\centering
+\end{figure}
 
 Das Bild \ref{Wireframe Regeluebersicht} zeigt die n\"achsten Wireframes. Im linken Frame ist die \"Ubersicht \"uber alle Einstellungsm\"oglichkeiten einer Regel zu finden. Tippt der Nutzer nun auf eine dieser Auswahlm\"oglichkeiten, so gelangt er zur jeweiligen Activity. Im weiteren Verlauf werden alle aufgef\"uhrten Activitys dargestellt und genauer erl\"autert.
 Alle nun folgenden Activitys sehen gleich aus, egal ob es sich nun um eine SMS-Regel oder E-Mail-Regel handelt.
@@ -34,24 +43,15 @@ Hier ist es m\"oglich, einen Kontakt \"uber die Suchleiste zu finden, oder einfa
 Je nachdem, ob es sich um eine SMS- oder E-Mail-Regel handelt, wird die Telefonnummer beziehungsweise die E-Mail-Adresse eingetragen.
 
 Ist die Auswahl vollendet, gelangt der Nutzer \"uber den Speichern-Button zur\"uck zur linken Activity, wo er weitere Einstellungen vornehmen kann.
+ 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=16cm]{Bilder/WireframeRegeluebersicht.png}
-\caption{Wireframe der Regel\"ubersicht und der Absenderauswahl}
-\label{Wireframe Regeluebersicht}
-\centering
-\end{figure}
-
-\newpage
-
- 
-\begin{wrapfigure}{l}{10cm}
-\vspace{-13pt}
 \includegraphics[width=10cm]{Bilder/WireframeWortwahl.png}
 \caption{Wireframe der Wortauswahl und der Alarmtonwahl}
 \label{Wireframe Wortauswahl}
-\vspace{-20pt}
-\end{wrapfigure}
+\centering
+\end{figure}
+
 Tippt der Nutzer nun auf die Wortauswahl (im Bild \ref{Wireframe Regeluebersicht} links), so gelangt er auf eine Activity, welche es ihm erm\"oglicht, Schl\"usselw\"orter auszuw\"ahlen. Im Bild \ref{Wireframe Wortauswahl} ist die Activity mit der Schlagwortauswahl links dargestellt. 
 
 Der Nutzer hat nun die M\"oglichkeit, Schlagw\"orter zu w\"ahlen, welche vorkommen m\"ussen und welche nicht enthalten sein d\"urfen. Sind beide Felder leer, so reicht es aus, das eine Nachricht vom Absender eingeht, um einen Alarm auszul\"osen.
@@ -75,26 +75,19 @@ In der rechten Activity im Bild \ref{Wireframe Antwort} ist die Voreinstellung f
 \centering
 \end{figure}
 
-\FloatBarrier
-\begin{wrapfigure}{l}{5cm}
-\vspace{-13pt}
-\includegraphics[width=5cm]{Bilder/WireframeNaviAuswahl.png}
-\caption{Wireframe der Navigationsauswahl}
-\label{Wireframe NaviAuswahl}
-\vspace{-230pt}
-\end{wrapfigure}
 Im Bild \ref{Wireframe NaviAuswahl} ist die Activity zum Einstellen eines Navigationsziels zu sehen. Hier besteht zum einen die M\"oglickeit, eine Adresse selbstst\"andig einzugeben oder mit automatischer Google-Erg\"anzung, was mit Hilfe der Places-\ac{API} von Google geschieht. Ist eine Adresse gew\"ahlt, muss der Nutzer diese, wie schon \"ofter erl\"autert, mit dem Speichern-Button sichern.
 
 Hiermit wurden nun alle Activitys und M\"oglichkeiten dargestellt, die eine Regelerstellung bietet.
-\newpage
 
-\begin{wrapfigure}{l}{10cm}
-\vspace{-13pt}
-\includegraphics[width=10cm]{Bilder/WireframeRegeluebersicht_popup.png}
-\caption{Wireframe der Regel\"ubersicht mit Popup und Alarmeinstellungen}
-\label{Wireframe Regeluebersicht Popup}
-\vspace{-20pt}
-\end{wrapfigure}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=5cm]{Bilder/WireframeNaviAuswahl.png}
+\caption{Wireframe der Navigationsauswahl}
+\label{Wireframe NaviAuswahl}
+\centering
+\end{figure}
+\FloatBarrier
+
 Im Bild \ref{Wireframe Regeluebersicht Popup} links ist wieder die Regelauswahl zu sehen, diesmal jedoch mit ge\"offnetem Popup-Men\"u. Das Men\"u enth\"alt die drei Punkte Neue Regel, Alarmeinstellungen und Ger\"atehauseinstellung. Der erste Men\"upunkt f\"uhrt wieder zu der Regelerstellung, wie oben schon beschrieben. 
 
 Der zweite Punkt \"offnet das globale Einstellungsmen\"u f\"ur den Alarmempfang, dies ist im Wireframe rechts dargestellt. Als erstes ist ein Schalter f\"ur die Aktivierung der Alarmierung zu finden. Ist dieser deaktiviert, so werden keine Alarme angezeigt. Als n\"achstes kann der Nutzer die Lautst\"arke des Alarms \"uber den Schieberegler ausw\"ahlen. Dieser regelt die Lautst\"arke, mit welcher ein Alarm abgeben wird.
@@ -103,17 +96,26 @@ Als n\"achstes folgt der Schalter, an dem eingestellt werden kann, ob ein Alarm 
 
 Der letzte Schalter ist der wahrscheinlich wichtigste, denn er gibt an, ob eine Alarmierung auch erfolgen soll, wenn das Telefon sich im Lautlosmodus befindet.
 
-\begin{wrapfigure}{r}{5cm}
-\vspace{-13pt}
-\includegraphics[width=5cm]{Bilder/WireframeGeraetehaus.png}
-\caption{Wireframe der Ger\"atehauseinstellung}
-\label{Wireframe Geraetehaus}
-\vspace{-250pt}
-\end{wrapfigure}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{Bilder/WireframeRegeluebersicht_popup.png}
+\caption{Wireframe der Regel\"ubersicht mit Popup und Alarmeinstellungen}
+\label{Wireframe Regeluebersicht Popup}
+\centering
+\end{figure}
+\FloatBarrier
 Die letzte noch fehlende Activity ist im Wireframe im Bild \ref{Wireframe Geraetehaus} zu sehen. In diese Activity gelangt man \"uber den dritten Popupmen\"upunkt. Die Activity enth\"alt einzig ein Textfeld, in das der Standort des Ger\"atehauses mit Hilfe der Google-Autovervollst\"andigung (Places-\ac{API}) eingetragen werden kann.
 
 Mit diesem Standort errechnet die App sp\"ater die Entferung zum Ger\"atehaus.
-\newpage
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=5cm]{Bilder/WireframeGeraetehaus.png}
+\caption{Wireframe der Ger\"atehauseinstellung}
+\label{Wireframe Geraetehaus}
+\centering
+\end{figure}
+\FloatBarrier
+% \newpage
 
 \subsection{Die Evaluierung}
 Die eben gezeigten und genauer beschriebenen Wireframes wurden zusammen mit einer kurzen Pr\"asentation des Projekts der Freiwilligen Feuerwehr Rastenberg vorgestellt.
@@ -148,6 +150,7 @@ Der Nutzer hat die Wahl, die eingehende Nachricht, welche die Regel matcht, vorl
 \label{Wireframe Vorlesen}
 \centering
 \end{figure}
+\FloatBarrier
 
 \subsection{Auswirkungen der Evaluierung auf das Lastenheft}
 Nach der Evaluierung muss das Lastenheft somit um einen weiteren Punkt erweitert werden.
