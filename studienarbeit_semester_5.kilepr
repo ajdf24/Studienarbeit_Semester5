@@ -9,7 +9,7 @@ kile_livePreviewStatusUserSpecified=false
 kile_livePreviewTool=LivePreview-PDFLaTeX
 kileprversion=2
 kileversion=2.1.3
-lastDocument=Programmierung.tex
+lastDocument=Ausblick.tex
 masterDocument=
 name=Studienarbeit_Semester_5
 pkg_extIsRegExp=false
@@ -67,6 +67,13 @@ Bookmarks=
 Encoding=ISO-8859-1
 FoldedColumns=
 FoldedLines=
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+
+[document-settings,item:Ausblick.tex]
+Bookmarks=
+Encoding=ISO-8859-1
 Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
@@ -142,12 +149,19 @@ Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
 
+[document-settings,item:Zusammenfassung.tex]
+Bookmarks=
+Encoding=ISO-8859-1
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+
 [item:ADT_Einrichten.tex]
 archive=true
-column=12
+column=93
 encoding=ISO-8859-1
 highlight=LaTeX
-line=40
+line=0
 mode=LaTeX
 open=true
 order=5
@@ -164,13 +178,13 @@ order=10
 
 [item:Abkuerzungen.tex]
 archive=true
-column=7
+column=46
 encoding=ISO-8859-1
 highlight=LaTeX
-line=12
+line=4
 mode=LaTeX
 open=true
-order=13
+order=15
 
 [item:Android.tex]
 archive=true
@@ -202,6 +216,16 @@ mode=LaTeX
 open=true
 order=2
 
+[item:Ausblick.tex]
+archive=true
+column=18
+encoding=ISO-8859-1
+highlight=LaTeX
+line=0
+mode=LaTeX
+open=true
+order=14
+
 [item:Auswertung_Lastenheft.tex]
 archive=true
 column=55
@@ -224,10 +248,10 @@ order=1
 
 [item:FacebookSDK.tex]
 archive=true
-column=71
+column=185
 encoding=ISO-8859-1
 highlight=LaTeX
-line=16
+line=13
 mode=LaTeX
 open=true
 order=11
@@ -244,30 +268,30 @@ order=3
 
 [item:Programmierung.tex]
 archive=true
-column=229
+column=164
 encoding=ISO-8859-1
 highlight=LaTeX
-line=111
+line=93
 mode=LaTeX
 open=true
 order=12
 
 [item:Quellen.bib]
 archive=true
-column=121
+column=13
 encoding=ISO-8859-1
 highlight=BibTeX
-line=312
+line=295
 mode=BibTeX
 open=true
-order=14
+order=16
 
 [item:Studienarbeit_Semester_5.tex]
 archive=true
 column=8
 encoding=ISO-8859-1
 highlight=LaTeX
-line=198
+line=204
 mode=LaTeX
 open=true
 order=0
@@ -292,6 +316,16 @@ mode=LaTeX
 open=true
 order=9
 
+[item:Zusammenfassung.tex]
+archive=true
+column=0
+encoding=ISO-8859-1
+highlight=LaTeX
+line=23
+mode=LaTeX
+open=true
+order=13
+
 [item:studienarbeit_semester_5.kilepr]
 archive=true
 column=1
@@ -303,10 +337,10 @@ open=false
 order=-1
 
 [view-settings,view=0,item:ADT_Einrichten.tex]
-CursorColumn=12
-CursorLine=40
+CursorColumn=93
+CursorLine=0
 JumpList=
-ViMarks=.,115,87,[,115,87,],115,87
+ViMarks=.,0,71,[,0,71,],0,92
 
 [view-settings,view=0,item:AKD.tex]
 CursorColumn=12
@@ -315,8 +349,8 @@ JumpList=
 ViMarks=.,5,329,[,5,329,],5,339
 
 [view-settings,view=0,item:Abkuerzungen.tex]
-CursorColumn=7
-CursorLine=12
+CursorColumn=46
+CursorLine=4
 JumpList=
 ViMarks=.,10,19,[,10,19,],10,51
 
@@ -338,6 +372,12 @@ CursorLine=21
 JumpList=
 ViMarks=.,21,160,[,21,160,],21,160
 
+[view-settings,view=0,item:Ausblick.tex]
+CursorColumn=18
+CursorLine=0
+JumpList=
+ViMarks=
+
 [view-settings,view=0,item:Auswertung_Lastenheft.tex]
 CursorColumn=55
 CursorLine=84
@@ -351,8 +391,8 @@ JumpList=
 ViMarks=.,7,207,[,7,207,],7,207
 
 [view-settings,view=0,item:FacebookSDK.tex]
-CursorColumn=71
-CursorLine=16
+CursorColumn=185
+CursorLine=13
 JumpList=
 ViMarks=.,19,249,[,19,214,],19,249
 
@@ -363,22 +403,22 @@ JumpList=
 ViMarks=.,81,0,[,81,0,],81,0
 
 [view-settings,view=0,item:Programmierung.tex]
-CursorColumn=229
-CursorLine=111
+CursorColumn=164
+CursorLine=93
 JumpList=
-ViMarks=.,111,228,[,111,206,],111,228
+ViMarks=.,93,163,[,93,127,],93,163
 
 [view-settings,view=0,item:Quellen.bib]
-CursorColumn=121
-CursorLine=312
+CursorColumn=13
+CursorLine=295
 JumpList=
 ViMarks=.,0,0,[,0,0,],-1,-1
 
 [view-settings,view=0,item:Studienarbeit_Semester_5.tex]
 CursorColumn=8
-CursorLine=198
+CursorLine=204
 JumpList=
-ViMarks=.,198,7,[,198,0,],198,7
+ViMarks=.,204,0,[,204,0,],204,7
 
 [view-settings,view=0,item:UseCases.tex]
 CursorColumn=50
@@ -391,3 +431,9 @@ CursorColumn=28
 CursorLine=145
 JumpList=
 ViMarks=.,142,164,[,142,164,],142,164
+
+[view-settings,view=0,item:Zusammenfassung.tex]
+CursorColumn=0
+CursorLine=23
+JumpList=
+ViMarks=.,23,0,[,23,0,],23,0
