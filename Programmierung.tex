@@ -1,36 +1,36 @@
 \section{Schwerpunkte der Programmierung} \label{Schwerpunkte der Programmierung}
-Da aus Zeitgr\"unden nicht auf die gesamte Programmierung im einzelnen genau eingegangen werden kann, sind im Folgenden Schwerpunkte die sich bei der Programmierung ergaben genauer aufgef\"uhrt und werden anhand von Quellcode-Beispielen genauer beschrieben.
+Da aus Zeitgr\"unden nicht auf die gesamte Programmierung im einzelnen genau eingegangen werden kann, sind im folgenden die Schwerpunkte die sich bei der Programmierung ergaben genauer aufgef\"uhrt und werden anhand von Quellcode-Beispielen genauer beschrieben.
 
 \subsection{Die Google-Places-API}
 Die Google-Places-\ac{API} bietet eine Schnittstelle f\"ur die Anbindung an Google, mit welcher es m\"oglich ist verschiedene Orte zu suchen. Im Projekt wird die \ac{API} in der Activity Navigation verwendet, um einen Ort f\"ur die Navigation zu w\"ahlen (Bild \ref{Wireframe NaviAuswahl}).
 
-Im Projekt ist in der Activity Navigation ein Textfeld, in welches der Nutzer einen Ort eintragen kann. Beim eintragen, wird der Nutzer \"uber eine Trefferliste bei der Auswahl unterst\"utz, wobei diese Vervollst\"andigung mit Hilfe der Places-\ac{API} geschieht.
+In der Activity Navigation ist ein Textfeld zu finden, in welches der Nutzer einen Ort eintragen kann. Beim eintragen, wird der Nutzer \"uber eine Trefferliste bei der Auswahl unterst\"utz, wobei diese Vervollst\"andigung mit Hilfe der Places-\ac{API} geschieht.
 
-Hierf\"ur wurde ein "`ArrayAdapter"' gew\"ahlt welcher beim eintragen in das Textfeld eine Liste mit Treffern unterhalb des Textfeldes darstellt.
+Hierf\"ur wurde ein "`ArrayAdapter"' gew\"ahlt, welcher beim eintragen in das Textfeld eine Liste mit Treffern unterhalb des Feldes anzeigt.
 
 Die statische Methode autocomplete() der Klasse GooglePlacesAutocompleteAdapter enth\"alt die Logik, mit der die Places-\ac{API} angesprochen wird.
 
-Als erstes wird eine Ergebnisliste und eine HttpURLConnection deklariert, wobei durch einen StringBuilder eine URL gebaut und geladen wird.
+Als erstes wird eine Ergebnisliste und eine HttpURLConnection deklariert, wobei durch einen StringBuilder eine URL gebaut und diese geladen wird.
 
-Der StingBuilder baut einen Sting, wie er im Listing zu sehen ist.
+Der StingBuilder baut einen Sting, \"ahnlich wie er im Listing zu sehen ist.
 \lstinputlisting{Code/PlacesURL.txt}
 
-Das daraufhin zum Google Server gelieferte JSON-Dokument wird dem StringBuilder hinzugef\"ugt um es im n\"achsten Schritt weiter zu verarbeiten. Ein Beispiel f\"ur ein solches ist im Anhang \ref{Places_API-Response Anhang} zu finden.
+Das daraufhin vom Google Server gelieferte JSON-Dokument wird dem StringBuilder hinzugef\"ugt, um es im n\"achsten Schritt weiter zu verarbeiten. Ein Beispiel f\"ur ein solches Dokument ist im Anhang \ref{Places_API-Response Anhang} zu finden.
 
-Aus diesem JSON-Dokument wird nun ein Array mit den einzelnen M\"oglichkeiten erstellt, wobei aus diesem Array wiederum die einzelnen Beschreibungen "description"` ausgelesen werdem. Diese Ergebnisse werden dann mit Hilfe der Ergebinsliste zur\"uckgegeben. Dieser Zusammenhang ist im Listing unten noch einmal als Quellcode dargestellt.
+Aus diesem JSON-Dokument wird nun ein Array mit den einzelnen M\"oglichkeiten erstellt, wobei aus diesem Array wiederum die einzelnen Beschreibungen unter dem Schl\"ussen "`description"` ausgelesen werdem. Diese Ergebnisse werden dann mit Hilfe der Ergebinsliste zur\"uckgegeben. Dieser Zusammenhang ist im Listing unten noch einmal als Quellcode dargestellt.
 \cite{PlacesAPIGoogle}
 
 \lstinputlisting{Code/Metode_autocomplete.java}
 \cite{PlacesExample}
 
 \subsection{ogg-Files und Android}
-Im Lastenheft wurde festgelegt, das die App zum einen Alarmt\"one selbst mitbringen soll, aber auch die internen Klingelt\"one sollen verwendet werden k\"onnen.
+Im Lastenheft wurde festgelegt, dass die App zum einige Alarmt\"one selbst mitbringen soll, zum anderen sollen aber auch die internen Klingelt\"one verwendet werden k\"onnen.
 
 Hierf\"ur wurden verschiedene Alarmt\"one zum Projekt hinzugef\"ugt, welche somit auch zu Auswahl stehen.
 
-Bei dem einbinden von standard Klingelt\"onen ergab sich jedoch ein schwerwiedendes Problem, welches im Folgenden genauer beschrieben wird.
+Bei dem Einbinden von standard Klingelt\"onen ergab sich jedoch ein schwerwiedendes Problem, welches im Folgenden genauer beschrieben wird.
 
-Unter Android sind alle Klingelt\"one als sogenannte .ogg-Files abgelegt. Diese .ogg-Files k\"onnen ein Flag enthalten, welches Android anweist sich bis zum Abbruch der Wiedergabe sich ewig zu wiederholen. 
+Unter Android sind alle Klingelt\"one als sogenannte .ogg-Files abgelegt. Diese .ogg-Files k\"onnen ein Flag enthalten, welches Android anweist den Ton bis zum Abbruch der Wiedergabe ewig zu wiederholen. 
 \cite{oogStackOver} (Abgerufen am 14.02.2015)
 
 Hierbei wird auch der Aufruf der Mediaplayer-Methode setLooping(false) durch das ogg-Flag ignoriert. Hierbei handelt es sich um einen Dokumentierten Bug im Android-System.
@@ -38,11 +38,11 @@ Hierbei wird auch der Aufruf der Mediaplayer-Methode setLooping(false) durch das
 
 Da der Alarmton beim anklicken durch den User demonstrativ abgespielt werden soll und dann automatisch enden soll, ergibt sich hierbei ein Problem, da sich Klingelt\"one unendlich wiederholen w\"urden.
 
-Um dieses Problem zu um gehen, wurde ein Workaround gemacht, welcher im Listing unten zu sehen ist.
+Um dieses Problem zu um gehen, wurde ein Workaround geschrieben, welcher im Listing unten zu sehen ist.
 
-Wird ein Ton gespielt, welcher ein Klingelton ist wird ein neuer Thread gestartet. Dieser Thread \"ubernimmt die Aufgabe die Wiedergabe zu unterbrechen, nachdem sie einmal abgespielt wurden ist.
+Wird ein Ton gespielt, welcher ein Klingelton ist, so wird ein neuer Thread gestartet. Dieser Thread \"ubernimmt die Aufgabe die Wiedergabe zu unterbrechen, nachdem sie einmal abgespielt wurden ist.
 
-Hierf\"ur wird eine While-Schleife gestartet, welche solange l\"auft wie der eigentliche Ton, welcher gerade abgespielt wird l\"auft. Ist diese Schleife beendet, wird die Wiedergabe unterbrochen und die Thread ordnungsgem\"a\ss{} beendet.
+Hierf\"ur wird eine While-Schleife gestartet, welche genau solange l\"auft, wie der eigentliche Ton, welcher gerade abgespielt wird. Ist diese Schleife beendet, wird die Wiedergabe unterbrochen und die Thread ordnungsgem\"a\ss{} beendet.
 
 Das Listing ist im Quellcode in der Klasse SoundSelection unter der Methode createListAdapter() zu finden.
 
@@ -52,14 +52,14 @@ Das Listing ist im Quellcode in der Klasse SoundSelection unter der Methode crea
 Wie schon in den Unterkapitel \ref{AKD Factory Pattern} und \ref{AKD Observer Pattern} erw\"ahnt, musste f\"ur die Arbeit unter Android das Factory und das Observer Pattern angepasst werden. Im folgenden wird nun genauer auf die Programmierung eingegangen, da unter Android wie schon beschrieben nicht vorhergesagt werden kann, wo der Einsprungspunkt f\"ur eine App ist.
 
 \subsubsection{Die Implementierung des Observer Pattern}
-Da nicht bei jeder Verwendung des Observers angefragt werden soll, ob dieser schon existiert und auch eine \"Ubergabe der Observerinstanz mittels eines Android-Bundle unpraktikabel ist wurde der Observer so entwurfen, das er nun statische Methoden enth\"alt, welche von jeder Stelle des Quellcodes aufgerufen werden k\"onnen.
+Da nicht bei jeder Verwendung des Observers angefragt werden soll, ob dieser schon existiert und auch eine \"Ubergabe der Observerinstanz mittels eines Android-Bundle unpraktikabel ist, wurde der Observer so entwurfen, dass er nur statische Methoden enth\"alt, welche von jeder Stelle des Quellcodes aus aufgerufen werden k\"onnen.
 
 Zus\"atzlich h\"alt der Observer die beobachteten Instanzen nicht im Arbeitsspeicher, sondern legt diese mit Hilfe der Jackson-Library im Filesystem als JSON-Dokumente ab.
-Dieses Vorgehen ist notwendig, da nicht Vorhergesagt werden kann, wann eine App beendet und aus dem Arbeitsspeicher entfernt wird. Um den hieraus resultierenden Datenverlust zu verhindern, werden alle Instanzen im Filesystem abgelegt und k\"onnen \"uber den Observer von dort auch wieder gelesen werden.
+Dieses Vorgehen ist notwendig, da nicht vorhergesagt werden kann, wann eine App beendet und aus dem Arbeitsspeicher entfernt wird. Um den hieraus resultierenden Datenverlust zu verhindern, werden alle Instanzen im Filesystem abgelegt und k\"onnen \"uber den Observer von dort auch wieder gelesen werden.
 
-Der Observer Mappt bei speichern, die Instanz zu einem JSON-Objekt, welches als File im Filesystem unter Android abgelegt wird. Dieses Mapping wird mit Hilfe der Jackson-Library erledigt. Hierbei gibt es unterschiedliche Methoden f\"ur das Speichern von SMS- und E-Mailregeln.
+Der Observer Mappt bei speichern, die Instanz zu einem JSON-Objekt, welches als File im Filesystem unter Android abgelegt wird. Hierbei gibt es unterschiedliche Methoden f\"ur das Speichern von SMS- und E-Mail-Regeln.
 
-Das Lesen von Regeln geschieht in die umgekehrten Reihenfolge. Zuerst werden die Files, welche eine Regel beinhalten vom Filesystem gelesen. Anschliesend werden diese Files wieder zu Javainstanzen gemappt.
+Das Lesen von Regeln geschieht in der umgekehrten Reihenfolge. Zuerst werden die Files, welche eine Regel beinhalten vom Filesystem gelesen. Anschliesend werden diese Files wieder zu Javainstanzen gemappt.
 
 Die genaue Implementierung des Klasse RuleObserver ist im Anhang im Kapitel \ref{Die Klasse RuleObserver} zu finden.
 
@@ -70,9 +70,9 @@ Aus den selben Gr\"unden wie beim Observer Pattern, musste auch das Factory Patt
 
 Die Klasse RuleCreator stellt das Factory Pattern dar und hat verschiedene statische Methoden, die es erlauben eine Regelinstanz zu erstellen, oder zu \"andern.
 
-\"Uber die Methode createRule() wird, unter der angabe des Regelnames und des Typs, eine neue Regel der entsprechenden Instanz erstellt, und zur\"uckgeliefert.
+\"Uber die Methode createRule() wird, unter der Angabe des Regelnames und des Typs, eine neue Regel der entsprechenden Instanz erstellt, und zur\"uckgeliefert.
 
-Mit Hilfe der anderen Methoden kann eine Regel ge\"andert werden, so kann zum Beispiel der Absender oder der Alarmton ge\"andert werden. Hierbei folgen alle Methoden dem Schema wie es im Kapitel \ref{AKD Factory Pattern} schon einmal dargestellt wurde.
+Mit Hilfe der anderen Methoden kann eine Regel ge\"andert werden. So kann zum Beispiel der Absender oder der Alarmton ge\"andert werden. Hierbei folgen alle Methoden dem Schema wie es im Kapitel \ref{AKD Factory Pattern} schon einmal dargestellt wurde.
 \lstinputlisting{Code/FactorySchema.java} 
 
 Zus\"atzlich ruft jede Methode der Factory die Methode notifyObserver() der Klasse Rule auf, um den Observer \"uber eine Ver\"anderung zu informieren.
@@ -84,7 +84,7 @@ Da Android nicht wie vermutet einen eigenen Receiver f\"ur E-Mails bereitstellt,
 
 Da diese Implementierung f\"ur alle Protokolle wie zum Beispiel IMAP oder SecureIMAP gemacht werden muss, wurde in der Arbeit aus Zeitgr\"unden nur die Implementierung des IMAP-Protokolls umgesetzt. Hierf\"ur wurde eine Bibliothek ben\"otigt, welche schon in der Lage ist Mails von einem Server zu lesen. Au\ss{}erdem musste darauf geachtet werden, dass diese auch mit Android kompatibel ist. Im Projekt wurde hierf\"ur die JavaMail-API f\"ur Android verwendet, welche Google bereitstellt. \cite{MailAPI}
 
-F\"ur die Implementierung, wurde ein TimerTask verwendet, welcher in regelm\"a\ss{}igen Abst\"anden die Mails vom Server abruft. Dieser TimerTask ist in einem AsyncTask gekapselt, da unter Android der Netzwerkzugriff nicht vom UI-Thread gestattet ist. 
+F\"ur die Implementierung, wurde ein TimerTask verwendet, welcher in regelm\"a\ss{}igen Abst\"anden die Mails vom Server abruft. Dieser TimerTask ist in einem AsyncTask gekapselt, da unter Android ein Netzwerkzugriff nicht vom UI-Thread gestattet ist. 
 
 Der AsyncTask wiederum wird von einem Service gestartet, welcher mit der Option \\"'START\_STICKY"` versehen ist. Dies bedeutet, dass der Service vom System immer neu gestartet wird, sollte er beendet werden.
 
@@ -96,7 +96,7 @@ Da der Mail Receiver nicht stabil lauff\"ahig ist, wurde er nicht im Projekt sel
 \subsection{Versenden einer Regel}
 LF60 des Lastenhefts verlangt, das Regeln \"ubertragen werden k\"onnen sollen. Dies bedeutet, dass es einem Nutzer m\"oglich sein muss eine seiner Regeln auch an andere Nutzer der App versenden zu k\"onnen. Hierbei gibt das Lastenheft keine konkreten Vorgaben, sondern nur einige Vorschl\"age wie eine Regel \"ubertragen werden kann.
 
-Der Nutzer hat in der Activity der Regel\"ubersicht die m\"oglichkeit eine Regel l\"anger zu ber\"uhren. \"Uber das daraufhin erscheinede Contextmen\"u ist es m\"oglich eine Regel zu \"ubertragen.
+Der Nutzer hat in der Activity der Regel\"ubersicht die m\"oglichkeit eine Regel l\"anger zu ber\"uhren. \"Uber das daraufhin erscheinende Contextmen\"u ist es m\"oglich eine Regel zu \"ubertragen.
 
 Damit der Nutzer viele verschiedene M\"oglichkeiten hat eine Regel zu \"ubertragen, wurde ein Intent gew\"ahlt um den Nutzer eine Auswahl der Sendem\"oglichkeiten zur Verf\"ugung zu stellen.
 
@@ -109,4 +109,4 @@ Der eben beschriebene Zusammenhang ist im folgenden Quellcodeausschnitt noch ein
 
 \lstinputlisting{Code/SendRuleIntent.java}
 
-Zus\"atzlich ergibt sich durch den gew\"ahlten Weg auch die M\"oglichkeit, dass der Nutzer seine Regeln zum Beispiel in Google Drive oder Dropbox speichern kann. Dies iust davon abh\"angig, welche Apps der Nutzer installiert hat.
+Zus\"atzlich ergibt sich durch den gew\"ahlten Weg auch die M\"oglichkeit, dass der Nutzer seine Regeln zum Beispiel in Google Drive oder Dropbox speichern kann. Dies ist davon abh\"angig, welche Apps der Nutzer installiert hat.
